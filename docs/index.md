@@ -1,21 +1,43 @@
-# Welcome to MkDocs
+# Les secrets des réseaux informatiques
 
-This is a test site hosted on [GitLab Pages](https://pages.gitlab.io). You can
-[browse its source code](https://gitlab.com/pages/mkdocs), fork it and start
-using it on your projects.
+Bienvenue sur le site de la formation *Les secrets des réseaux informatiques*.
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Vous trouverez sur ce site les différentes resources et activités qui
+seront utilisées au cours de la formation. 
 
-## Commands
+Ces contenus sont également disponibles sur le site de partage
+documentaire de la MPLS. **TODO METTRE LE LIEN...**
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+Sauf mention contraire, le contenu de ce site est distribué sous licence
+Creative Commons [CC BY](https://creativecommons.org/licenses/?lang=fr).
+Vous pouvez donc réutiliser et modifier ces contenus à l'unique
+condition d'en citer les auteurs originaux. N'hésitez pas à vous
+rapprocher de nous pour avoir accès aux fichiers source ce ces contenus.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Les auteurs:
+
+* Anne-Hélène TUAL - Ingénieure pédagogique à la Maison Pour La Science de Bretagne
+* Anthony PENHARD - Enseignant de Technologie au collège de Bréal-sous-Montfort 
+* Christophe COUTURIER - Enseignant Chercheur à IMT Atlantique
+
+
+## Planning de la formation
+
+* Première journée (3h)
+    * Présentation participants (30')
+    * Présentation de la MPLS et des intervenants (10')
+    * Activité collective *"Les réseaux c'est"* (45')
+    * Théorie des réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
+    * Activité *"À la découverte de la configuration réseau de ma machine"* (45')
+
+
+* Deuxième journée (3h)
+    * Introduction et bilan session 1 (15')
+    * Activité mesure de délais + Traceroute **(1h20)**
+    * Apports théoriques sur les délais dans les réseaux  **(15')**
+    * Activité *"Mesure des délais sur Internet"* (50')
+    * Démo de l'outil Wireshark (10')
+    * Présentation *"Les enjeux des réseaux modernes"* (30')
+    * Échanges de pratiques (45')
+    * Conclusion (10')

@@ -2,6 +2,14 @@ site_name: Les secrets des réseaux
 site_url: https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/
 site_dir: public
 
+nav:
+- Accueil: 'index.md'
+- Activités:
+  - Configuration de ma machine: 'activite-config-machine.md'
+  - Mesures de délais: 'activite-mesure-delais.md'
+- Glossaire: 'glossaire.md'
+- Ressources: 'ressources.md'
+
 
 # theme: mkdocs
 # theme: readthedocs
