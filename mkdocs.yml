@@ -1,6 +1,7 @@
 site_name: Les secrets des réseaux
 site_url: https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/
 site_dir: public
+site_author: Anne-Hélène Tual, Anthony Penhard, Christophe Couturier
 
 nav:
 - Accueil: 'index.md'
@@ -9,17 +10,40 @@ nav:
   - Mesures de délais: 'activite-mesure-delais.md'
 - Glossaire: 'glossaire.md'
 - Ressources: 'ressources.md'
+- MPLS: 'https://www.maisons-pour-la-science.org/fr/bretagne'
 
 
-# theme: mkdocs
-# theme: readthedocs
 theme:
-  name: cinder
   # name: mkdocs
+  # name: readthedocs
+  # name: cinder
+  # name: flatly # pip3 install mkdocs-bootswatch 
+  name: superhero # pip3 install mkdocs-bootswatch 
+  # darkly, litera, lumen, lux, materia, minty, pulse, sandstone, solar, and superhero
   custom_dir: theme_custom/
 
+  # name: material
+  # palette:
+  #   # Light mode
+  #   - scheme: default
+  #     primary: indigo
+  #     accent: indigo
+  #     toggle:
+  #       icon: material/toggle-switch-off-outline
+  #       name: Switch to dark mode
+
+  #   # Dark mode
+  #   - scheme: slate
+  #     primary: blue
+  #     accent: blue
+  #     toggle:
+  #       icon: material/toggle-switch
+  #       name: Switch to light mode
+
 plugins:
-  - search
+  # - search
+  - search:
+      lang: fr
   - markdownextradata
 
 markdown_extensions:
@@ -48,6 +72,12 @@ markdown_extensions:
   # - pymdownx.tasklist:
   #     custom_checkbox: true
   # - pymdownx.tilde
+  - abbr # for abbreviations
+  - pymdownx.snippets # for abbreviations central include
+  - toc:
+      # baselevel: 1
+      permalink: False
+
 extra_css:
     - css/extra.css
 

@@ -1,6 +1,6 @@
 # Mesure des délais sur Internet
 
-**TODO: INTRODUCTION**
+**<p class="text-danger">TODO: FAIRE UNE INTRODUCTION</p>**
 
 
 ## Rappel sur les délais
@@ -19,3 +19,4 @@ Focalisation sur temps de propagation et temps d'émission
 
 ## Mesures
 
+--8<-- "includes/abbreviations.md"

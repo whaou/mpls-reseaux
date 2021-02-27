@@ -1,12 +1,13 @@
 # Les secrets des réseaux informatiques
 
 Bienvenue sur le site de la formation *Les secrets des réseaux informatiques*.
-
 Vous trouverez sur ce site les différentes resources et activités qui
 seront utilisées au cours de la formation. 
 
 Ces contenus sont également disponibles sur le site de partage
-documentaire de la MPLS. **TODO METTRE LE LIEN...**
+documentaire de la MPLS. 
+**<a class="text-danger">TODO METTRE LE LIEN...</a>**
+
 
 Sauf mention contraire, le contenu de ce site est distribué sous licence
 Creative Commons [CC BY](https://creativecommons.org/licenses/?lang=fr).
@@ -21,6 +22,8 @@ Les auteurs:
 * Anthony PENHARD - Enseignant de Technologie au collège de Bréal-sous-Montfort 
 * Christophe COUTURIER - Enseignant Chercheur à IMT Atlantique
 
+<!-- Some Markdown text with <span style="color:blue">some *blue* text</span>. -->
+<!-- <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
 
 ## Planning de la formation
 

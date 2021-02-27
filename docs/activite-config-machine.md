@@ -8,7 +8,7 @@ connectés. Dans cette activité, nous allons découvrir les principaux
 paramètres à configurer sur une machine pour qu'elle fonctionne
 correctement sur un réseau.
 
-
+ 
 
 ## Notion d'adresse
 ### Quelle est l'adresse de ma machine?
@@ -19,7 +19,7 @@ Plusieurs adresses (IP, nom de machine, MAC), et même plusieurs IP (IPv4, IPv6,
 ### Comment résoudre une adresse?
 
 * MAC/IP -> ARP
-* IP->nom de machine -> DNS
+* IP->nom de machine -> [DNS](glossaire.md#dns)
 
 ### IP publique / IP privée
 
@@ -44,3 +44,6 @@ mais est beaucoup moins utilisé dans ce cas car IPv6 fournit un nouveau
 système d'auto-configuration d'adresse qui permet de se passer de
 serveur DHCP
 
+
+
+--8<-- "includes/abbreviations.md"
