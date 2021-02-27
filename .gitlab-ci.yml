@@ -1,7 +1,9 @@
-image: python:3.8-buster
+# image: python:3.8-buster
 
-before_script:
-  - pip install -r requirements.txt
+# before_script:
+#   - pip install -r requirements.txt
+
+image: n1n1/mkdocs-mpls 
 
 test:
   stage: test
