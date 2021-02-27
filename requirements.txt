@@ -4,6 +4,8 @@ mkdocs-cinder
 mkdocs-bootswatch
 pymdown-extensions 
 mkdocs-markdownextradata-plugin
+mkdocs-material
+mkdocs-redirects
 
 # Add your custom theme if not inside a theme_dir
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
