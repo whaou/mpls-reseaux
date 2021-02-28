@@ -20,7 +20,7 @@ correctement sur un réseau.
 
         ```` shell
         # Pour lister les paramètres réseau, tapez: 
-        ipconfig --all
+        ipconfig /all
         ````
 
     === "Linux"

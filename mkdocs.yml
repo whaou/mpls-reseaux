@@ -51,7 +51,9 @@ markdown_extensions:
   - attr_list
   - def_list
   - pymdownx.arithmatex #  pip3 install pymdown-extensions; cf. https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
-
+  # - pymdownx.caret
+  # - pymdownx.mark
+  # - pymdownx.tilde
   - toc:
       # baselevel: 1
       permalink: False

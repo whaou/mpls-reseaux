@@ -27,7 +27,9 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Address_Resolution_Protocol)
 *Dynamic Host Configuration Protocol*
 
 Protocole qui permet à un nœud de récupérer automatiquement ses
-paramètres de configuration réseau auprès d'un *serveur DHCP*.
+paramètres de configuration réseau auprès d'un *serveur DHCP*. Ces 
+paramètres comprennent notamment l'adresse IP que la machine devra 
+utiliser ainsi que l'adresse d'un ou plusieurs serveurs DNS.
 
 Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol), 
 [en](https://wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol).
