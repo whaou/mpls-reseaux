@@ -9,6 +9,27 @@ connectés. Dans cette activité, nous allons découvrir les principaux
 paramètres à configurer sur une machine pour qu'elle fonctionne
 correctement sur un réseau.
 
+!!! note "Attention à votre système d'exploitation!" 
+
+    Certaines commandes n'ont pas le même nom (ou les même
+    paramètres) dans les différents systèmes d'exploitation. Dans ce 
+    cas, nous  utilisions parfois la représentation ci-dessous. 
+    Sélectionnez votre OS (Windows ou Linux) pour voir les commandes 
+    adéquates.
+
+    === "Windows"
+
+        ```` shell
+        # Pour lister les paramètres réseau, tapez: 
+        ipconfig --all
+        ````
+
+    === "Linux"
+
+        ```` shell
+        # Pour lister les adresses des différentes interfaces, tapez: 
+        ip address list
+        ````
 
 ## Notion d'adresse
 ### Quelle est l'adresse de ma machine?

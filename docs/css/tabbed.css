@@ -65,7 +65,8 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 1em 0;
+    /* margin: 1em 0; */
+    margin: 0 0;
     border-radius: px2rem(2px);
 
     // Tab radio button - the Tabbed extension will generate radio buttons with
@@ -141,10 +142,14 @@
 
 .tabbed-set label {
   width: auto;
-  margin: 0 0.5em;
+  /* margin: 0 0.5em; */
+  margin: 0 0em;
   padding: 0.25em;
+  padding: 0.25em 0.75em;
   font-size: 120%;
   cursor: pointer;
+  background-color:#4E5D6C;
+  border: none;
 }
 
 .tabbed-set input {
@@ -157,8 +162,10 @@
 }
 
 .tabbed-set input:nth-child(n+1):checked + label {
-    color: #FF5252;
-}
+    /* color: #FF5252; */
+    color: #fff;
+    background-color: #DF691A;
+  }
 
 .tabbed-set input:nth-child(n+1):checked + label + .tabbed-content {
     display: block;
