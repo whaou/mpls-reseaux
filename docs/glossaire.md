@@ -11,7 +11,7 @@ définition simple.
 
 
 ## ARP
-*Address Resolution Protocol*.
+*Address Resolution Protocol*
 
 Protocole assurant la résolution d'adresse MAC. Il permet à une machine
 d'interroger les autres machines du réseau local afin d'obtenir
@@ -24,7 +24,7 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Address_Resolution_Protocol)
 
 
 ## DHCP
-*Dynamic Host Configuration Protocol*.
+*Dynamic Host Configuration Protocol*
 
 Protocole qui permet à un nœud de récupérer automatiquement ses
 paramètres de configuration réseau auprès d'un *serveur DHCP*.
@@ -34,7 +34,7 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_P
 
 
 ## DNS
-*Domain Name System*.
+*Domain Name System*
 
 Système de nommage des machines utilisé sur l'Internet. Désigne
 également le nom du protocole permettant de demander à un *serveur DNS*
@@ -45,7 +45,7 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Domain_Name_System),
 
 
 ## IP
-*Internet Protocol*. 
+*Internet Protocol*
 
 C'est le protocole de la couche réseau (niveau 3 du modèle OSI). Il est
 notamment en charge de l'adressage (adresses IP) et du routage (chemin
@@ -59,7 +59,7 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Internet_Protocol),
 
 
 ## MAC
-*Medium Access Control*. 
+*Medium Access Control* 
 
 Nom donné à la couche gérant l'accès au canal (niveau 2 du modèle OSI).
 Cette couche gère notamment le partage du canal entre les différents 

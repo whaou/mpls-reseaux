@@ -2,6 +2,8 @@ site_name: Les secrets des réseaux
 site_url: https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/
 site_dir: public
 site_author: Anne-Hélène Tual, Anthony Penhard, Christophe Couturier
+#copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp;  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
 
 nav:
 - Accueil: 'index.md'
@@ -11,6 +13,7 @@ nav:
 - Glossaire: 'glossaire.md'
 - Ressources: 'ressources.md'
 - MPLS: 'https://www.maisons-pour-la-science.org/fr/bretagne'
+- Test: 'test.md'
 
 
 theme:
@@ -18,30 +21,21 @@ theme:
   # name: readthedocs
   # name: cinder
   # name: flatly # pip3 install mkdocs-bootswatch 
-  name: superhero # pip3 install mkdocs-bootswatch 
   # darkly, litera, lumen, lux, materia, minty, pulse, sandstone, solar, and superhero
+  name: superhero # pip3 install mkdocs-bootswatch 
   custom_dir: theme_custom/
-
+ 
   # name: material
+  # language: fr
   # palette:
-  #   # Light mode
-  #   - scheme: default
-  #     primary: indigo
-  #     accent: indigo
-  #     toggle:
-  #       icon: material/toggle-switch-off-outline
-  #       name: Switch to dark mode
+  #   scheme: slate
+  #   primary: blue grey
+  # features:
+  #   - navigation.instant
+  
 
-  #   # Dark mode
-  #   - scheme: slate
-  #     primary: blue
-  #     accent: blue
-  #     toggle:
-  #       icon: material/toggle-switch
-  #       name: Switch to light mode
 
 plugins:
-  # - search
   - search:
       lang: fr
   - markdownextradata
@@ -49,40 +43,23 @@ plugins:
 markdown_extensions:
   - codehilite
   - admonition
-  - pymdownx.details
-  - markdown.extensions.attr_list
-  - markdown.extensions.def_list
-  # - markdown.extensions.fenced_code
-  # - codehilite:
-  #     guess_lang: false
-      # linenums: true
-  - pymdownx.arithmatex #  pip3 install pymdown-extensions; cf. https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
-  # - pymdownx.betterem:
-  #     smart_enable: all
-  # - pymdownx.caret
-  # - pymdownx.critic
-  # - pymdownx.details
-  # - pymdownx.emoji:
-  #     emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  # - pymdownx.inlinehilite
-  # - pymdownx.magiclink
-  # - pymdownx.mark
-  # - pymdownx.smartsymbols
-  # - pymdownx.superfences
-  # - pymdownx.tasklist:
-  #     custom_checkbox: true
-  # - pymdownx.tilde
   - abbr # for abbreviations
   - pymdownx.snippets # for abbreviations central include
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - attr_list
+  - def_list
+  - pymdownx.arithmatex #  pip3 install pymdown-extensions; cf. https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+
   - toc:
       # baselevel: 1
       permalink: False
 
 extra_css:
     - css/extra.css
+    - css/tabbed.css
 
-extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-
-
+# extra_javascript:
+#   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 

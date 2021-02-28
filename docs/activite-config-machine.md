@@ -1,3 +1,4 @@
+
 # À la découverte de la configuration réseau de ma machine
 
 Les réseaux sont constitués de liaisons (câbles, fibres, faisceaux
@@ -8,7 +9,6 @@ connectés. Dans cette activité, nous allons découvrir les principaux
 paramètres à configurer sur une machine pour qu'elle fonctionne
 correctement sur un réseau.
 
- 
 
 ## Notion d'adresse
 ### Quelle est l'adresse de ma machine?

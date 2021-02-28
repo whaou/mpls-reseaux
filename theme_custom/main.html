@@ -5,12 +5,17 @@
 
 
 {% block footer %}
-<!-- For help about how to include CC icons: https://creativecommons.org/choose/ -->
-<small>&copy; Copyright 2021, A.H. Tual, A. Penhard, C. Couturier.
-    <!-- </br> -->
-    Contenu sous licence  <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY</a> 
-    <!-- <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a> -->
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
-</small> 
-
+<p>{% if config.copyright %}
+<hr>
+{{ config.copyright }}<br>
+{% endif %}
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+{% if page and page.meta.revision_date %}<br>
+<small>Revised on: {{ page.meta.revision_date }}</small>
+{% endif %}
 {% endblock %}
+
+
