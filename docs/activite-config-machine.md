@@ -38,14 +38,17 @@ ci-dessous:
 === "Windows"
 
     !!! note ""
-        Ouvrez le "menu démarrer" (touche "Windows" ) puis tapez `cmd` et 
-        "entrée".
+        Ouvrez le "menu démarrer" (touche "Windows" ) puis tapez `cmd` 
+        et entrée".
 
 === "Linux"
     !!! note ""
         Ouvrez le lanceur de programmes (touche "Windows") puis tapez 
         `term`. Le système devrait vous proposer l'un des émulateurs de 
         terminal déja installés. Sélectionnez celui que vous préférez.
+
+        Sous Ubuntu, une autre alternative est d'utiliser le raccourci 
+        clavier `Ctrl + Alt + t`.
 
 
 ## Notion d'adresse
@@ -74,14 +77,24 @@ interfaces de votre machine et notez les dans un tableau sur le modèle
 de celui ci-dessous.
 
 === "Windows"
-    ```` shell
-    ipconfig /all
-    ````
+    !!! note ""
+        ```` shell
+        ipconfig /all
+        ````
 
 === "Linux"
-    ```` shell
-    ip address list
-    ````
+    !!! note ""
+        ```` shell
+        ip address list
+        ````
+
+        *Note:* lorsque cela ne soulève pas d'ambiguïté, la commande 
+        `ip` assure automatiquement la complétion des paramètres qui lui 
+        sont passés. Ainsi `ip a l` donnera le même résultat que 
+        `ip address list`... Et comme `list` est le paramètre par défaut
+        pour la sous commande `address`, `ip a` sera même suffisant.
+        Les informaticiens ne sont pas fainéants, ils savent juste 
+        s'économiser :-)
 
 Essayez de retrouver les adresses MAC et IP des interfaces de votre
 machine. Notez les dans un tableau comme celui-ci:
@@ -156,7 +169,7 @@ exemple:
 Afin d'économiser le temps nous nous focaliserons sur la résolution DNS.
 
 
-### La Résolution DNS
+### La résolution DNS
 
 Différents programmes permettent de faire des requêtes DNS. Nous allons
 utiliser la commande `nslookup` qui a le mérite d'exister sous Windows
@@ -224,7 +237,7 @@ Faites une recherche DNS pour trouver l'adresse IP de ce site:
 nslookup sci-hub.se
 ````
 En analysant la réponse de cette commande, vous devriez voir qu'elle ne 
-vous retourne pas l'adresse demandé.
+vous retourne pas l'adresse demandée.
 
 Reprenons la même requête mais en la dirigeant vers un le célèbre 
 serveur DNS de Google dont l'adresse IP est `8.8.8.8`:
@@ -233,19 +246,217 @@ nslookup sci-hub.se 8.8.8.8
 ````
 Vous devriez obtenir une adresse valide cette fois-ci.
 
-Même si ce n'est pas le seul, le blocage de résolution DNS est un moyen
-couramment utilisé pour empêcher l'accès à des sites internet.
+Conclusion: Même si ce n'est pas le seul, le blocage de résolution DNS
+est un moyen couramment utilisé pour empêcher l'accès à des sites
+internet.
 
 
 
 
-### La Résolution ARP
+### La résolution ARP
 
-Hors scope
+**<a class="text-danger">TODO:  Probablement Hors scope (faute de
+temps). Peut-être à proposer comme une activité bonus à faire par les
+plus motivés/compétents entre les deux séances. </a>**
+
 note pour installer arp depuis linux `sudo apt install net-tools`
 
 
+
+
 ### IP publique / IP privée
+
+Dans les parties précédentes, vous avez noté les différentes adresses IP
+attribuées à votre machine. Les résultats dépendent fortement de votre
+réseau et de votre machine. Vous avez également vu que la commande 
+`ping` permet de tester la connectivité avec une machine identifiée par 
+son adresse IP. 
+
+Dans cette partie, commencez par essayer de tester la connectivité avec
+les différentes adresses IP des autres membres de votre groupe.
+
+Y-êtes vous arrivé·e? Probablement pas :-( Si ça a marché, il y a de
+fortes chance que ce soit avec des adresses IPv6. Essayons de
+comprendre...
+
+
+#### Un peu de théorie...
+
+Il existe deux version du protocole IP: IPv4 et IPv6. La principale
+raison de l'introduction d'IPv6 est la pénurie d'adresses IPv4. En
+effet, les adresses IPv4 sont codées sur 4 octets (`w.x.y.z`). Cela
+permet un peu plus de 4 milliards d'adresses. Ce nombre s'est révélé
+insuffisant pour permettre d'adresser directement l'ensemble des
+équipements connectés à l'Internet. IPv6 a résolu le problème en codant
+les adresses sur 16 octets soit plus de $10^{38}$ adresses. Mais le 
+passage d'IPv4 à IPv6 va prendre du temps et nous allons devoir vivre
+avec le double système pendant un certain temps...
+
+##### IPv4 et NAT
+
+Les protocoles [NAT](glossaire.md#nat) ont été imaginés pour de palier
+le manque d'adresses IPv4. Sans approfondir, disons simplement que NAT
+permet à un routeur (typiquement votre box d'accès Internet) de "prêter"
+son adresse IP aux équipements de son réseau. Votre ordinateur dispose
+de sa propre adresse pour communiquer avec les autres équipements (dont
+la box) au sein du réseau local mais cette adresse est choisie dans une
+plage particulière dite d'*adresses privées* (par exemple les plages
+`192.168.x.y`  ou `10.x.y.z`). Chacun peut construire son réseau local
+en utilisant ces adresses. Mais pour éviter les conflits d'adresse, il
+n'est pas possible d'utiliser une adresse privée pour communiquer sur
+l'Internet (les routeurs de l'internet ne traitent pas ces adresses).
+Pour aller sur Internet, il faut donc utiliser une *adresse IP publique*
+mais c'est cette ressource qui est limitée en IPv4. Votre fournisseur
+d'accès à Internet attribue donc une IPv4 publique à votre box qui peut
+alors la prêter aux autres équipements en utilisant le protocole NAT.
+
+Lorsque vous avez demandé ses adresses IPv4 à votre machine, vous avez
+logiquement récupéré ses adresses privées puisque votre machine ne
+connaît l'IP publique votre box. Comme ces adresses ne sont pas
+routables sur l'Internet, il est logique que vous n'ayez pas réussi à
+faire un ping avec elles.
+
+##### Et en IPv6 ?
+
+En IPv6, il n'y a pas de pénurie d'adresses, les IPv6 des machines sont
+donc généralement publiques par défaut (sauf celles que l'on veut
+volontairement être non routables comme celles commençant par `fe80:`).
+Le ping entre deux adresses IPv6 devrait donc pouvoir fonctionner.
+
+Mais pour que cela fonctionne, il faut encore que les fournisseurs
+d'accès à Internet des deux machines implémentent effectivement IPv6, ce
+qui n'est pas forcément le cas... 
+
+
+##### En quoi est-ce un problème ?
+
+Comme vous pouvez le constater, le fait de n'avait une IP publique que
+sur votre box ne vous empêche pas de vous connecter à Internet. Le
+problème se pose lorsque vous voulez exposer un service sur Internet
+(autrement dit: héberger un serveur). Dans ce cas, il faut bien que vous
+disposiez d'une adresse publique pour que vos clients s'y connectent. De
+la même façon, qu'elle peut vous prêter son IP pour sortir sur Internet,
+votre box peut faire suivre le trafic qu'elle reçoit vers l'un de vos
+serveurs. Mais cela induit de nombreuses complications, à commencer par
+le fait que vous ne pourrez héberger qu'un seul serveur car vous ne
+disposez que d'une seule IP publique. D'autre part, cela suppose que
+votre fournisseur d'accès vous attribue systématiquement la même adresse
+IP publique (on parle alors d'*IP fixe*), ce qui n'est pas forcément
+toujours le cas compte tenu de la pénurie d'adresses.
+
+
+
+
+#### Un peu de pratique...
+
+##### Comment connaître l'IP publique de ma box ?
+
+Différents sites internet vous permettent de connaître votre adresse IP
+publique. Il s'agit généralement de serveur Web qui affichent l'adresse
+source des paquets IP que vous leur envoyez. 
+
+Nous vous proposons d'utiliser le site
+[http://ip.lafibre.info/](http://ip.lafibre.info/) car il affiche
+plusieurs informations intéressantes (notamment l'IPv4 et l'IPv6).
+
+Ouvrez le lien dans votre navigateur et notez notamment les
+informations suivantes (conservez les quelque part):
+
+* votre adresse IPv4 publique, si vous en avez une 
+* votre adresse IPv6 publique, si vous en avez une 
+* les noms associés à ces adresses (résultat des requêtes reverse DNS )
+
+Comparez ces adresses avec celles que vous aviez récupérées localement
+sur votre machine. Vous devriez constater que 
+
+* L'IPv4 publique est différente de l'IPv4 de votre machine (car votre
+  box a utilisé NAT pour remplacer votre IP privée par son IP publique).
+* Si vous avez de l'IPv6, il est fort probable que l'une des adresses
+  IPv6 de votre machine corresponde exactement à celle affichée par le
+  site. Cela signifie que votre machine est directement accessible
+  depuis l'internet (il est donc possible d'y héberger un serveur en
+  IPv6).
+
+##### Tester la connectivité sur mon(mes) IP publique(s) ?
+
+Maintenant que chacun·e a récupéré son(ses) IP publique(s), essayez de 
+"pinguer" celles de vos collègues. Cela devait fonctionner désormais.
+
+*Note*: La situation n'est pas exactement la même en IPv4 qu'en IPv6. En
+IPv4, les requêtes arrivent sur la box internet de votre correspondant,
+c'est donc elle qui y répond. Alors qu'en IPv6, elles arrivent
+directement sur la machine cible. Bien que cela dépasse le cadre de
+cette activité, les utilisateurs les plus avancés peuvent l'observer en
+utilisant un outil d'analyse de trafic comme
+[Wireshark](https://www.wireshark.org/) sur la cible de la requête. Vous 
+devriez observer le trafic ping en IPv6 (puisqu'il atteint la machine) 
+mais pas en IPv4 (car c'est la box qui y répond).
+
+
+
+##### Remarques plus avancés sur l'IPv6
+
+En IPv6, vous disposez généralement de plusieurs adresses IP
+(trois, typiquement):
+
+* L'une est dite temporaire. C'est celle dont se sert la machine pour
+  faire des requêtes vers d'autres serveur. Cette adresse change
+  périodiquement afin de limiter la possibilité de vous pister.
+  Attention! cela ne vous garantit en aucun cas l'anonymat!
+* Une adresse qui ne change pas au cours. C'est cette adresse qu'il faut
+  utiliser si pour héberger vos propres serveurs. En effet, il vaut
+  mieux que l'adresse des serveurs ne change pas trop au cours du
+  temps...
+* Une adresse dite de *lien local* et qui commence en `fe80::`. Celle-ci
+  est uniquement destinée aux communications avec les machines
+  directement reliées sur le même câble. Nous n'en dirons pas plus si ce
+  n'est qu'elle n'offre pas de connectivité internet puisqu'elle n'est
+  pas routable sur l'Internet.
+
+
+Vous noterez que les deux premières adresses commencent de la même
+façon. Plus exactement, ont dit qu'elles ont le même *préfixe*. Ce
+préfixe a typiquement une longueur de 64 bits (soit 8 octets). Si en
+IPv4, les fournisseurs d'accès ne fournissent qu'une seule IP publique,
+en IPv6 en revanche, chaque client se voit attribuer une large plage
+d'adresses qui ont toutes le même préfixe. Les adresses IPv6 ayant une
+taille de 128 bits et si l'on fixe les 64 premiers bits pour le préfixe,
+il reste 64 bits pour numéroter des machines soit $2^{64}$, c'est à dire
+plus de $10^{19}$ adresses pour chaque client! Autant dire que la
+pénurie d'adresse est résolue!
+
+
+##### Manipulations avancés en IPv6 (et IPv4)
+
+Pour les utilisateurs un peu avancées, il est assez simple de tester
+l'exposition d'un service sur Internet. cela suppose:
+
+* d'installer et lancer un serveur sur votre machine, 
+* le cas échéant, de configurer le firewall de votre machine pour
+  accepter les connexions entrantes
+* si vous êtes en IPv4 uniquement (pas d'IPv6) ou si vous voulez que le
+  service soit accessible en IPv4, il faudra également configurer votre
+  box que qu'elle fasse suivre (*port forwading*) le trafic des ports
+  TCP et/ou UDP concernés (par exemple TCP port 80 pour un serveur web
+  http) vers la machine où est installé le serveur
+
+Attention à ce que vous faites! Pensez à arrêter vos serveurs et à
+refermer les différents ports à la fin de vos expérimentations.
+
+Certaines de ces activités nécessiteront les droits administrateurs.
+
+Pour vous entraîner, vous pouvez par exemple installer 
+* un serveur web, par exemple
+  [XAMPP](https://www.apachefriends.org/fr/index.html) sous windows ou
+  bien `apache` ou `nginx` sous linux
+* ou simplement `netcat` (linux) ou [`ncat`](http://nmap.org/ncat/) sous
+  windows qui permettent de lancer un serveur et de s'y connecter sur
+  n'importe quel port
+* et même installer un serveur `ssh`, attention toutefois à bien
+  sécuriser vos accès!
+
+
+
 
 
 

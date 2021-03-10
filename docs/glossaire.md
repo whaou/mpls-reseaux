@@ -73,6 +73,22 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Contr%C3%B4le_d%27acc%C3%A8s
 [en](https://en.wikipedia.org/wiki/Medium_access_control).
 
 
+## NAT
+*Network Address Translation* 
+
+Protocole permettant à un routeur de substituer l'adresse d'un paquet
+par une autre. Ce protocole est principalement utilisé par les routeurs
+d'accès pour substituer les IP privées du réseau local par une IP
+publique routable sur l'Internet. Cela permet d'une part de palier le
+manque d'adresses IPv4 et d'autre part de limiter l'accès direct aux
+machines d'un réseau local depuis l'extérieur.
+
+Il existe différents types de NAT mais nous ne n'évoquerons pas ces
+différences ici.
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Network_address_translation), 
+[en](https://en.wikipedia.org/wiki/Network_address_translation).
+
 
 <!-- 
 * [**DHCP**](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol):

@@ -3,3 +3,4 @@
 *[DNS]: Domain Name System
 *[IP]: Internet Protocol
 *[MAC]: Medium Access Control
+*[NAT]: Network Address Translation
