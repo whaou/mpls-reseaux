@@ -284,7 +284,7 @@ de l'aéroport le plus proche
 === "Windows"
     !!! note ""
 
-        ```` she
+        ```` sh
         tracert -w 500 -h 64 berkeley.edu
         ````
 
