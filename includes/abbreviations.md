@@ -4,3 +4,4 @@
 *[IP]: Internet Protocol
 *[MAC]: Medium Access Control
 *[NAT]: Network Address Translation
+*[RTT]: Round Trip Time

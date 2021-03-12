@@ -90,6 +90,18 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Network_address_translation)
 [en](https://en.wikipedia.org/wiki/Network_address_translation).
 
 
+## RTT 
+*Round Trip Time*
+
+Le RTT représente le temps d'aller / retour entre deux machines. La
+commande `ping` permet par exemple de mesurer ce temps. Une machine
+envoie un paquet de test à la machine cible qui le renvoie à son tour à
+l'expéditeur initial. Le RTT est mesuré par l'expéditeur initial. C'est
+le temps entre le début de l'émission du paquet de test et la réception 
+de la fin du la réponse.
+
+
+
 <!-- 
 * [**DHCP**](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol):
   *Dynamic Host Configuration Protocol*. Protocole qui permet

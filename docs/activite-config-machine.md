@@ -264,7 +264,7 @@ note pour installer arp depuis linux `sudo apt install net-tools`
 
 
 
-### IP publique / IP privée
+## IP publique / IP privée
 
 Dans les parties précédentes, vous avez noté les différentes adresses IP
 attribuées à votre machine. Les résultats dépendent fortement de votre
@@ -280,7 +280,7 @@ fortes chance que ce soit avec des adresses IPv6. Essayons de
 comprendre...
 
 
-#### Un peu de théorie...
+### Un peu de théorie...
 
 Il existe deux version du protocole IP: IPv4 et IPv6. La principale
 raison de l'introduction d'IPv6 est la pénurie d'adresses IPv4. En
@@ -292,7 +292,7 @@ les adresses sur 16 octets soit plus de $10^{38}$ adresses. Mais le
 passage d'IPv4 à IPv6 va prendre du temps et nous allons devoir vivre
 avec le double système pendant un certain temps...
 
-##### IPv4 et NAT
+#### IPv4 et NAT
 
 Les protocoles [NAT](glossaire.md#nat) ont été imaginés pour de palier
 le manque d'adresses IPv4. Sans approfondir, disons simplement que NAT
@@ -316,7 +316,7 @@ connaît l'IP publique votre box. Comme ces adresses ne sont pas
 routables sur l'Internet, il est logique que vous n'ayez pas réussi à
 faire un ping avec elles.
 
-##### Et en IPv6 ?
+#### Et en IPv6 ?
 
 En IPv6, il n'y a pas de pénurie d'adresses, les IPv6 des machines sont
 donc généralement publiques par défaut (sauf celles que l'on veut
@@ -328,7 +328,7 @@ d'accès à Internet des deux machines implémentent effectivement IPv6, ce
 qui n'est pas forcément le cas... 
 
 
-##### En quoi est-ce un problème ?
+#### En quoi est-ce un problème ?
 
 Comme vous pouvez le constater, le fait de n'avait une IP publique que
 sur votre box ne vous empêche pas de vous connecter à Internet. Le
@@ -347,9 +347,9 @@ toujours le cas compte tenu de la pénurie d'adresses.
 
 
 
-#### Un peu de pratique...
+### Un peu de pratique...
 
-##### Comment connaître l'IP publique de ma box ?
+#### Comment connaître l'IP publique de ma box ?
 
 Différents sites internet vous permettent de connaître votre adresse IP
 publique. Il s'agit généralement de serveur Web qui affichent l'adresse
@@ -377,7 +377,7 @@ sur votre machine. Vous devriez constater que
   depuis l'internet (il est donc possible d'y héberger un serveur en
   IPv6).
 
-##### Tester la connectivité sur mon(mes) IP publique(s) ?
+#### Tester la connectivité sur mon(mes) IP publique(s) ?
 
 Maintenant que chacun·e a récupéré son(ses) IP publique(s), essayez de 
 "pinguer" celles de vos collègues. Cela devait fonctionner désormais.
@@ -394,7 +394,7 @@ mais pas en IPv4 (car c'est la box qui y répond).
 
 
 
-##### Remarques plus avancés sur l'IPv6
+#### Remarques plus avancés sur l'IPv6
 
 En IPv6, vous disposez généralement de plusieurs adresses IP
 (trois, typiquement):
@@ -426,10 +426,10 @@ plus de $10^{19}$ adresses pour chaque client! Autant dire que la
 pénurie d'adresse est résolue!
 
 
-##### Manipulations avancés en IPv6 (et IPv4)
+#### Manipulations avancés en IPv6 (et IPv4)
 
-Pour les utilisateurs un peu avancées, il est assez simple de tester
-l'exposition d'un service sur Internet. cela suppose:
+Pour les utilisat·rice·eur·s un peu avancées, il est assez simple de
+tester l'exposition d'un service sur Internet. cela suppose:
 
 * d'installer et lancer un serveur sur votre machine, 
 * le cas échéant, de configurer le firewall de votre machine pour
@@ -458,7 +458,7 @@ Pour vous entraîner, vous pouvez par exemple installer
 
 
 
-
+**<p class="text-danger">TODO: REDISCUTER DES CONTENUS (cf. ci-dessous)</p>**
 
 ## Pour aller plus loin
 ### Les paramètres nécessaires 
@@ -470,6 +470,7 @@ Pour vous entraîner, vous pouvez par exemple installer
 * serveur DNS
 
 
+
 ### Comment déterminer ces paramètres? 
 
 Configuration manuelle ou dynamique via DHCP
@@ -478,6 +479,9 @@ note: DHCP est très utilisé en IPv4. Il est également disponible en IPv6
 mais est beaucoup moins utilisé dans ce cas car IPv6 fournit un nouveau
 système d'auto-configuration d'adresse qui permet de se passer de
 serveur DHCP
+
+### Un peu de Whois? et d'IP locator 
+
 
 
 
