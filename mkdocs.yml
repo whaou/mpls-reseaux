@@ -55,7 +55,7 @@ markdown_extensions:
   # - pymdownx.mark
   # - pymdownx.tilde
   - pymdownx.highlight:
-      use_pygments: false
+      use_pygments: true
   - toc:
       # baselevel: 1
       permalink: False
@@ -63,9 +63,9 @@ markdown_extensions:
 extra_css:
     - css/extra.css
     - css/tabbed.css
-    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
 
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
-  - javascripts/config.js
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
+  # - javascripts/config.js
