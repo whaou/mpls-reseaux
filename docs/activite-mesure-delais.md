@@ -81,9 +81,26 @@ d'un fichier) sont traditionnellement exprimés en octets, alors que les
 débits sont typiquement exprimés en bits/seconde. Il ne faut donc pas 
 oublier le facteur 8 pour convertir les octets en bits...
 
-**<p class="text-danger">TODO: Voir la possibilité d'ajouter une vidéo
-pour montrer les 2 effets durée d'emission et temps de propagation</p>**
 
+### Illustration vidéo
+
+La vidéo ci-dessous illustre ces notions. 
+
+Les liaisons bleues et jaunes fonctionnent à $1~Mb/s$ alors que la liaison
+rouge est à $5~Mb/s$. La longueur des traits figurant les paquets
+représente la durée d'émission. Elle est bien 5 fois plus courte pour la
+liaison rouge.
+
+La distance $d$ est identique sur les liaisons bleue et rouge. Le temps
+de propagation (c'est à dire le temps de parcours du 1er bit par ex.)
+est donc identique.
+
+Sur la liaisons jaune en revanche, la distance est plus courte. Le temps
+de propagation est donc plus court également.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yZi5g39pad0" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Modèle proposé
 
