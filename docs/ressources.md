@@ -3,7 +3,8 @@
 * Outils en ligne pour l'analyse de l'internet
     * Un site (parmi d'autres) de ["looking glasses"](https://www.bgp4.as/looking-glasses)
     * Un site (parmi d'autres) pour [trouver votre @IP publique](https://ip.lafibre.info/)
-* Les Wethermaps permettant de suivre l'état d'un réseau en temps réel
+* Des "Weathermaps" permettant de suivre l'état d'un réseau en temps
+  réel
     * La ["Weathermap" du réseau
       RENATER](https://www.renater.fr/sites/default/files/weathermap/weathermap_metropole.html)
     * La
