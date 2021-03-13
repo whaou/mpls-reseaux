@@ -475,7 +475,8 @@ Mais n'est ca pas un peu compliqué? :-(</p>**
 * Routeur par défaut 
 * serveur DNS
 
-
+**<p class="text-danger">TODO: Ce serait peut-être possible de le faire
+dans un simulateur comme Filius</p>**
 
 ### Comment déterminer ces paramètres? 
 
