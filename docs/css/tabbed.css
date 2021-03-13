@@ -170,3 +170,25 @@
 .tabbed-set input:nth-child(n+1):checked + label + .tabbed-content {
     display: block;
 }
+
+
+
+h1  {
+  color: #DF691A;
+  font-weight: bold;
+}
+
+h2  {
+  color: #DF691A;
+}
+
+h3  {
+  /* color:#4E5D6C; */
+  /* font-size: x-large */
+  /* font-weight: bold; */
+}
+
+h4  {
+  font-size: medium;
+  font-weight: bold;
+}

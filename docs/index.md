@@ -13,7 +13,7 @@ Sauf mention contraire, le contenu de ce site est distribué sous licence
 Creative Commons [CC BY](https://creativecommons.org/licenses/?lang=fr).
 Vous pouvez donc réutiliser et modifier ces contenus à l'unique
 condition d'en citer les auteurs originaux. N'hésitez pas à vous
-rapprocher de nous pour avoir accès aux fichiers source ce ces contenus.
+rapprocher de nous pour avoir accès aux fichiers source de ces contenus.
 
 
 Les auteurs:

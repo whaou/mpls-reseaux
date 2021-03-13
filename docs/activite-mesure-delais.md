@@ -81,8 +81,8 @@ d'un fichier) sont traditionnellement exprimés en octets, alors que les
 débits sont typiquement exprimés en bits/seconde. Il ne faut donc pas 
 oublier le facteur 8 pour convertir les octets en bits...
 
-**<p class="text-danger">TODO: Voir la possibilité d'ajouter une vidéo pour montrer les 2 effets
-durée d'emission et temps de propagation</p>**
+**<p class="text-danger">TODO: Voir la possibilité d'ajouter une vidéo
+pour montrer les 2 effets durée d'emission et temps de propagation</p>**
 
 
 ## Modèle proposé
@@ -307,6 +307,10 @@ différentes machines.
 
 Amusez vous à identifier les routes vers différents sites et les IP
 publiques de membres de votre groupe.
+
+**<p class="text-danger">TODO: On pourrait parler d'outils externes
+comme les looking glass (et éventuellement les weathermaps pour la
+congestions). Mais est-ce nécessaire.</p>**
 
 
 ## Conclusion

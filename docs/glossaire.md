@@ -100,6 +100,8 @@ l'expéditeur initial. Le RTT est mesuré par l'expéditeur initial. C'est
 le temps entre le début de l'émission du paquet de test et la réception 
 de la fin du la réponse.
 
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Round-trip_delay_time), 
+[en](https://en.wikipedia.org/wiki/Round-trip_delay).
 
 
 <!-- 

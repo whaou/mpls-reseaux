@@ -39,7 +39,7 @@ ci-dessous:
 
     !!! note ""
         Ouvrez le "menu démarrer" (touche "Windows" ) puis tapez `cmd` 
-        et entrée".
+        et "entrée".
 
 === "Linux"
     !!! note ""
@@ -70,11 +70,11 @@ Notez le nom de votre machine.
 
 ### Quelle est l'adresse de ma machine?
 
-Les commandes ci-dessous vous permettent de lister les interfaces 
-(aussi appelée cartes réseaux ou "NIC") de votre machine ainsi que leurs
-différentes adresses. Essayez de retrouver les adresses MAC et IP des 
-interfaces de votre machine et notez les dans un tableau sur le modèle 
-de celui ci-dessous.
+Les commandes ci-dessous vous permettent de lister les interfaces (aussi
+appelée cartes réseaux ou "NIC" pour Network Interface Card) de votre
+machine ainsi que leurs différentes adresses. Essayez de retrouver les
+adresses MAC et IP des interfaces de votre machine et notez les dans un
+tableau sur le modèle de celui ci-dessous.
 
 === "Windows"
     !!! note ""
@@ -92,7 +92,7 @@ de celui ci-dessous.
         `ip` assure automatiquement la complétion des paramètres qui lui 
         sont passés. Ainsi `ip a l` donnera le même résultat que 
         `ip address list`... Et comme `list` est le paramètre par défaut
-        pour la sous commande `address`, `ip a` sera même suffisant.
+        pour la sous commande `address`, `ip a` sera même suffisant!
         Les informaticiens ne sont pas fainéants, ils savent juste 
         s'économiser :-)
 
@@ -128,7 +128,7 @@ qui permet de vérifier le bon fonctionnement de la liaison.
 **Note 1**: Cela suppose que la machine cible accepte de coopérer, ce qui
 n'est pas toujours le cas.
 
-**Note 2**:Par défaut, sous Windows, `ping` s'arrête automatique après avoir envoyé
+**Note 2**: Par défaut, sous Windows, `ping` s'arrête automatique après avoir envoyé
 4 paquets de test, alors que sous Linux, il faut forcer son arrêt à
 l'aide de `Ctrl+C`.
 
@@ -218,12 +218,9 @@ sélectionne-t-il le serveur DNS à interroger? Faute de temps, il est
 difficile de rentrer dans les détails. Disons simplement que, quand elle
 démarre, votre machine récupère ses paramètres de configuration auprès
 d'un *serveur [DHCP](glossaire.md#dhcp)* qui lui communique notamment
-l'adresse d'un ou plusieurs serveur DNS. Si vous êtes à la maison, ce
-serveur tourne sur votre "Box Internet" et le serveur DNS qui vous est 
-proposé est géré par votre fournisseur d'accès internet.
-
-Cette pseudo centralisation du DNS permet aux états (qui accordent leur
-licence aux opérateurs télécom) de gére 
+l'adresse d'un ou plusieurs serveur DNS. Si vous êtes à la maison, le
+serveur DHCP tourne sur votre "Box Internet" et le serveur DNS qui vous
+est proposé est géré par votre fournisseur d'accès internet.
 
 La gestion du DNS peut revêtir un intérêt stratégique. N'oublions pas 
 que ce sont les états qui accordent aux opérateurs télécoms les licences
@@ -272,8 +269,8 @@ réseau et de votre machine. Vous avez également vu que la commande
 `ping` permet de tester la connectivité avec une machine identifiée par 
 son adresse IP. 
 
-Dans cette partie, commencez par essayer de tester la connectivité avec
-les différentes adresses IP des autres membres de votre groupe.
+Dans cette partie, commencez par tester la connectivité avec les
+différentes adresses IP des autres membres de votre groupe.
 
 Y-êtes vous arrivé·e? Probablement pas :-( Si ça a marché, il y a de
 fortes chance que ce soit avec des adresses IPv6. Essayons de
@@ -286,11 +283,11 @@ Il existe deux version du protocole IP: IPv4 et IPv6. La principale
 raison de l'introduction d'IPv6 est la pénurie d'adresses IPv4. En
 effet, les adresses IPv4 sont codées sur 4 octets (`w.x.y.z`). Cela
 permet un peu plus de 4 milliards d'adresses. Ce nombre s'est révélé
-insuffisant pour permettre d'adresser directement l'ensemble des
-équipements connectés à l'Internet. IPv6 a résolu le problème en codant
-les adresses sur 16 octets soit plus de $10^{38}$ adresses. Mais le 
-passage d'IPv4 à IPv6 va prendre du temps et nous allons devoir vivre
-avec le double système pendant un certain temps...
+insuffisant pour adresser directement l'ensemble des équipements
+connectés à l'Internet. IPv6 a résolu le problème en codant les adresses
+sur 16 octets soit plus de $10^{38}$ adresses. Mais le passage d'IPv4 à
+IPv6 va prendre du temps et nous allons devoir vivre avec le double
+système pendant un certain temps...
 
 #### IPv4 et NAT
 
@@ -321,16 +318,16 @@ faire un ping avec elles.
 En IPv6, il n'y a pas de pénurie d'adresses, les IPv6 des machines sont
 donc généralement publiques par défaut (sauf celles que l'on veut
 volontairement être non routables comme celles commençant par `fe80:`).
-Le ping entre deux adresses IPv6 devrait donc pouvoir fonctionner.
+Le ping entre deux adresses IPv6 devrait donc fonctionner en général.
 
 Mais pour que cela fonctionne, il faut encore que les fournisseurs
 d'accès à Internet des deux machines implémentent effectivement IPv6, ce
-qui n'est pas forcément le cas... 
+qui n'est pas toujours le cas... 
 
 
 #### En quoi est-ce un problème ?
 
-Comme vous pouvez le constater, le fait de n'avait une IP publique que
+Comme vous pouvez le constater, le fait de n'avoir une IP publique que
 sur votre box ne vous empêche pas de vous connecter à Internet. Le
 problème se pose lorsque vous voulez exposer un service sur Internet
 (autrement dit: héberger un serveur). Dans ce cas, il faut bien que vous
@@ -352,7 +349,7 @@ toujours le cas compte tenu de la pénurie d'adresses.
 #### Comment connaître l'IP publique de ma box ?
 
 Différents sites internet vous permettent de connaître votre adresse IP
-publique. Il s'agit généralement de serveur Web qui affichent l'adresse
+publique. Il s'agit généralement de serveurs Web qui affichent l'adresse
 source des paquets IP que vous leur envoyez. 
 
 Nous vous proposons d'utiliser le site
@@ -399,19 +396,20 @@ mais pas en IPv4 (car c'est la box qui y répond).
 En IPv6, vous disposez généralement de plusieurs adresses IP
 (trois, typiquement):
 
-* L'une est dite temporaire. C'est celle dont se sert la machine pour
-  faire des requêtes vers d'autres serveur. Cette adresse change
+* L'une est dite *temporaire*. C'est celle dont se sert la machine pour
+  faire des requêtes vers d'autres serveurs. Cette adresse change
   périodiquement afin de limiter la possibilité de vous pister.
   Attention! cela ne vous garantit en aucun cas l'anonymat!
-* Une adresse qui ne change pas au cours. C'est cette adresse qu'il faut
-  utiliser si pour héberger vos propres serveurs. En effet, il vaut
-  mieux que l'adresse des serveurs ne change pas trop au cours du
-  temps...
+* Une adresse qui ne change pas au cours du temps. C'est cette adresse
+  qu'il faut utiliser si pour héberger vos propres serveurs. En effet,
+  il vaut mieux que l'adresse des serveurs ne change pas trop au cours
+  du temps, sinon ils risque d'être difficiles à trouver (même s'il l'on
+  peu y arriver en mettant à jour le DNS).
 * Une adresse dite de *lien local* et qui commence en `fe80::`. Celle-ci
   est uniquement destinée aux communications avec les machines
-  directement reliées sur le même câble. Nous n'en dirons pas plus si ce
-  n'est qu'elle n'offre pas de connectivité internet puisqu'elle n'est
-  pas routable sur l'Internet.
+  directement reliées sur le même câble. Nous n'en dirons pas plus, si
+  ce n'est qu'elle n'offre pas de connectivité internet puisqu'elle
+  n'est pas routable sur l'Internet.
 
 
 Vous noterez que les deux premières adresses commencent de la même
@@ -428,7 +426,7 @@ pénurie d'adresse est résolue!
 
 #### Manipulations avancés en IPv6 (et IPv4)
 
-Pour les utilisat·rice·eur·s un peu avancées, il est assez simple de
+Pour les utilisat·rice·eur·s un peu avancé·e·s, il est assez simple de
 tester l'exposition d'un service sur Internet. cela suppose:
 
 * d'installer et lancer un serveur sur votre machine, 
@@ -445,24 +443,32 @@ refermer les différents ports à la fin de vos expérimentations.
 
 Certaines de ces activités nécessiteront les droits administrateurs.
 
-Pour vous entraîner, vous pouvez par exemple installer 
+Pour vous entraîner, vous pouvez par exemple installer:
+
 * un serveur web, par exemple
   [XAMPP](https://www.apachefriends.org/fr/index.html) sous windows ou
   bien `apache` ou `nginx` sous linux
 * ou simplement `netcat` (linux) ou [`ncat`](http://nmap.org/ncat/) sous
   windows qui permettent de lancer un serveur et de s'y connecter sur
   n'importe quel port
-* et même installer un serveur `ssh`, attention toutefois à bien
+* et même installer un serveur `ssh` qui vous permettra d'exécuter des
+  commandes à distance sur votre machine. Attention toutefois à bien
   sécuriser vos accès!
-
+* Vous pouvez aussi développer votre propre serveur, pas exemple en
+  utilisant la librairie [Flask](https://palletsprojects.com/p/flask/)
+  en Python. Il est ainsi assez facile de développer une API permettant
+  de lancer des actions en fonction des requêtes reçues.
 
 
 
 **<p class="text-danger">TODO: REDISCUTER DES CONTENUS (cf. ci-dessous)</p>**
 
-## Pour aller plus loin
+## Autre activité possible: découvrir les paramètres réseau de la machine
 ### Les paramètres nécessaires 
 
+**<p class="text-danger">TODO: L'idée originale était de parler des paramètres 
+de config réseau de base d'une machine: IP, masque, routeur par défaut et DNS.
+Mais n'est ca pas un peu compliqué? :-(</p>**
 
 * @IP (v4, v6, les 2)
 * masque: aie! il va falloir faire simple pour éviter de perdre tout le monde un peu compliqué 
@@ -480,9 +486,16 @@ mais est beaucoup moins utilisé dans ce cas car IPv6 fournit un nouveau
 système d'auto-configuration d'adresse qui permet de se passer de
 serveur DHCP
 
-### Un peu de Whois? et d'IP locator 
 
+## Autre activité possible (pour les plus avancés): Développement d'une API en Flask
 
+On pourrait donner un squelette de programme Python mettant en place un
+début d'API. Ils pourrraient alors ajouter une URI pour déclencher une
+action, par exemple:
+
+* déclencher un son
+* afficher le message de texte reçu dans une fenêtre
+* ....
 
 
 --8<-- "includes/abbreviations.md"
