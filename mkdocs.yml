@@ -13,7 +13,7 @@ nav:
 - Glossaire: 'glossaire.md'
 - Ressources: 'ressources.md'
 - MPLS: 'https://www.maisons-pour-la-science.org/fr/bretagne'
-- Test: 'test.md'
+# - Test: 'test.md'
 
 
 theme:

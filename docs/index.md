@@ -24,6 +24,10 @@ Les auteurs:
 
 <!-- Some Markdown text with <span style="color:blue">some *blue* text</span>. -->
 <!-- <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+<!-- <p class="text-secondary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+
+**<p class="text-danger">TODO: Mettre à jour le programme quand il sera
+finalisé.</p>**
 
 ## Planning de la formation
 
