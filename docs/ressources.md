@@ -21,9 +21,15 @@
       d'intégrer de machines virtuelles et des images de routeur (à
       condition d'en avoir!) dans les émulations.
 * Quelques logiciels et librairies
-    * [Wireshark](https://www.wireshark.org/): un outil de capture de trafic
-    * [NMap](https://nmap.org/): Pour les utilisateurs avancés: un outil de
-      scan de réseau 
-    * [Scapy](https://scapy.net/): Pour les utilisateurs avancés: à la fois
-      une librairie (Python) et un outil de test réseau
+    * [Wireshark](https://www.wireshark.org/): un outil de capture de
+      trafic
+    * [NMap](https://nmap.org/): Pour les utilisateurs avancés: un outil
+      de scan de réseau 
+    * [hrPing](https://www.cfos.de/en/ping/ping.htm): une commande
+      `ping` plus évoluée pour windows offrant notamment un horodatage
+      plus précis
+    * [Scapy](https://scapy.net/): Pour les utilisateurs avancés: à la
+      fois une librairie (Python) et un outil de test réseau
+    * [Flask](https://palletsprojects.com/p/flask/): Librairie Python
+      pour développer facilement des serveurs et des API web simples.
 
