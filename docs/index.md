@@ -38,6 +38,7 @@ finalisé.</p>**
     * Théorie des réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
     * Activité *"À la découverte de la configuration réseau de ma machine"* (45')
 
+</br>
 
 * Deuxième journée (3h)
     * Introduction et bilan session 1 **(15')**
