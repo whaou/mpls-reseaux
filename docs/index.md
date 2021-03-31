@@ -32,7 +32,7 @@ finalisé.</p>**
 ## Planning de la formation
 
 * Première journée (3h)
-    * Présentation participants (30')
+    * Présentation participants (20')
     * Présentation de la MPLS et des intervenants (10')
     * Activité collective *"Les réseaux c'est"* (45')
     * Théorie des réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
@@ -40,11 +40,10 @@ finalisé.</p>**
 
 
 * Deuxième journée (3h)
-    * Introduction et bilan session 1 (15')
-    * Activité mesure de délais + Traceroute **(1h20)**
+    * Introduction et bilan session 1 **(15')**
     * Apports théoriques sur les délais dans les réseaux  **(15')**
-    * Activité *"Mesure des délais sur Internet"* (50')
-    * Démo de l'outil Wireshark (10')
-    * Présentation *"Les enjeux des réseaux modernes"* (30')
-    * Échanges de pratiques (45')
-    * Conclusion (10')
+    * Activité *"Mesure des délais sur Internet"* **(1h20)**
+    * Démo de l'outil Wireshark **(10')**
+    * Présentation *"Les enjeux des réseaux aujourd'hui"* **(30')**
+    * Échanges de pratiques **(45')**
+    * Conclusion **(10')**

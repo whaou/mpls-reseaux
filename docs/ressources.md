@@ -32,5 +32,11 @@
     * [Scapy](https://scapy.net/): Pour les utilisateurs avancés: à la
       fois une librairie (Python) et un outil de test réseau
     * [Flask](https://palletsprojects.com/p/flask/): Librairie Python
-      pour développer facilement des serveurs et des API web simples.
+      pour développer facilement des serveurs et des API web.
+    * [FastAPI](https://fastapi.tiangolo.com/) Une autre librairie
+      Python (ou plutôt un framework) pour développer facilement des
+      API web.
 
+<!-- 
+Ajouter le lien vers la vidéo d'éducation aux fake news:
+https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html -->
