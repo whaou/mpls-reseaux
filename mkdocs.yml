@@ -8,7 +8,7 @@ copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu s
 nav:
 - Accueil: 'index.md'
 - Activités:
-  - Les réseaux c est: 'activite-les-reseaux-c_est.md'
+  - Les réseaux c'est: 'activite-les-reseaux-c_est.md'
   - Configuration de ma machine: 'activite-config-machine.md'
   - Mesures de délais: 'activite-mesure-delais.md'
 # TODO: activate gloassary bellow after the first activity
