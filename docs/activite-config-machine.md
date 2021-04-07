@@ -1,5 +1,5 @@
 
-# À la découverte de la configuration réseau de ma machine
+# À la découverte de la configuration réseau
 
 Les réseaux sont constitués de *liaisons* (câbles, fibres, faisceaux
 hertziens...) et d'*équipements d'interconnexion* (routeurs, switches,
@@ -249,7 +249,7 @@ internet.
 
 
 
-
+<!-- 
 ### La résolution ARP
 
 **<a class="text-danger">TODO:  Probablement Hors scope (faute de
@@ -257,7 +257,7 @@ temps). Peut-être à proposer comme une activité bonus à faire par les
 plus motivés/compétents entre les deux séances. </a>**
 
 note pour installer arp depuis linux `sudo apt install net-tools`
-
+ -->
 
 
 
@@ -460,7 +460,7 @@ Pour vous entraîner, vous pouvez par exemple installer:
   de lancer des actions en fonction des requêtes reçues.
 
 
-
+<!-- 
 **<p class="text-danger">TODO: REDISCUTER DES CONTENUS (cf. ci-dessous)</p>**
 
 ## Autre activité possible: découvrir les paramètres réseau de la machine
@@ -491,12 +491,12 @@ serveur DHCP
 ## Autre activité possible (pour les plus avancés): Développement d'une API en Flask
 
 On pourrait donner un squelette de programme Python mettant en place un
-début d'API. Ils pourrraient alors ajouter une URI pour déclencher une
+début d'API. Ils pourraient alors ajouter une URI pour déclencher une
 action, par exemple:
 
 * déclencher un son
 * afficher le message de texte reçu dans une fenêtre
-* ....
+* .... -->
 
 
 --8<-- "includes/abbreviations.md"

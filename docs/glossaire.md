@@ -1,9 +1,5 @@
 # Glossaire
 
-**<p class="text-danger">TODO: CE GLOSSAIRE POURRAIT AUSSI ÊTRE RÉDIGÉ DE MANIÈRE COLLABORATIVE...</p>**
-
-
-
 
 Le monde des réseaux regorgent de termes parfois abscons pour le commun
 des mortels. Voici la signification de quelques acronymes et leur

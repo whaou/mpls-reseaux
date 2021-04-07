@@ -4,9 +4,8 @@ Bienvenue sur le site de la formation *Les secrets des réseaux informatiques*.
 Vous trouverez sur ce site les différentes resources et activités qui
 seront utilisées au cours de la formation. 
 
-Ces contenus sont également disponibles sur le site de partage
-documentaire de la MPLS. 
-**<a class="text-danger">TODO METTRE LE LIEN...</a>**
+Ces contenus sont également disponibles sur le site de [partage
+documentaire de la MPLS](http://devpro.fondation-lamap.org/). 
 
 
 Sauf mention contraire, le contenu de ce site est distribué sous licence
@@ -26,17 +25,15 @@ Les auteurs:
 <!-- <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
 <!-- <p class="text-secondary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
 
-**<p class="text-danger">TODO: Mettre à jour le programme quand il sera
-finalisé.</p>**
-
 ## Planning de la formation
 
 * Première journée (3h)
     * Présentation participants (20')
-    * Présentation de la MPLS et des intervenants (10')
+    * Présentation de la MPL, des intervenants et des participants (10')
     * Activité collective *"Les réseaux c'est"* (45')
-    * Théorie des réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
-    * Activité *"À la découverte de la configuration réseau de ma machine"* (45')
+    * Pause
+    * Éclairage scientifique sur les réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
+    * Activité *"À la découverte de la configuration réseau"* (45')
 
 </br>
 
@@ -44,7 +41,8 @@ finalisé.</p>**
     * Introduction et bilan session 1 **(15')**
     * Apports théoriques sur les délais dans les réseaux  **(15')**
     * Activité *"Mesure des délais sur Internet"* **(1h20)**
-    * Démo de l'outil Wireshark **(10')**
+    * Pause
+    * Démo *"Capture de trafic avec Wireshark* **(10')**
     * Présentation *"Les enjeux des réseaux aujourd'hui"* **(30')**
     * Échanges de pratiques **(45')**
     * Conclusion **(10')**

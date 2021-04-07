@@ -325,9 +325,9 @@ différentes machines.
 Amusez vous à identifier les routes vers différents sites et les IP
 publiques de membres de votre groupe.
 
-**<p class="text-danger">TODO: On pourrait parler d'outils externes
+<!-- **<p class="text-danger">TODO: On pourrait parler d'outils externes
 comme les looking glass (et éventuellement les weathermaps pour la
-congestions). Mais est-ce nécessaire.</p>**
+congestions). Mais est-ce nécessaire.</p>** -->
 
 
 ## Conclusion
