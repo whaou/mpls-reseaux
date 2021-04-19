@@ -210,10 +210,11 @@ par une méthode complètement indépendante. Il se trouve que les
 géographes ont eux aussi des méthodes pour calculer la distance entre
 deux villes. 
 
-Le site [distance.to](https://fr.distance.to/) permet de mesurer la
-distance orthodromique (c'est à dire la distance à vol d'oiseau en
-suivant la courbure de la terre) entre deux villes du globe. Servez-vous 
-en pour valider vos résultats et estimer la précision du modèle.
+Le site [distance.to](https://fr.distance.to/){target=_blank} permet de
+mesurer la distance orthodromique (c'est à dire la distance à vol
+d'oiseau en suivant la courbure de la terre) entre deux villes du globe.
+Servez-vous en pour valider vos résultats et estimer la précision du
+modèle.
 
 
 ## Étude des écarts du modèle
@@ -228,14 +229,15 @@ du gouvernement de Singapour était hébergé à...Singapour. Mais nos
 mesures semblent contredire cette hypothèse. Devons nous mettre en cause
 notre modèle ou cette hypothèse sur la localisation du serveur?
 
-Le site [iplocation.net](https://www.iplocation.net) (parmi beaucoup
+Le site [iplocation.net](https://www.iplocation.net){target=_blank} (parmi beaucoup
 d'autres) permet de trouver la localisation géographique d'une adresse
 IP. Il se base sur des données fournies par les fournisseurs d'accès à
 Internet. La précision de ces données varie suivant les fournisseurs et
 les bases de données, mais elles permettent souvent de se faire un idée
 (au moins à l'échelle d'un pays).
 
-Jouez avec [iplocation.net](https://www.iplocation.net) pour:
+Jouez avec [iplocation.net](https://www.iplocation.net){target=_blank}
+pour:
 
 * localiser votre propre adresse IP publique
 * localiser celle des sites qui donnaient des résultats aberrants avec
@@ -291,10 +293,10 @@ Lancez la commande suivante pour identifier la route jusqu'au serveur de
 `berkley.edu` et essayez de suivre le chemin emprunté par les paquets.
 
 *Note*: Le nom des routeurs intègre souvent le [code
-AITA](https://fr.wikipedia.org/wiki/Liste_des_codes_AITA_des_a%C3%A9roports/A)
+AITA](https://fr.wikipedia.org/wiki/Liste_des_codes_AITA_des_a%C3%A9roports/A){target=_blank}
 de l'aéroport le plus proche
 
-Par défaut, traceroute effectue trois essais pour chaque saut. C'est
+Par défaut, `traceroute` effectue trois essais pour chaque saut. C'est
 pourquoi vous voyez trois résultats sur chaque ligne. Si vous avez de la
 chance, vous pourrez constater que, parfois, le chemin n'est pas le
 même. Cela est notamment lié aux stratégies de partage de charge (ou

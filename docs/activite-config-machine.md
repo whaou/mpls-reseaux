@@ -353,8 +353,9 @@ publique. Il s'agit généralement de serveurs Web qui affichent l'adresse
 source des paquets IP que vous leur envoyez. 
 
 Nous vous proposons d'utiliser le site
-[http://ip.lafibre.info/](http://ip.lafibre.info/) car il affiche
-plusieurs informations intéressantes (notamment l'IPv4 et l'IPv6).
+[http://ip.lafibre.info/](http://ip.lafibre.info/){target=_blank} car il
+affiche plusieurs informations intéressantes (notamment l'IPv4 et
+l'IPv6).
 
 Ouvrez le lien dans votre navigateur et notez notamment les
 informations suivantes (conservez les quelque part):
@@ -385,9 +386,9 @@ c'est donc elle qui y répond. Alors qu'en IPv6, elles arrivent
 directement sur la machine cible. Bien que cela dépasse le cadre de
 cette activité, les utilisateurs les plus avancés peuvent l'observer en
 utilisant un outil d'analyse de trafic comme
-[Wireshark](https://www.wireshark.org/) sur la cible de la requête. Vous 
-devriez observer le trafic ping en IPv6 (puisqu'il atteint la machine) 
-mais pas en IPv4 (car c'est la box qui y répond).
+[Wireshark](https://www.wireshark.org/){target=_blank} sur la cible de
+la requête. Vous devriez observer le trafic ping en IPv6 (puisqu'il
+atteint la machine) mais pas en IPv4 (car c'est la box qui y répond).
 
 
 
@@ -446,18 +447,21 @@ Certaines de ces activités nécessiteront les droits administrateurs.
 Pour vous entraîner, vous pouvez par exemple installer:
 
 * un serveur web, par exemple
-  [XAMPP](https://www.apachefriends.org/fr/index.html) sous windows ou
-  bien `apache` ou `nginx` sous linux
-* ou simplement `netcat` (linux) ou [`ncat`](http://nmap.org/ncat/) sous
-  windows qui permettent de lancer un serveur et de s'y connecter sur
-  n'importe quel port
+  [XAMPP](https://www.apachefriends.org/fr/index.html){target=_blank}
+  sous windows ou bien `apache` ou `nginx` sous linux
+* ou simplement `netcat` (linux) ou
+  [`ncat`](http://nmap.org/ncat/){target=_blank} sous windows qui
+  permettent de lancer un serveur et de s'y connecter sur n'importe quel
+  port
 * et même installer un serveur `ssh` qui vous permettra d'exécuter des
   commandes à distance sur votre machine. Attention toutefois à bien
   sécuriser vos accès!
 * Vous pouvez aussi développer votre propre serveur, pas exemple en
-  utilisant la librairie [Flask](https://palletsprojects.com/p/flask/)
-  en Python. Il est ainsi assez facile de développer une API permettant
-  de lancer des actions en fonction des requêtes reçues.
+  utilisant les librairies Python
+  [Flask](https://palletsprojects.com/p/flask/){target=_blank} ou
+  [FastAPI](https://fastapi.tiangolo.com/){target=_blank}. Il est ainsi
+  assez facile de développer une API permettant de lancer des actions en
+  fonction des requêtes reçues.
 
 
 <!-- 

@@ -5,14 +5,15 @@ Vous trouverez sur ce site les différentes resources et activités qui
 seront utilisées au cours de la formation. 
 
 Ces contenus sont également disponibles sur le site de [partage
-documentaire de la MPLS](http://devpro.fondation-lamap.org/). 
+documentaire de la MPLS](http://devpro.fondation-lamap.org/){target=_blank}. 
 
 
 Sauf mention contraire, le contenu de ce site est distribué sous licence
-Creative Commons [CC BY](https://creativecommons.org/licenses/?lang=fr).
-Vous pouvez donc réutiliser et modifier ces contenus à l'unique
-condition d'en citer les auteurs originaux. N'hésitez pas à vous
-rapprocher de nous pour avoir accès aux fichiers source de ces contenus.
+Creative Commons [CC
+BY](https://creativecommons.org/licenses/?lang=fr){target=_blank}. Vous
+pouvez donc réutiliser et modifier ces contenus à l'unique condition
+d'en citer les auteurs originaux. N'hésitez pas à vous rapprocher de
+nous pour avoir accès aux fichiers source de ces contenus.
 
 
 Les auteurs:
