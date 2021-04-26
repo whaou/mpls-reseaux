@@ -378,6 +378,36 @@ sur votre machine. Vous devriez constater que
   depuis l'internet (il est donc possible d'y héberger un serveur en
   IPv6).
 
+
+#### Trouver les même infos via une API
+
+Le site [https://www.myip.com](https://www.myip.com){target=_blank}
+offre le même type d'informations (votre adresse IP publique). Mais il
+les fournit également sous la forme d'une API web accessible à l'adresse
+suivante: [https://api.myip.com](https://api.myip.com){target=_blank}.
+
+Cette URL renvoie des données structurées dans au format JSON. Ce format
+présente l'avantage d'être facilement compréhensible par des programmes
+informatiques.
+
+Accédez à [https://api.myip.com](https://api.myip.com){target=_blank} à
+l'aide de votre navigateur Web.
+
+Vous pouvez récupérer la même information depuis la ligne de commande en
+utilisant l'outil `curl` qui sert à effectuer des requêtes HTTP.
+
+
+```` shell
+curl https://api.myip.com
+````
+
+
+Note: Avec `curl`, vous pouvez utiliser les options `-4` ou `-6` pour
+imposer des requêtes respectivement en IPv4 ou IPv6. Par exemple, si
+vous avez une connexion IPv6, la commande suivante devrait retourner
+votre IPv6 publique: `curl -6 https://api.myip.com`.
+
+
 #### Tester la connectivité sur mon(mes) IP publique(s) ?
 
 Maintenant que chacun·e a récupéré son(ses) IP publique(s), essayez de 
