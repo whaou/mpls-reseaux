@@ -391,16 +391,14 @@ présente l'avantage d'être facilement compréhensible par des programmes
 informatiques.
 
 Accédez à [https://api.myip.com](https://api.myip.com){target=_blank} à
-l'aide de votre navigateur Web.
+l'aide de votre navigateur Web et observez la réponse au format JSON.
 
 Vous pouvez récupérer la même information depuis la ligne de commande en
 utilisant l'outil `curl` qui sert à effectuer des requêtes HTTP.
 
-
 ```` shell
 curl https://api.myip.com
 ````
-
 
 Note: Avec `curl`, vous pouvez utiliser les options `-4` ou `-6` pour
 imposer des requêtes respectivement en IPv4 ou IPv6. Par exemple, si
@@ -408,7 +406,7 @@ vous avez une connexion IPv6, la commande suivante devrait retourner
 votre IPv6 publique: `curl -6 https://api.myip.com`.
 
 
-#### Tester la connectivité sur mon(mes) IP publique(s) ?
+#### Tester la connectivité sur mon(mes) IP publique(s)
 
 Maintenant que chacun·e a récupéré son(ses) IP publique(s), essayez de 
 "pinguer" celles de vos collègues. Cela devait fonctionner désormais.
