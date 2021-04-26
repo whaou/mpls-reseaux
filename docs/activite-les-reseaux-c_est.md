@@ -1,6 +1,6 @@
 ## Liens pour l'activité "les réseaux c'est"
 
-Lien vers le [nuage de mots sur Wooclap](http://www.wooclap.com/PLTHIP){target=_blank}
+Lien vers le [nuage de mots sur Wooclap](https://www.wooclap.com/UGFEMM){target=_blank}
 
 Liens vers les tableurs pour la définition des mots:
 
