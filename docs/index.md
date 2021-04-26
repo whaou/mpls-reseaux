@@ -30,7 +30,7 @@ Les auteurs:
 
 * Première journée (3h)
     * Présentation participants (20')
-    * Présentation de la MPL, des intervenants et des participants (10')
+    * Présentation de la MPLS, des intervenants et des participants (10')
     * Activité collective *"Les réseaux c'est"* (45')
     * Pause
     * Éclairage scientifique sur les réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
