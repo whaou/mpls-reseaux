@@ -97,14 +97,17 @@ tableau sur le modèle de celui ci-dessous.
         s'économiser :-)
 
 Essayez de retrouver les adresses MAC et IP des interfaces de votre
-machine. Notez les dans un tableau comme celui-ci:
+machine. Notez les dans le tableau correspondant à votre groupe (cf. 
+tableaux de réponses [ici](activite-les-reseaux-c_est.md){target=_blank}) 
+
+<!-- Notez les dans un tableau comme celui-ci:
 
 Interface    | Adresse MAC   | Adresse IP
 :------------|---------------| -----------
 interface 1  |   @MAC_1      |   @IP_1_1
              |               |   @IP_1_2
 interface 2  |   @MAC_2      |   @IP_1_2
-    ...      |       ...     |   ...
+    ...      |       ...     |   ... -->
 
 
 
