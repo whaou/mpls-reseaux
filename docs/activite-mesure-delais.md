@@ -307,9 +307,9 @@ différentes machines.
 === "Windows"
     !!! note ""
 
-        ```` sh
+        ``` sh
         tracert -w 500 -h 64 berkeley.edu
-        ````
+        ```
 
         * l'option `-w 500` indique d'attendre 500 ms avant de considérer 
           qu'un routeur intermédiaires n'a pas répondu
@@ -320,9 +320,16 @@ différentes machines.
 === "Linux"
     !!! note ""
 
-        ```` sh
+        ``` sh
         traceroute berkeley.edu
-        ````
+        ```
+
+=== "Mac"
+    !!! note ""
+
+        ``` sh
+        traceroute berkeley.edu
+        ```
 
 Amusez vous à identifier les routes vers différents sites et les IP
 publiques de membres de votre groupe.
