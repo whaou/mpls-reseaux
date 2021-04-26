@@ -16,7 +16,7 @@
     * [Filius](https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/){target=_blank}:
       un simulateur de réseaux simple permettant de dessiner des
       topologies réseau et de tester des configurations simples (@IP,
-      Routage, DNS, Serveur Web...)
+      Routage, DNS, Serveur Web...) [Logiciel Filius](https://www.lernsoftware-filius.de/Herunterladen){target=_blank}
     * [GNS3](https://www.gns3.com/){target=_blank}: Émulateur de réseau un peu plus
       complexe (mais puissant) que Filius. GNS3 permet notamment
       d'intégrer de machines virtuelles et des images de routeur (à
