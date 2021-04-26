@@ -14,22 +14,29 @@ correctement sur un réseau.
     Certaines commandes n'ont pas le même nom (ou les même
     paramètres) dans les différents systèmes d'exploitation. Dans ce 
     cas, nous  utilisions parfois la représentation ci-dessous. 
-    Sélectionnez votre OS (Windows ou Linux) pour voir les commandes 
-    adéquates.
+    Sélectionnez votre OS (Windows, Linux ou Mac) pour voir les 
+    commandes adéquates.
 
     === "Windows"
 
-        ```` shell
+        ``` shell
         # Pour lister les paramètres réseau, tapez: 
         ipconfig /all
-        ````
+        ```
 
     === "Linux"
 
-        ```` shell
+        ``` shell
         # Pour lister les adresses des différentes interfaces, tapez: 
         ip address list
-        ````
+        ```
+
+    === "Mac"
+
+        ``` shell
+        # Pour lister les adresses des différentes interfaces, tapez: 
+        ifconfig
+        ```
 
 Dans cette activité, nous allons beaucoup utiliser la ligne de commande.
 Si vous ne savez pas ouvrir un terminal, suivez les instructions
@@ -50,6 +57,10 @@ ci-dessous:
         Sous Ubuntu, une autre alternative est d'utiliser le raccourci 
         clavier `Ctrl + Alt + t`.
 
+=== "Mac"
+    !!! note ""
+        Lancez le programme `Terminal`.
+
 
 ## Notion d'adresse
 
@@ -64,7 +75,10 @@ Une machine dispose de plusieurs adresses:
 ### Quel est le nom de ma machine?
 
 Les ordinateurs possèdent généralement un nom de machine. Vous pouvez
-retrouver le nom de votre machine à l'aide de la commande `hostname`. 
+retrouver le nom de votre machine à l'aide de la commande suivante:
+
+```hostname```
+
 Notez le nom de votre machine.
 
 
@@ -78,15 +92,15 @@ tableau sur le modèle de celui ci-dessous.
 
 === "Windows"
     !!! note ""
-        ```` shell
+        ``` shell
         ipconfig /all
-        ````
+        ```
 
 === "Linux"
     !!! note ""
-        ```` shell
+        ``` shell
         ip address list
-        ````
+        ```
 
         *Note:* lorsque cela ne soulève pas d'ambiguïté, la commande 
         `ip` assure automatiquement la complétion des paramètres qui lui 
@@ -95,6 +109,13 @@ tableau sur le modèle de celui ci-dessous.
         pour la sous commande `address`, `ip a` sera même suffisant!
         Les informaticiens ne sont pas fainéants, ils savent juste 
         s'économiser :-)
+
+=== "Mac"
+    !!! note ""
+        ``` shell
+        ifconfig
+        ```
+
 
 Essayez de retrouver les adresses MAC et IP des interfaces de votre
 machine. Notez les dans le tableau correspondant à votre groupe (cf. 
@@ -143,11 +164,11 @@ noms de machine. Prenez le temps de regarder les informations retournées
 par la commande `ping`. Regardez notamment par quelle adresse IP, le 
 nom de machine `localhost` a été remplacé.
 
-````sh
+```sh
 ping 127.0.0.1
 ping ::1
 ping localhost
-````
+```
 
 
 
@@ -179,11 +200,11 @@ utiliser la commande `nslookup` qui a le mérite d'exister sous Windows
 comme sous Linux.
 
 Tapez les commandes suivantes. 
-````sh
+```sh
 nslookup localhost
 nslookup google.fr
 nslookup google.com
-````
+```
 Pour trouver ses réponses `nslookup` procède en deux étapes:
 
 * Il recherche tout d'abord si l'adresse de la machine recherchée a été
@@ -198,14 +219,19 @@ fichier (les lignes commençant par `#` sont des commentaires et ne sont
 donc pas prises en compte).
 
 === "Windows"
-    ```` shell
+    ``` shell
     type C:\Windows\System32\Drivers\etc\hosts
-    ````
+    ```
 
 === "Linux"
-    ```` shell
+    ``` shell
     cat /etc/hosts
-    ````
+    ```
+
+=== "Mac"
+    ``` shell
+    cat /etc/hosts
+    ```
 
 Il est très rare d'avoir à configurer statiquement la résolution DNS, et
 **nous vous déconseillons de le faire** sans bonne raison. En effet, il
@@ -233,17 +259,17 @@ donne accès à des publications scientifiques en contournant les droits
 des maisons d'édition.
 
 Faites une recherche DNS pour trouver l'adresse IP de ce site:
-````sh
+```sh
 nslookup sci-hub.se
-````
+```
 En analysant la réponse de cette commande, vous devriez voir qu'elle ne 
 vous retourne pas l'adresse demandée.
 
 Reprenons la même requête mais en la dirigeant vers un le célèbre 
 serveur DNS de Google dont l'adresse IP est `8.8.8.8`:
-````sh
+```sh
 nslookup sci-hub.se 8.8.8.8
-````
+```
 Vous devriez obtenir une adresse valide cette fois-ci.
 
 Conclusion: Même si ce n'est pas le seul, le blocage de résolution DNS
@@ -397,9 +423,9 @@ l'aide de votre navigateur Web et observez la réponse au format JSON.
 Vous pouvez récupérer la même information depuis la ligne de commande en
 utilisant l'outil `curl` qui sert à effectuer des requêtes HTTP.
 
-```` shell
+``` shell
 curl https://api.myip.com
-````
+```
 
 Note: Avec `curl`, vous pouvez utiliser les options `-4` ou `-6` pour
 imposer des requêtes respectivement en IPv4 ou IPv6. Par exemple, si
