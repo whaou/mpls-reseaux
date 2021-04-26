@@ -12,7 +12,7 @@ nav:
   - Configuration de ma machine: 'activite-config-machine.md'
   - Mesures de délais: 'activite-mesure-delais.md'
 # TODO: activate glossary bellow after the first activity
-# - Glossaire: 'glossaire.md'
+- Glossaire: 'glossaire.md'
 - Ressources: 'ressources.md'
 - MPLS: 'https://www.maisons-pour-la-science.org/fr/bretagne'
 
