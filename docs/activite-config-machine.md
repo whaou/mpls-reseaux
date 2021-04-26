@@ -383,12 +383,13 @@ sur votre machine. Vous devriez constater que
 
 Le site [https://www.myip.com](https://www.myip.com){target=_blank}
 offre le même type d'informations (votre adresse IP publique). Mais il
-les fournit également sous la forme d'une API web accessible à l'adresse
-suivante: [https://api.myip.com](https://api.myip.com){target=_blank}.
+les fournit également sous la forme d'une [API](glossaire.md#api) Web
+accessible à l'adresse suivante:
+[https://api.myip.com](https://api.myip.com){target=_blank}.
 
-Cette URL renvoie des données structurées dans au format JSON. Ce format
-présente l'avantage d'être facilement compréhensible par des programmes
-informatiques.
+Cette [URL](glossaire.md#url) renvoie des données structurées dans au
+format [JSON](glossaire.md#json). Ce format présente l'avantage d'être
+facilement compréhensible par des programmes informatiques.
 
 Accédez à [https://api.myip.com](https://api.myip.com){target=_blank} à
 l'aide de votre navigateur Web et observez la réponse au format JSON.

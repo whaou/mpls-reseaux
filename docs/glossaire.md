@@ -19,6 +19,21 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Address_Resolution_Protocol)
 [en](https://en.wikipedia.org/wiki/Address_Resolution_Protocol){target=_blank}.
 
 
+## API
+*Application Programming Interface*
+
+Interface de programmation permettant à un programme d'exposer un
+service auprès d'autres programmes. Ces interfaces permettent par
+exemple d'accéder à des informations (lecture, écriture) ou de
+déclencher des actions.
+
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Interface_de_programmation){target=_blank}, 
+[en](https://en.wikipedia.org/wiki/API){target=_blank}.
+
+
+
+
 ## DHCP
 *Dynamic Host Configuration Protocol*
 
@@ -54,6 +69,19 @@ important.
 
 Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Internet_Protocol){target=_blank}, 
 [en](https://wikipedia.org/wiki/Internet_Protocol){target=_blank}.
+
+
+## JSON
+*JavaScript Object Notation*
+
+Format de représentation de données structurées facilement interprétable
+par les machines d'autant que des librairies pour le manipuler existent
+dans la plupart des langages de programmation. Les données sont
+organisées sous forme de `clé`:`valeur`. Il est également possible
+d'imbriquer ces données et de les organiser sous forme de listes.
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation){target=_blank}, 
+[en](https://en.wikipedia.org/wiki/JavaScript_Object_Notation){target=_blank}.
 
 
 ## MAC
@@ -98,6 +126,20 @@ de la fin du la réponse.
 
 Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Round-trip_delay_time){target=_blank}, 
 [en](https://en.wikipedia.org/wiki/Round-trip_delay){target=_blank}.
+
+
+## URL
+*Uniform Resource Locator*
+
+Adresse au format texte permettant de localiser une resource sur
+Internet de façon unique. Le début de l'URL indique également le
+protocole à utiliser pour accéder à cette resource. Par exemple
+`https://www.imt-atlantique.fr/fr` indique comment accéder à la page
+d'accueil en français de la machine `www` du domaine `imt-atlantique.fr`
+en utilisant le protocole HTTPS.
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Uniform_Resource_Locator){target=_blank}, 
+[en](https://en.wikipedia.org/wiki/Uniform_Resource_Locator){target=_blank}.
 
 
 <!-- 
