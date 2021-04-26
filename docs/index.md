@@ -28,22 +28,22 @@ Les auteurs:
 
 ## Planning de la formation
 
-* Première journée (3h)
-    * Présentation participants (20')
-    * Présentation de la MPLS, des intervenants et des participants (10')
-    * Activité collective *"Les réseaux c'est"* (45')
-    * Pause
-    * Éclairage scientifique sur les réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports (40')
-    * Activité *"À la découverte de la configuration réseau"* (45')
+* Première journée **(3h)**
+    * Présentation participants **(20')**
+    * Présentation de la MPLS, des intervenants et des participants **(10')**
+    * Activité collective *"Les réseaux c'est"* **(45')**
+    * Pause **(10')**
+    * Éclairage scientifique sur les réseaux: Architecture (LAN/WAN) / Modèle en couches / Adresses / Ports **(40')**
+    * Activité *"À la découverte de la configuration réseau"* **(45')**
 
 </br>
 
-* Deuxième journée (3h)
+* Deuxième journée **(3h)**
     * Introduction et bilan session 1 **(15')**
     * Apports théoriques sur les délais dans les réseaux  **(15')**
-    * Activité *"Mesure des délais sur Internet"* **(1h20)**
-    * Pause
+    * Activité *"Mesure des délais sur Internet"* **(50')**
+    * Pause **(10')**
     * Démo *"Capture de trafic avec Wireshark* **(10')**
     * Présentation *"Les enjeux des réseaux aujourd'hui"* **(30')**
-    * Échanges de pratiques **(45')**
+    * Échanges de pratiques **(30')**
     * Conclusion **(10')**
