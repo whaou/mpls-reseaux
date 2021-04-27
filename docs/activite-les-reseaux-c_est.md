@@ -1,4 +1,5 @@
-## Liens pour l'activité "les réseaux c'est"
+## Jour #1
+### Liens pour l'activité "les réseaux c'est"
 
 Lien vers le [nuage de mots sur Wooclap](https://www.wooclap.com/UGFEMM){target=_blank}
 
@@ -11,7 +12,7 @@ Liens vers les tableurs pour la définition des mots:
 * [Groupe 4](https://cloud.imt-atlantique.fr/index.php/apps/onlyoffice/s/CJmQmbarSFKA9DF){target=_blank}
 
 
-## Liens pour l'activité "Configuration de ma machine"
+### Liens pour l'activité "Configuration de ma machine"
 
 Liens vers les tableurs réponse pour rentrer vos réponses:
 
@@ -19,8 +20,11 @@ Liens vers les tableurs réponse pour rentrer vos réponses:
 * [Groupe 2](https://cloud.imt-atlantique.fr/index.php/apps/onlyoffice/s/WjANWK5yPixqEck){target=_blank}
 
 
+## Jour #2
 
-## Liens pour l'activité "Mesure des délais sur Internet"
+Lien vers le [nuage de mots sur Wooclap](https://www.wooclap.com/MPLSRES){target=_blank}
+
+### Liens pour l'activité "Mesure des délais sur Internet"
 
 Liens vers les tableurs réponse pour rentrer vos réponses:
 
