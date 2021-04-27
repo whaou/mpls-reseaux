@@ -20,4 +20,12 @@ Liens vers les tableurs réponse pour rentrer vos réponses:
 
 
 
+## Liens pour l'activité "Mesure des délais sur Internet"
+
+Liens vers les tableurs réponse pour rentrer vos réponses:
+
+* [Groupe 1](https://cloud.imt-atlantique.fr/index.php/apps/onlyoffice/s/cttsTiydipTBNie){target=_blank}
+* [Groupe 2](https://cloud.imt-atlantique.fr/index.php/apps/onlyoffice/s/X2AQEk8qiZtt4yA){target=_blank}
+
+
 --8<-- "includes/abbreviations.md"

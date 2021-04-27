@@ -186,8 +186,10 @@ pourquoi et si cela se justifie, écartez cette mesure.
 
 À partir de notre modèle ($t_p = \frac{d}{v_p}$) estimez la distance
 vers chacun des nœuds testés. Cela revient à remplir le tableau
-ci-dessous. Note: Vous aurez besoin de faire une hypothèse sur le type
-de liaison; cela fait partie du modèle.
+ci-dessous. Notez vos réponses dans les premières colones du [tableur
+collaboratif](activite-les-reseaux-c_est.md){target=_blank} fourni.
+Note: Vous aurez besoin de faire une hypothèse sur le type de liaison;
+cela fait partie du modèle.
 
 Les ordres de grandeur de vos résultats vous semblent-ils cohérents? À
 ce stade, si vous notez des incohérences que vous ne savez pas
