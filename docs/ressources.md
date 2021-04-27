@@ -1,5 +1,12 @@
 # Liens vers des resources externes 
 
+* Présentations utilisées pendant la formation
+    * Support Genially *["Éclairage scientifique sur les
+      réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* (1er
+      jour)
+    * Support *["Les enjeux des
+      réseaux"](resources/20210428--MPLS-Enjeux_des_reseaux.pdf){target=_blank}*
+      (2eme jour)
 * Outils en ligne pour l'analyse de l'internet
     * Un site (parmi d'autres) de ["looking glasses"](https://www.bgp4.as/looking-glasses){target=_blank}
     * Un site (parmi d'autres) pour [trouver votre @IP publique](https://ip.lafibre.info/){target=_blank}
