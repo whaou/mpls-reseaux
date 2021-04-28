@@ -61,7 +61,8 @@
     * Livre: Comédies françaises d'Eric Reinhardt [lien Babelio](https://www.babelio.com/livres/Reinhardt-Comedies-francaises/1239543){target=_blank}
     * Sur la surveillance numérique, lire le travail de [Shoshana
       ZUBOFF](https://fr.wikipedia.org/wiki/Shoshana_Zuboff)
-
+    * Description de l'activité proposée par Séverin et ses collègues 
+      de l'académie de Grenoble à télécharger [ici](https://filesender.renater.fr/?s=download&token=73fefedc-2e2c-4597-b5e7-9347af9f052c)
 
 <!-- 
 Ajouter le lien vers la vidéo d'éducation aux fake news:
