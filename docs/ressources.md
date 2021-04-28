@@ -74,6 +74,8 @@
     Fake
     News](https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html)
 
+<!-- lien direct vers la video: https://vimeo.com/166931978 -->
+
 ### MOOC et Livres
 
 * Le [MOOC Principes des réseaux de
@@ -91,8 +93,3 @@
   Pujolle](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782212675351/),
   best seller en France
 
-
-
-<!-- 
-Ajouter le lien vers la vidéo d'éducation aux fake news:
-https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html -->
