@@ -86,7 +86,7 @@
 * Un [MOOC dédié à IPv6](https://www.fun-mooc.fr/fr/cours/objectif-ipv6/), par l'IMT
 * Le livre ["Réseaux" de Andrew
   Tanenbaum](https://www.eyrolles.com/Informatique/Livre/reseaux-9782744075216/)
-  qui est une référence dans les universités du monde entier.
+  qui est une référence dans les universités du monde entier
 * Le livre ["Les Réseaux" de Guy
   Pujolle](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782212675351/),
   best seller en France
