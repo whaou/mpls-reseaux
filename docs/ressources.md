@@ -47,6 +47,21 @@
     * [FastAPI](https://fastapi.tiangolo.com/){target=_blank}: Une autre
       librairie Python (ou plutôt un framework) pour développer
       facilement des API web.
+* Les liens issus de nos échanges:
+    * Sous Android, pour vérifier les pisteurs installés sur vos applis
+      vous pouvez utiliser [Exodus Privacy](https://exodus-privacy.eu.org/fr/){target=_blank}
+    * Livre: Mindfuck de Christophe Wylie, le lanceur d'alerte de Cambridge
+      Analytica [lien Babelio](https://www.babelio.com/livres/Wylie-Mindfuck/1321716){target=_blank}
+    * BD: [La Revue
+      Dessinée](https://www.4revues.fr/la-revue-dessinee/), avec un n°
+      sur Cambridge Analytica  
+    * [Nothing to Hide](https://fr.wikipedia.org/wiki/Nothing_to_Hide):
+      documentaire qui s'intéresse aux effets de la surveillance de
+      masse sur les individus et la société 
+    * Livre: Comédies françaises d'Eric Reinhardt [lien Babelio](https://www.babelio.com/livres/Reinhardt-Comedies-francaises/1239543){target=_blank}
+    * Sur la surveillance numérique, lire le travail de [Shoshana
+      ZUBOFF](https://fr.wikipedia.org/wiki/Shoshana_Zuboff)
+
 
 <!-- 
 Ajouter le lien vers la vidéo d'éducation aux fake news:
