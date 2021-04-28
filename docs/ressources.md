@@ -1,4 +1,4 @@
-# Liens vers des resources externes 
+# Resources complémentaires
 
 ### Présentations utilisées pendant la formation
 
@@ -29,7 +29,8 @@
     * [Filius](https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/){target=_blank}:
       un simulateur de réseaux simple permettant de dessiner des
       topologies réseau et de tester des configurations simples (@IP,
-      Routage, DNS, Serveur Web...) [Logiciel Filius](https://www.lernsoftware-filius.de/Herunterladen){target=_blank}
+      Routage, DNS, Serveur Web...) [lien de téléchargement (en
+      allemand)](https://www.lernsoftware-filius.de/Herunterladen){target=_blank}
     * [GNS3](https://www.gns3.com/){target=_blank}: Émulateur de réseau un peu plus
       complexe (mais puissant) que Filius. GNS3 permet notamment
       d'intégrer de machines virtuelles et des images de routeur (à
@@ -57,24 +58,20 @@
 
   * Sous Android, pour vérifier les pisteurs installés sur vos applis
     vous pouvez utiliser [Exodus Privacy](https://exodus-privacy.eu.org/fr/){target=_blank}
-  * Livre: Mindfuck de Christophe Wylie, le lanceur d'alerte de Cambridge
-    Analytica [lien Babelio](https://www.babelio.com/livres/Wylie-Mindfuck/1321716){target=_blank}
-  * BD: [La Revue
-    Dessinée](https://www.4revues.fr/la-revue-dessinee/), avec un n°
-    sur Cambridge Analytica  
-  * [Nothing to Hide](https://fr.wikipedia.org/wiki/Nothing_to_Hide):
-    documentaire qui s'intéresse aux effets de la surveillance de
+  * Livre: [Mindfuck de Christophe Wylie](https://www.babelio.com/livres/Wylie-Mindfuck/1321716){target=_blank}, le lanceur d'alerte de Cambridge Analytica
+  * BD: [La Revue Dessinée](https://www.4revues.fr/la-revue-dessinee/),
+    avec un numéro sur Cambridge Analytica (n°25) 
+  * Documentaire: [Nothing to Hide](https://fr.wikipedia.org/wiki/Nothing_to_Hide),
+      s'intéresse aux effets de la surveillance de
     masse sur les individus et la société 
-  * Livre: Comédies françaises d'Eric Reinhardt [lien Babelio](https://www.babelio.com/livres/Reinhardt-Comedies-francaises/1239543){target=_blank}
+  * Livre: [Comédies françaises d'Eric Reinhardt](https://www.babelio.com/livres/Reinhardt-Comedies-francaises/1239543){target=_blank}
   * Sur la surveillance numérique, lire le travail de [Shoshana
-    ZUBOFF](https://fr.wikipedia.org/wiki/Shoshana_Zuboff)
-  * Description de l'activité proposée par Séverin et ses collègues 
-    de l'académie de Grenoble à télécharger [ici](https://filesender.renater.fr/?s=download&token=73fefedc-2e2c-4597-b5e7-9347af9f052c)
+    Zuboff](https://fr.wikipedia.org/wiki/Shoshana_Zuboff)
   * Le travail d'une classe de 4eme qui a créé elle même une [vidéo de
     Fake
-    News](https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html)
-
-<!-- lien direct vers la video: https://vimeo.com/166931978 -->
+    News](https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html) <!-- lien direct vers la video: https://vimeo.com/166931978 -->
+  * Description de l'activité proposée par Séverin et ses collègues 
+    de l'académie de Grenoble à télécharger [ici](https://filesender.renater.fr/?s=download&token=73fefedc-2e2c-4597-b5e7-9347af9f052c)
 
 ### MOOC et Livres
 
