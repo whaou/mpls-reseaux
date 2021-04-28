@@ -4,6 +4,7 @@
     * Support Genially *["Éclairage scientifique sur les
       réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* (1er
       jour)
+    * Support Génially *["Retour sur l'activité sur les adresses"](https://view.genial.ly/608725ea101f0b0d197f3dbb){target=_blank}*
     * Support des présentations sur*["Les délais et Wireshark"](resources/20210428--MPLS-Delais_et_Wireshark.pdf){target=_blank}*
       (2eme jour)
     * Support *["Les enjeux des
