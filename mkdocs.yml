@@ -20,10 +20,10 @@ theme:
   favicon: img/favicon.ico
   # name: mkdocs
   # name: readthedocs
-  # name: cinder
+  name: cinder
   # name: flatly # pip3 install mkdocs-bootswatch
   # darkly, litera, lumen, lux, materia, minty, pulse, sandstone, solar, and superhero
-  name: superhero # pip3 install mkdocs-bootswatch
+  # name: superhero # pip3 install mkdocs-bootswatch
   custom_dir: theme_custom/
 
   # name: material
