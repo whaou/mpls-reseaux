@@ -6,27 +6,26 @@ site_author: Anne-Hélène Tual, Anthony Penhard, Christophe Couturier
 copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
 
 nav:
-- Accueil: 'index.md'
-- Activités:
-  - Liens pour les réponses aux activités: 'activite-les-reseaux-c_est.md'
-  - Configuration de ma machine: 'activite-config-machine.md'
-  - Mesures de délais: 'activite-mesure-delais.md'
-# TODO: activate glossary bellow after the first activity
-- Glossaire: 'glossaire.md'
-- Ressources: 'ressources.md'
-- MPLS: 'https://www.maisons-pour-la-science.org/fr/bretagne'
-
+  - Accueil: "index.md"
+  - Activités:
+      - Liens pour les réponses aux activités: "activite-les-reseaux-c_est.md"
+      - Configuration de ma machine: "activite-config-machine.md"
+      - Mesures de délais: "activite-mesure-delais.md"
+  # TODO: activate glossary bellow after the first activity
+  - Glossaire: "glossaire.md"
+  - Ressources: "ressources.md"
+  - MPLS: "https://www.maisons-pour-la-science.org/fr/bretagne"
 
 theme:
   favicon: img/favicon.ico
   # name: mkdocs
-  # name: readthedocs
+  name: readthedocs
   # name: cinder
-  # name: flatly # pip3 install mkdocs-bootswatch 
+  # name: flatly # pip3 install mkdocs-bootswatch
   # darkly, litera, lumen, lux, materia, minty, pulse, sandstone, solar, and superhero
-  name: superhero # pip3 install mkdocs-bootswatch 
+  # name: superhero # pip3 install mkdocs-bootswatch
   custom_dir: theme_custom/
- 
+
   # name: material
   # language: fr
   # palette:
@@ -34,7 +33,6 @@ theme:
   #   primary: blue grey
   # features:
   #   - navigation.instant
-
 
 plugins:
   - search:
@@ -63,11 +61,11 @@ markdown_extensions:
   - attr_list
 
 extra_css:
-    - css/extra.css
-    - css/tabbed.css
-    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
+  - css/extra.css
+  - css/tabbed.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css
 
 extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
   # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js
   # - javascripts/config.js
