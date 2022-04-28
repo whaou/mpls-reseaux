@@ -9,7 +9,19 @@ jobs:
     name: Deploy docs
     runs-on: ubuntu-latest
     permissions:
-      pages: write 
+      actions: none
+      checks: none
+      contents: read
+      deployments: none
+      id-token: none
+      issues: none
+      metadata: read
+      packages: none
+      pages: write
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
     steps:
       - name: Checkout master
         uses: actions/checkout@v1
