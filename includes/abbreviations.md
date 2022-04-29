@@ -8,3 +8,4 @@
 *[NAT]: Network Address Translation
 *[RTT]: Round Trip Time
 *[URL]: Uniform Resource Locator
+*[VM]: Virtual Machine

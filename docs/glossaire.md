@@ -142,6 +142,36 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Uniform_Resource_Locator){ta
 [en](https://en.wikipedia.org/wiki/Uniform_Resource_Locator){target=_blank}.
 
 
+## VM
+*Virtual Machine*
+
+Une machine virtuelle est un logiciel qui reproduit de manière virtuelle
+l'ensemble des composants matériels d'un ordinateur. Il est ainsi 
+possible de faire tourner une ou plusieurs *machine(s) virtuelle(s)* sur
+le même *hôte physique*.
+
+Cela permet notamment de facilement:
+
+* installer de nouvelles configuration,
+* dupliquer des configurations intéressantes,
+* faire fonctionner plusieurs *instances* de machines virtuelles sur un 
+  même *hôte* physique,
+* isoler les différentes VM entre elles afin de limiter les 
+  interférences entre elles (pb de sécurité, incompatibilités de 
+  configuration, isolation des pannes...).
+
+Les VM peuvent être utilisée sur des ordinateurs personnels à des fins 
+de test ou pour de besoins de configuration spécifiques (ex. une VM 
+Linux sur un hôte sous Windows) ou bien sur des serveurs afin de 
+mutualiser les resources matérielles entre différents clients ou 
+services.
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Machine_virtuelle){target=_blank}, 
+[en](https://en.wikipedia.org/wiki/Virtual_machine){target=_blank}.
+
+
+
+
 <!-- 
 * [**DHCP**](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol):
   *Dynamic Host Configuration Protocol*. Protocole qui permet

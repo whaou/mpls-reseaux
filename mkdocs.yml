@@ -3,14 +3,17 @@ site_url: https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/
 site_dir: public
 site_author: Anne-Hélène Tual, Anthony Penhard, Christophe Couturier
 #copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp;  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
-copyright: Copyright &copy; 2021, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+copyright: Copyright &copy; 2021-2022, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://whaou.github.io/mpls-reseaux/"target="_blank">ce dépôt Github</a>.
 
 nav:
   - Accueil: "index.md"
   - Activités:
-      - Liens pour les réponses aux activités: "activite-les-reseaux-c_est.md"
-      - Configuration de ma machine: "activite-config-machine.md"
-      - Mesures de délais: "activite-mesure-delais.md"
+      # - Liens pour les réponses aux activités: "activite-les-reseaux-c_est.md"
+      - L'environnement de TP à IMT Atlantique: "activite-environnement-imta.md"
+      - Simulation réseau avec Filius: "activite-filius.md"
+      - Internet des objets avec micro:bit: "activite-IoT-micro-bit.md"
+      - Configuration de ma machine (activité 2021 => à supprimer): "activite-config-machine.md"
+      - Mesures de délais (activité 2021 => à supprimer): "activite-mesure-delais.md"
   # TODO: activate glossary bellow after the first activity
   - Glossaire: "glossaire.md"
   - Ressources: "ressources.md"
