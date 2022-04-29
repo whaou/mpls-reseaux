@@ -11,16 +11,20 @@ La doc peut être testée localement à l'aide des commandes
 `mkdocs serve`. De même, il est possible de la générer localement avec 
 `mkdocs build`.
 
-Par ailleurs, l'intégration avec GitLab CI permet de re-générer et de
-publier automatiquement la documentation à chaque commit. Le résultat
-est publié sur Gitlab Pages à l'adresse suivante:
-https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/
+La branche `master` contient la dernière version à jour et des tags
+identifient les versions précédentes (à ce jour: `v1` pour la session 
+2021) 
 
+Le dépôt inclut par ailleurs des fichiers de configuration pour 
+l'intégration continue afin de publier automatiquement les pages web du 
+site dès qu'un push est réalisé. Pour des raisons historiques, il existe
+deux versions de ces scripts:
 
-
-Les infos ci-dessous sont extraites de la [doc présentant l'intégration
-entre mkdocs et gitlab CI et pages](https://gitlab.com/pages/mkdocs).
-Elles ne présentent pas d'intérêt particulier pour l'utilisateur
-standard.
+* l'une pour l'infrastructure GitLab CI d'Inria qui a hébergé ce site
+  lors de la première session (session 2021). Le résultat était alors 
+  publié sur https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/. Et
+* une autre depuis le passage sur Github (en 2022) utilisant le système
+  d'*actions* et de *pages* de Github qui publie sur 
+  https://whaou.github.io/mpls-reseaux/. 
 
 
