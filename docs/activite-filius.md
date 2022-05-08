@@ -12,9 +12,6 @@ Cette activité a pour objectifs de:
 
 ## Présentation de filius
 
-TODO:
-
-* petit texte de présentation
 * lien vers le [site officiel de Filus (en allemand)](https://www.lernsoftware-filius.de/Herunterladen)
 * [lien vers un exemple d'activité](https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/)
 
