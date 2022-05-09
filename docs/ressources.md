@@ -3,28 +3,10 @@
 ### Présentations utilisées pendant la formation
 
 * Support Genially *["Éclairage scientifique sur les
-  réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* (1er
-  jour)
+  réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* 
 * Support Génially *["Retour sur l'activité sur les adresses"](https://view.genial.ly/608725ea101f0b0d197f3dbb){target=_blank}*
-* Support des présentations sur*["Les délais et Wireshark"](resources/20210428--MPLS-Delais_et_Wireshark.pdf){target=_blank}*
-  (2eme jour)
-* Support *["Les enjeux des
-  réseaux"](resources/20210428--MPLS-Enjeux_des_reseaux.pdf){target=_blank}*
-  (2eme jour)
 
 ### Outils en ligne, logiciels et librairies 
-* Outils en ligne pour l'analyse de l'internet
-    * Un site (parmi d'autres) de ["looking glasses"](https://www.bgp4.as/looking-glasses){target=_blank}
-    * Un site (parmi d'autres) pour [trouver votre @IP publique](https://ip.lafibre.info/){target=_blank}
-* Des "Weathermaps" permettant de suivre l'état d'un réseau en temps
-  réel
-    * La ["Weathermap" du réseau
-      RENATER](https://www.renater.fr/sites/default/files/weathermap/weathermap_metropole.html){target=_blank}
-    * La
-      [topologie](https://www.geant.org/resources/publishingimages/geant_topology_map_december_2018.jpg){target=_blank}
-      et la
-      ["Weathermap"](https://tools.geant.org/portal/links/p-cacti/plugins/weathermap/weathermap-cacti-plugin.php?group_id=2){target=_blank}
-      du réseau GÉANT
 * Simulateurs de réseau:
     * [Filius](https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/){target=_blank}:
       un simulateur de réseaux simple permettant de dessiner des
@@ -64,6 +46,36 @@
     * [FastAPI](https://fastapi.tiangolo.com/){target=_blank}: Une autre
       librairie Python (ou plutôt un framework) pour développer
       facilement des API web.
+
+
+
+## Resources de la session 2021
+### Présentations utilisées pendant la formation
+
+* Support Genially *["Éclairage scientifique sur les
+  réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* (1er
+  jour)
+* Support Génially *["Retour sur l'activité sur les adresses"](https://view.genial.ly/608725ea101f0b0d197f3dbb){target=_blank}*
+* Support des présentations sur*["Les délais et Wireshark"](resources/20210428--MPLS-Delais_et_Wireshark.pdf){target=_blank}*
+  (2eme jour)
+* Support *["Les enjeux des
+  réseaux"](resources/20210428--MPLS-Enjeux_des_reseaux.pdf){target=_blank}*
+  (2eme jour)
+
+### Outils en ligne, logiciels et librairies 
+
+* Outils en ligne pour l'analyse de l'internet
+    * Un site (parmi d'autres) de ["looking glasses"](https://www.bgp4.as/looking-glasses){target=_blank}
+    * Un site (parmi d'autres) pour [trouver votre @IP publique](https://ip.lafibre.info/){target=_blank}
+* Des "Weathermaps" permettant de suivre l'état d'un réseau en temps
+  réel
+    * La ["Weathermap" du réseau
+      RENATER](https://www.renater.fr/sites/default/files/weathermap/weathermap_metropole.html){target=_blank}
+    * La
+      [topologie](https://www.geant.org/resources/publishingimages/geant_topology_map_december_2018.jpg){target=_blank}
+      et la
+      ["Weathermap"](https://tools.geant.org/portal/links/p-cacti/plugins/weathermap/weathermap-cacti-plugin.php?group_id=2){target=_blank}
+      du réseau GÉANT
 
 
 ### Les liens issus de nos échanges:
