@@ -3,7 +3,7 @@
 Dans cette activité, vous allez utiliser des cartes
 [micro:bit](https://microbit.org/fr/) pour développer une application
 très simple illustrant le principe de l'[Internet des
-Objets](glossaire.md#iot) ([IoT](glossaire.md#iot): Internet of Things)
+Objets](glossaire.md#iot) ([IoT](glossaire.md#iot): Internet of Things).
 
 
 
@@ -13,16 +13,16 @@ Les objectifs de l'activité sont de:
 
 * Programmer et exécuter un programme simple sur une carte micro:bit,
 * Échanger des messages par radio entre deux cartes micro:bit,
-* comprendre les contraintes liées à la conception d'un protocole de 
+* Comprendre les contraintes liées à la conception d'un protocole de 
   communication,
-* imaginer sur cette base des activités pédagogiques transposables 
+* Imaginer sur cette base des activités pédagogiques transposables 
   facilement en classe.
   
 
 
 ## Description de l'architecture
 
-La carte Micro:bit ne peut pas se connecter seule à internet. Nous
+La carte Micro:bit ne peut pas se connecter seule à Internet. Nous
 mettrons en oeuvre un dispositif s'appuyant sur une carte Raspberry Pi
 (ou PC sous Linux) pour récupérer des données captées par plusieurs
 cartes Micro:bit sur une page web, accessibles depuis un ordinateur.
@@ -31,11 +31,11 @@ cartes Micro:bit sur une page web, accessibles depuis un ordinateur.
 Le système IoT est représenté sur la figure ci-dessous. Il comprend:
 
 * Des cartes micro:bit *clientes* (une par stagiaire) qui envoient des
-  messages par radio vers une autre carte micro:bit dite *serveur*.
-  C'est sur cette carte que vous allez développer.
+  messages par radio vers une autre carte micro:bit *serveur*. Dans
+  cette activité, vous ne développerez que la partie "client".
 
-* Une carte micro:bit renvoie tous les messages qu'elle reçoit par la
-  radio vers une machine *serveur* (Raspberry ou PC) au travers de la
+* Une carte micro:bit centrale reçoit tous les messages radio et les
+  envoie vers une machine *serveur* (Raspberry ou PC) au travers de la
   liaison série sur USB. 
   
 * Sur ce *serveur* un logiciel interprète les messages reçus et
@@ -43,13 +43,13 @@ Le système IoT est représenté sur la figure ci-dessous. Il comprend:
   un navigateur.
 
     * Une première page affiche de façon synthétique les informations de
-      l'ensemble des cartes. Son url est
+      l'ensemble des cartes. Son URL est
       `http://ADDRESSE_DU_SERVEUR:8080` (remplacez `ADDRESSE_DU_SERVEUR`
       par celle qui vous sera donnée par les formateurs).
 
 
-    * D'autre pages affichent de manière plus détaillées les
-      informations pour chacune des cartes. Son url est
+    * D'autre pages affichent de manière plus détaillée les informations
+      pour chacune des cartes. Leur URL est
       `http://ADDRESSE_DU_SERVEUR:8080/carte/NUMERO_DE_CARTE`. Là aussi,
       remplacez `ADDRESSE_DU_SERVEUR` par celle qui vous sera donnée par
       les formateurs et `NUMERO_DE_CARTE` par le numéro qui vous a été
@@ -57,23 +57,23 @@ Le système IoT est représenté sur la figure ci-dessous. Il comprend:
       exemple si vous utilisez la carte n°5, vous devez utiliser la
       valeur `05` et non `5`.
 
-![Schéma de l'application](img/activite_IoT.png){width=10}
+![Schéma de l'application](img/activite_IoT.png)
 
 <!-- ![Architecture MB/Raspberry Pi](img/mb_architecture.png){ width="75%" } -->
 
 
 ## Consignes
 
-Vous êtes chargé·e·s de développer l'application de la carte *cliente*.
+Vous êtes chargé·e de développer l'application de la carte *cliente*.
 Pour cela, vous devez respecter le protocole de communication qui vous
 est donné [à la fin du
-sujet](#specification-du-protocole-format-des-messages-radio)). Si vous
+sujet](#specification-du-protocole-format-des-messages-radio). Si vous
 souhaitez l'exploiter en classe, le code source des autres parties est
 disponible librement sur [ce dépôt
 Github](https://github.com/whaou/mpls-reseaux-code).
 
 Si vous ne respectez pas strictement ce protocole, le serveur sera
-incapable de décoder vos messages. 
+incapable de décoder vos messages :-(. 
 
 De plus, vous verrez que ce protocole permet le *multiplexage*  des
 communications des différentes cartes sur le même canal radio. Si vous
@@ -87,20 +87,31 @@ séparer les informations. D'autres solutions sont possibles. Essayez
 d'en imaginer et discuter de leurs avantages et inconvénients avec les
 formateurs.
 
+Le but de l'activité est de vous faire découvrir librement et à votre
+rythme les possibilités de communication des cartes micro:bit. C'est 
+pourquoi nous ne vous donnons pas de consignes précise. Si vous ne 
+savez pas quoi faire, commencez par:
+
+* transmettre l'état du bouton A,
+* puis celui du bouton B,
+* puis faites un programme qui fait changer la couleur RVB en fonction 
+  de l'orientation de la carte.
+
+
 
 ## Comment commencer?
 
 * Lancez la machine virtuelle tel que décrit dans la page sur
   [l'environnement de développement à IMT
   Atlantique](activite-environnement-imta.md).
-* Lancer le navigateur Chromium (version libre de Chrome) en cliquant 
-  sur l'icône correspondante: ![](img/chromium_icon_128x128.png){: style="width:30px"}
-* **Bon à savoir:** MakeCode, l’environnement de développement web pour
-  les cartes micro:bit utilise la librairie `WebUSB` qui n'est pas prise
-  en charge par Firefox pour des raisons de sécurité. si vous utilisez
-  Firefox, vous pourrez travailler en simulation mais pas transferer 
-  directement vos programmes dans les cartes (cela reste possible mais 
-  moins pratique à faire).
+* Lancer le navigateur Chromium (version libre de Chrome) en cliquant
+  sur l'icône correspondante: ![](img/chromium_icon_128x128.png){:style="width:30px"} </br>
+  **Bon à savoir:** MakeCode, l’environnement de développement web pour
+  les cartes micro:bit, utilise la librairie `WebUSB` qui n'est pas
+  prise en charge par Firefox pour des raisons de sécurité. si vous
+  utilisez Firefox, vous pourrez travailler en simulation mais le
+  transfer des programmes dans les cartes micro:bit sera un peu plus
+  fastidieux.
 * Connectez-vous au site de MakeCode: [https://makecode.microbit.org/](https://makecode.microbit.org/).
 * Commencez un nouveau projet.
 * Vérifiez que vous arrivez bien à programmer votre carte:
@@ -115,12 +126,16 @@ formateurs.
       procédure. 
       Attention à bien sélectionner "BBC micro:bit CMISS-DAP" au moment 
       où la fenêtre correspondante le demande.
-      ![](img/connect_microbit_1.png){: style="width:40%"}  
-      ![](img/connect_microbit_2.png){: style="width:40%"}
+      ![](img/connect_microbit_1.png){: style="width:60%"}  
+      </br>
+      ![](img/connect_microbit_2.png){: style="width:60%"}
     * Si tout s'est bien déroulé, vous devriez désormais pouvoir 
       télécharger vos programmes en cliquant simplement sur 
       "Télécharger".
 
+Le protocole proposé dans le cadre de cette activité présente un certain
+nombre de défauts et de limitation. Discutez entre vous et avec les 
+formateurs des modifications qu'il conviendrait d'y apporter...
 
 
 ## Spécification du protocole (format des messages radio)
@@ -146,14 +161,16 @@ maximum.
     * Les différents champs sont séparés entre eux par le caractère `;`.
       Ce caractère ne doit pas être utilisé pour autre chose que la 
       séparation des champs. Il est donc notamment interdit à 
-      l'intérieur des autres chaînes de caractère
-    * L'entête décrit ci dessus est obligatoirement présent en tête de 
-      chaque message.
+      l'intérieur des autres chaînes de caractères. Vous pouvez discuter
+      avec les formations des solutions possibles pour palier cette 
+      limitation.
+    * L'entête décrit ci-dessus est obligatoirement présent au début de 
+      chaque message. Il peut être suivi de un plusieurs autres champs.
     * Tous les champs respectent un format de type `type:valeur` où
         * La `type` définit le type de champ
         * Le format de `valeur` dépend du type de champ
         * `type` et `valeur` sont séparés par le délimiteur `:`. Ce 
-          caractère est donc interdit à l'intérieur des types.
+          caractère est donc interdit à l'intérieur des noms de types.
 * **Types de champs**: les types de champs suivants sont définis:
     * `NAME`: La `valeur` de ce champ est de type chaîne de caractère.
       Elle contient le nom de la carte.
@@ -202,7 +219,7 @@ maximum.
 * le message `C:03;A:0;B:1;P0:1` indique que sur la carte n°3 transmet la 
     * le bouton A est relâché,
     * le bouton B est appuyé et
-    * une tension est présente sur la broche P0.
+    * une tension est présente sur la broche `P0`.
 
 
 
