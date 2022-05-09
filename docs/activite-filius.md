@@ -86,7 +86,7 @@ typiquement la box de la maison) qui l'assure.
 * [vidéos ressources  Filius - Comment connecter plusieurs réseaux ensemble ?](https://www.youtube.com/watch?v=bkaRSt5TUbY)
 * [Comment mettre en place un serveur Web ](https://www.youtube.com/watch?v=pS_rpzolCy8)
 * [Comment se connecter à un serveur par son adresse URL ?](https://www.youtube.com/watch?v=aHAmIwBhZdU)
-
+* [Genial.ly de présentation](https://view.genial.ly/6272924086ebe00018d2ac39/presentation-secrets-des-reseaux-2022)
 
 
 
