@@ -47,38 +47,39 @@ Correction : [Correction Filius Partie 2](resources/Filius_2.fls)
 
 ![Filius Partie 3](img/Filius_3.png){ width="75%" }
 
-* Ajouter un serveur, "PC fixe", que vous appelez "Youtube.fr" avec l’adresse IP  qui n'est ni en `192.168.1.x` ni `192.168.2.x`. Par exemple : `192.168.20.200`
-* Sur ce serveur, "Installer" un "serveur web", "Explorateur de fichier", "Editeur de texte"
-* "Installer" sur quelques "PC portable" un "navigateur web"
+* Ajouter un serveur, "PC fixe", que vous appelez "Youtube.fr" avec l’adresse IP  qui n'est ni en `192.168.1.x` ni `192.168.2.x`. Par exemple : `192.168.20.200`.
+* Sur ce serveur, "Installer" un "serveur web", "Explorateur de fichier", "Editeur de texte".
+* "Installer" sur quelques "PC portable" un "navigateur web".
 * Depuis un "PC portable" vous devriez pouvoir visualiser la page disponible sur le "serveur web" en utilisant sont adresse IP dans le navigateur.
 
 Correction : [Correction Filius Partie 3](resources/Filius_3.fls)
 
-## Partie 4 (Bonus) : Serveur DNS
+## Partie 4 (Bonus) : Serveur [DNS](glossaire.md#dns)
 
 ![Filius Partie 4](img/Filius_all_end.png){ width="75%" }
 
-* Ajouter un nouveau serveur, "PC fixe", que vous appelez `DNS` avec une adresse IP  qui n'est ni en `192.168.1.x` ni en `192.168.2.x`. Par exemple : `192.168.100.100`
-* Sur ce serveur, "Installer" un "serveur DNS"
-* Vous devez configurer l'adresse IP du serveur "Youtube.fr" et l'associer a son adresse IP
-* Les "PC portable" sont a reconfigurer avec l'IP du DNS
-* Depuis un "PC portable" vous devriez pouvoir visualiser la page disponible sur le "serveur web" en utilisant cette fois si son nom de domaine "Youtube.fr"
+* Ajouter un nouveau serveur, "PC fixe", que vous appelez `DNS` avec une adresse IP  qui n'est ni en `192.168.1.x` ni en `192.168.2.x`. Par exemple : `192.168.100.100`.
+* Sur ce serveur, "Installer" un "serveur [DNS](glossaire.md#dns)".
+* Vous devez configurer l'adresse IP du serveur "Youtube.fr" et l'associer a son adresse IP.
+* Les "PC portable" sont a reconfigurer avec l'IP du [DNS](glossaire.md#dns).
+* Depuis un "PC portable" vous devriez pouvoir visualiser la page disponible sur le "serveur web" en utilisant cette fois si son nom de domaine "Youtube.fr".
 
 Correction : [Correction Filius Partie 4](resources/Filius_4.fls)
 
-## Partie 5 (Super Bonus): Serveur DHCP
+## Partie 5 (Super Bonus): Serveur [DHCP](glossaire.md#dhcp)
 
-Configurez Filius pour qui émule le fonctionnement d'un serveur DHCP. 
-Les machines récupéreront ainsi automatiquement leurs paramètres réseau:
+Configurez Filius pour qui émule le fonctionnement d'un serveur
+[DHCP](glossaire.md#dhcp). Les machines récupéreront ainsi
+automatiquement leurs paramètres réseau:
 
 * leur adresse IP et leur masque de sous-réseau,
 * l'adresse de leur routeur par défaut et
-* l'adresse du serveur DNS.
+* l'adresse du serveur [DNS](glossaire.md#dns).
 
-Il faut noter qu'en réalité cette fonctionnalité est assurée par un 
-équipement physique sur le réseau. Dans la grande majorité des cas, 
-c'est le routeur d'accès (routeur par défaut, typiquement la box de la 
-maison) qui l'assure.
+Il faut noter qu'en réalité la fonctionnalité [DHCP](glossaire.md#dhcp)
+est assurée par un équipement physique sur le réseau. Dans la grande
+majorité des cas, c'est le routeur d'accès (routeur par défaut,
+typiquement la box de la maison) qui l'assure.
 
 
 ## Ressources : 
