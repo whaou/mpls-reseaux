@@ -22,6 +22,12 @@ Les objectifs de l'activité sont de:
 
 ## Description de l'architecture
 
+La carte Micro:bit ne peut pas se connecter seule à internet. Nous
+mettrons en oeuvre un dispositif s'appuyant sur une carte Raspberry Pi
+(ou PC sous Linux) pour récupérer des données captées par plusieurs
+cartes Micro:bit sur une page web, accessibles depuis un ordinateur.
+
+
 Le système IoT est représenté sur la figure ci-dessous. Il comprend:
 
 * Des cartes micro:bit *clientes* (une par stagiaire) qui envoient des
@@ -53,6 +59,8 @@ Le système IoT est représenté sur la figure ci-dessous. Il comprend:
 
 ![Schéma de l'application](img/activite_IoT.png)
 
+<!-- ![Architecture MB/Raspberry Pi](img/mb_architecture.png){ width="75%" } -->
+
 
 ## Consignes
 
@@ -80,8 +88,6 @@ formateurs.
 ## Spécification du protocole (format des messages radio)
 
 
-
-
-
+TODO
 
 --8<-- "includes/abbreviations.md"

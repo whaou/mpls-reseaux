@@ -31,6 +31,18 @@
       topologies réseau et de tester des configurations simples (@IP,
       Routage, DNS, Serveur Web...) [lien de téléchargement (en
       allemand)](https://www.lernsoftware-filius.de/Herunterladen){target=_blank}
+        * vidéos ressources  Filius - Comment connecter plusieurs réseaux ensemble ?
+          <iframe width="560" height="315" src="https://www.youtube.com/watch?v=bkaRSt5TUbY" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture" allowfullscreen></iframe>
+        * Comment mettre en place un serveur Web ?
+          <iframe width="560" height="315" src="https://www.youtube.com/watch?v=pS_rpzolCy8" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture" allowfullscreen></iframe>
+        * Comment se connecter à un serveur par son adresse URL ?
+          <iframe width="560" height="315" src="https://www.youtube.com/watch?v=aHAmIwBhZdU" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture" allowfullscreen></iframe>
     * [GNS3](https://www.gns3.com/){target=_blank}: Émulateur de réseau un peu plus
       complexe (mais puissant) que Filius. GNS3 permet notamment
       d'intégrer de machines virtuelles et des images de routeur (à
