@@ -42,20 +42,20 @@
 
     // Code block is the only child of a tab - remove margin and mirror
     // previous (now deprecated) SuperFences code block grouping behavior
-    > pre:only-child,
-    > .highlight:only-child pre,
-    > .highlighttable:only-child {
+    >pre:only-child,
+    >.highlight:only-child pre,
+    >.highlighttable:only-child {
       margin: 0;
 
       // Omit rounded borders
-      > code {
+      >code {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
     }
 
     // Adjust spacing for nested tab
-    > .tabbed-set {
+    >.tabbed-set {
       margin: 0;
     }
   }
@@ -73,37 +73,37 @@
     // labels, so tabs can be triggered without the necessity for JavaScript.
     // This is pretty cool, as it has great accessibility out-of-the box, so
     // we just hide the radio button and toggle the label color for indication.
-    > input {
+    >input {
       position: absolute;
       width: 0;
       height: 0;
       opacity: 0;
 
       // Tab label for checked radio button
-      &:checked + label {
+      &:checked+label {
         color: var(--md-accent-fg-color);
         border-color: var(--md-accent-fg-color);
 
         // Show tabbed block content
-        + .tabbed-content {
+        +.tabbed-content {
           display: block;
         }
       }
 
       // Tab label on focus
-      &:focus + label {
+      &:focus+label {
         outline-style: auto;
       }
 
       // Hide outline for pointer devices
-      &:not(.focus-visible) + label {
+      &:not(.focus-visible)+label {
         outline: none;
         -webkit-tap-highlight-color: transparent;
       }
     }
 
     // Tab label
-    > label {
+    >label {
       z-index: 1;
       width: auto;
       padding: px2em(12px, 12.8px) 1.25em px2em(10px, 12.8px);
@@ -148,7 +148,7 @@
   padding: 0.25em 0.75em;
   font-size: 100%;
   cursor: pointer;
-  background-color:#4E5D6C;
+  background-color: #4E5D6C;
   border: none;
 }
 
@@ -161,34 +161,34 @@
   color: #333333;
 }
 
-.tabbed-set input:nth-child(n+1):checked + label {
-    /* color: #FF5252; */
-    color: #fff;
-    background-color: #DF691A;
-  }
+.tabbed-set input:nth-child(n+1):checked+label {
+  /* color: #FF5252; */
+  color: #fff;
+  background-color: #DF691A;
+}
 
-.tabbed-set input:nth-child(n+1):checked + label + .tabbed-content {
-    display: block;
+.tabbed-set input:nth-child(n+1):checked+label+.tabbed-content {
+  display: block;
 }
 
 
 
-h1  {
+h1 {
   color: #DF691A;
   font-weight: bold;
 }
 
-h2  {
+h2 {
   color: #DF691A;
 }
 
-h3  {
+h3 {
   /* color:#4E5D6C; */
-  /* font-size: x-large */
-  /* font-weight: bold; */
+  font-size: x-large
+    /* font-weight: bold; */
 }
 
-h4  {
+h4 {
   font-size: medium;
   font-weight: bold;
   color: #DF691A;
