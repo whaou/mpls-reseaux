@@ -57,6 +57,35 @@ Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Domain_Name_System){target=_
 [en](https://wikipedia.org/wiki/Domain_Name_System){target=_blank}.
 
 
+## IoT
+*Internet of Things* (ou IdO: Internet des objets)
+
+L'Internet des Objets désigne à la fois les équipements et les
+mécanismes (protocoles et réseaux de communication) permettant de faire
+dialoguer des objets entre eux. 
+
+Dans sa version la plus simple, l'Internet des Objets permet à des 
+capteurs (par exemple de température) des remonter leur valeur vers 
+des serveurs. Il permet également d'interagir à distance avec des 
+actionneurs (par exemple de déclencher le chauffage à distance). Une 
+application plus complexe concerne par exemple les véhicules 
+communicants.
+
+Une caractéristique de l'IoT et qu'il s’intéresse souvent à de petits
+objets dont les resources sont très contraintes en matière d'énergie, de puissance de calcul ou de moyen de communication. De plus, le nombre 
+d'objets à intégrer peut parfois être très important. C'est pourquoi des solutions spécifiques sont dédiées à l'IoT. 
+
+Une autre contrainte de l'IoT est que les objets sont parfois 
+difficilement accessibles une fois déployés. Ce qui peut poser des 
+problèmes pour assurer leur maintenance ou leur mise à jour. Associées à 
+la limite de puissance de calcul et de stockage, cela peut conduire à de
+sérieux problèmes en matière de cybersécurité.
+
+Liens wikipedia: [fr](https://fr.wikipedia.org/wiki/Internet_des_objets){target=_blank}, 
+[en](https://en.wikipedia.org/wiki/Internet_of_things){target=_blank}.
+
+
+
 ## IP
 *Internet Protocol*
 

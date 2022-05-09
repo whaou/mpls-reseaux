@@ -2,6 +2,7 @@
 *[API]: Application Programming Interface
 *[DHCP]: Dynamic Host Configuration Protocol
 *[DNS]: Domain Name System
+*[IoT]: Internet of Things
 *[IP]: Internet Protocol
 *[JSON]: Javascript Object Notation
 *[MAC]: Medium Access Control
