@@ -8,17 +8,17 @@
 ``` shell
 wget https://www.lernsoftware-filius.de/downloads/Setup/filius_1.13.2_all.deb
 sudo apt update
-sudo apt install ./filius_1.13.2_all.deb
-sudo apt install default-jdk
+sudo apt install -y ./filius_1.13.2_all.deb
+sudo apt install -y default-jdk
+
 ```
 
 ## Chromium
 
-À venir....
 ``` shell
 sudo ls
 
-sudo apt install net-tools curl minicom wireshark
+sudo apt install -y net-tools curl minicom wireshark
 sudo usermod -a -G wireshark $USER
 
 # CHROME
