@@ -12,10 +12,32 @@ sudo apt install ./filius_1.13.2_all.deb
 sudo apt install default-jdk
 ```
 
-<!-- ## Chromium
+## Chromium
 
 À venir....
- -->
+``` shell
+sudo ls
+
+sudo apt install net-tools curl minicom wireshark
+sudo usermod -a -G wireshark $USER
+
+# CHROME
+snap refresh chromium --channel=candidate/raw-usb 
+snap connect chromium:raw-usb
+
+# Create rule
+sudo cat << EOF >> /etc/udev/rules.d/50-microbit.rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="plugdev"
+EOF
+
+# Add current user to plugdev group
+sudo usermod -a -G plugdev $USER
+
+# Reload udev rules
+sudo udevadm control --reload-rules
+
+```
+
 
 
 --8<-- "includes/abbreviations.md"
