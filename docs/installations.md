@@ -18,17 +18,17 @@ sudo apt install -y default-jdk
 ``` shell
 sudo ls
 
-sudo apt install -y net-tools curl minicom wireshark
+sudo apt install -y net-tools curl minicom wireshark snapd
 sudo usermod -a -G wireshark $USER
+sudo usermod -a -G dialout $USER
 
 # CHROME
-snap refresh chromium --channel=candidate/raw-usb 
-snap connect chromium:raw-usb
+sudo snap install chromium
+sudo snap refresh chromium --channel=candidate/raw-usb 
+sudo snap connect chromium:raw-usb
 
 # Create rule
-sudo cat << EOF >> /etc/udev/rules.d/50-microbit.rules
-SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="plugdev"
-EOF
+echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", MODE="0664", GROUP="plugdev"' | sudo tee /etc/udev/rules.d/50-microbit.rules
 
 # Add current user to plugdev group
 sudo usermod -a -G plugdev $USER
