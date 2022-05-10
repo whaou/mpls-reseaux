@@ -152,6 +152,8 @@ pas capables d'envoyer sur la radio des messages de plus de 19 octets.
 Le protocole limite donc la taille des messages à 19 caractères au
 maximum.
 
+Le serveur fonctionne sur le **groupe radio n°1**.
+
 * **Entête**: Tous les messages commencent par `C:xx` où `xx` représente
   le numéro de la carte codé sur deux caractères (par ex. `05` pour la
   carte n°5). La valeur `00` est réservée. Le protocole est donc capable
