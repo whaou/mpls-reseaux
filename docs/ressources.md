@@ -4,9 +4,56 @@
 
 * Support Genially *["Éclairage scientifique sur les
   réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* 
-* Support Génially *["Retour sur l'activité sur les adresses"](https://view.genial.ly/608725ea101f0b0d197f3dbb){target=_blank}*
 
-### Outils en ligne, logiciels et librairies 
+### Codes sources
+
+* Le code source ce ce site web est hébergé sur 
+[ce dépôt Github](https://github.com/whaou/mpls-reseaux){target=_blank}.
+* Celui de l'activité sur l'Internet des Objets avec les cartes
+micro:bit sur
+[celui-là](https://github.com/whaou/mpls-reseaux-code){target=_blank}.
+
+### MPLS et FabLab
+
+* Les 
+  [mallettes Mérite](https://maisons-pour-la-science.org/node/1489332){target=_blank}
+   et en particulier : 
+   [Communication informatique : tout un protocole](https://www.imt-atlantique.fr/fr/formation/dynamique-pedagogique/merite?arg=6418_2_6538){target=_blank}
+* Le site du [réseau Labfab](https://labfab.fr/){target=_blank} dont Baptiste nous a parlé
+* la liste des 
+  [MOOCs de l'IMT hébergés sur FUN](https://www.fun-mooc.fr/fr/etablissements/imt/){target=_blank} 
+  ou sur [edX (en anglais)](https://www.edx.org/school/imtx){target=_blank}
+  et [Coursera](https://www.coursera.org/imt). Mais d'autres 
+  institutions proposent également des ressources intéressantes!
+* Les sites de [Tinkercad](https://www.tinkercad.com/){target=_blank} 
+  et [FreeCAD](https://www.freecadweb.org/){target=_blank}
+* Les ressources 
+  [1,2,3..odez!](https://fondation-lamap.org/projet/123-codez){target=_blank}
+  de la Main à la pâte
+### MOOCs et Livres
+
+* Le [MOOC Principes des réseaux de
+  données](https://www.fun-mooc.fr/fr/cours/principes-des-reseaux-de-donnees/?edit&language=fr){target=_blank}
+  réalisé par l'IMT
+* Le [livre correspondant au MOOC Principe des réseaux de
+  données](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782746246591/){target=_blank},
+  édité par les auteurs du MOOC. Mais il semble en rupture chez
+  l'éditeur :-(
+* Un [MOOC dédié à IPv6](https://www.fun-mooc.fr/fr/cours/objectif-ipv6/){target=_blank}, par l'IMT
+* Plus généralement: la liste des 
+  [MOOCs de l'IMT hébergés sur FUN](https://www.fun-mooc.fr/fr/etablissements/imt/){target=_blank} 
+  ou sur [edX (en anglais)](https://www.edx.org/school/imtx){target=_blank}
+  et [Coursera](https://www.coursera.org/imt). Mais d'autres 
+  institutions proposent également des ressources intéressantes!
+* Le livre ["Réseaux" de Andrew
+  Tanenbaum](https://www.eyrolles.com/Informatique/Livre/reseaux-9782744075216/){target=_blank}
+  qui est une référence dans les universités du monde entier
+* Le livre ["Les Réseaux" de Guy
+  Pujolle](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782212675351/){target=_blank},
+  best seller en France
+
+
+### Outils en ligne, logiciels et librairies logicielles
 * Simulateurs de réseau:
     * [Filius](https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/){target=_blank}:
       un simulateur de réseaux simple permettant de dessiner des
@@ -83,34 +130,17 @@
   * Sous Android, pour vérifier les pisteurs installés sur vos applis
     vous pouvez utiliser [Exodus Privacy](https://exodus-privacy.eu.org/fr/){target=_blank}
   * Livre: [Mindfuck de Christophe Wylie](https://www.babelio.com/livres/Wylie-Mindfuck/1321716){target=_blank}, le lanceur d'alerte de Cambridge Analytica
-  * BD: [La Revue Dessinée](https://www.4revues.fr/la-revue-dessinee/),
+  * BD: [La Revue Dessinée](https://www.4revues.fr/la-revue-dessinee/){target=_blank},
     avec un numéro sur Cambridge Analytica (n°25) 
-  * Documentaire: [Nothing to Hide](https://fr.wikipedia.org/wiki/Nothing_to_Hide),
+  * Documentaire: [Nothing to Hide](https://fr.wikipedia.org/wiki/Nothing_to_Hide){target=_blank},
       s'intéresse aux effets de la surveillance de
     masse sur les individus et la société 
   * Livre: [Comédies françaises d'Eric Reinhardt](https://www.babelio.com/livres/Reinhardt-Comedies-francaises/1239543){target=_blank}
   * Sur la surveillance numérique, lire le travail de [Shoshana
-    Zuboff](https://fr.wikipedia.org/wiki/Shoshana_Zuboff)
+    Zuboff](https://fr.wikipedia.org/wiki/Shoshana_Zuboff){target=_blank}
   * Le travail d'une classe de 4eme qui a créé elle même une [vidéo de
     Fake
-    News](https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html) <!-- lien direct vers la video: https://vimeo.com/166931978 -->
-  * Description de l'activité proposée par Séverin et ses collègues 
-    de l'académie de Grenoble à télécharger [ici](https://filesender.renater.fr/?s=download&token=73fefedc-2e2c-4597-b5e7-9347af9f052c)
-
-### MOOC et Livres
-
-* Le [MOOC Principes des réseaux de
-  données](https://www.fun-mooc.fr/fr/cours/principes-des-reseaux-de-donnees/?edit&language=fr){target=_blank}
-  réalisé par l'IMT
-* Le [livre correspondant au MOOC Principe des réseaux de
-  données](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782746246591/),
-  édité par les auteurs du MOOC. Mais il semble en rupture chez
-  l'éditeur :-(
-* Un [MOOC dédié à IPv6](https://www.fun-mooc.fr/fr/cours/objectif-ipv6/), par l'IMT
-* Le livre ["Réseaux" de Andrew
-  Tanenbaum](https://www.eyrolles.com/Informatique/Livre/reseaux-9782744075216/)
-  qui est une référence dans les universités du monde entier
-* Le livre ["Les Réseaux" de Guy
-  Pujolle](https://www.eyrolles.com/Informatique/Livre/les-reseaux-9782212675351/),
-  best seller en France
+    News](https://blog.francetvinfo.fr/l-instit-humeurs/2021/02/20/video-des-eleves-denoncent-les-chats-pour-lutter-contre-le-complotisme.html){target=_blank} <!-- lien direct vers la video: https://vimeo.com/166931978 -->
+  <!-- * Description de l'activité proposée par Séverin et ses collègues 
+    de l'académie de Grenoble à télécharger [ici](https://filesender.renater.fr/?s=download&token=73fefedc-2e2c-4597-b5e7-9347af9f052c){target=_blank} -->
 

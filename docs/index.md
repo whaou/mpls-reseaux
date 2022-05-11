@@ -12,8 +12,13 @@ Sauf mention contraire, le contenu de ce site est distribué sous licence
 Creative Commons [CC
 BY](https://creativecommons.org/licenses/?lang=fr){target=_blank}. Vous
 pouvez donc réutiliser et modifier ces contenus à l'unique condition
-d'en citer les auteurs originaux. Le code source du site est disponible
-sur ce [dépôt github](https://github.com/whaou/mpls-reseaux).
+d'en citer les auteurs originaux. Le code source est disponible
+librement sur deux dépôts Github
+([ici](https://github.com/whaou/mpls-reseaux){target=_blank} pour la
+partie documentaire (ce site web) et
+[là](https://github.com/whaou/mpls-reseaux-code){target=_blank} pour le
+code source de l'activité sur l'Internet des Objets avec les cartes
+micro:bit).
 
 
 Les auteurs:

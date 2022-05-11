@@ -9,10 +9,10 @@ nav:
   - Accueil: "index.md"
   - Activités:
       # - Liens pour les réponses aux activités: "activite-les-reseaux-c_est.md"
-      - Installation des logiciels: "installations.md"
+      # - Installation des logiciels: "installations.md"
       - Simulation réseau avec Filius: "activite-filius.md"
       - Internet des objets avec micro:bit: "activite-IoT-micro-bit.md"
-      - L'environnement de TP à IMT Atlantique: "activite-environnement-imta.md"
+      # - L'environnement de TP à IMT Atlantique: "activite-environnement-imta.md"
   - Archives  session 2021:
       - Configuration de ma machine: "activite-config-machine.md"
       - Mesures de délais: "activite-mesure-delais.md"
