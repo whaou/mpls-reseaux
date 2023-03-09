@@ -23,9 +23,9 @@ micro:bit).
 
 Les auteurs:
 
-* Anne-Hélène TUAL - Ingénieure pédagogique à la Maison Pour La Science de Bretagne
-* Anthony PENHARD - Enseignant de Technologie au collège de Bréal-sous-Montfort 
-* Christophe COUTURIER - Enseignant Chercheur à IMT Atlantique
+* Anne-Hélène TUAL - Ingénieure pédagogique à la [Maison Pour La Science de Bretagne](https://bretagne.maisons-pour-la-science.org/)
+* Anthony PENHARD - Enseignant de Technologie au [Collège Françoise Élie de Bréal-sous-Montfort](https://college-breal-sous-montfort.ac-rennes.fr/) 
+* Christophe COUTURIER - Responsable de l'innovation chez [YoGoKo](https://yogoko.fr) (anciennement Enseignant Chercheur à [IMT Atlantique](https://www.imt-atlantique.fr/))
 
 <!-- Some Markdown text with <span style="color:blue">some *blue* text</span>. -->
 <!-- <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
@@ -46,6 +46,6 @@ Pause déjeuner: 12h30-13h30 **(1h)**
 
 Après midi: 13h30-17h **(3h30)**
 
-  * Visite du FabLab d'IMT Atlantique: 13h30-14h30 **(1h)**
+  * Présentation *"Recherche, développement et innovation en entreprise"*: 13h30-14h30 **(1h)**
   * Activité *["Internet des objets avec micro:bit"](activite-IoT-micro-bit.md)*: 14h30-16h00 **(1h30)**
   * Échanges de pratiques et présentation des resources 16h-17h **(1h)**

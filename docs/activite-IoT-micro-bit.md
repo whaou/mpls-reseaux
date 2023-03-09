@@ -45,7 +45,8 @@ Le système IoT est représenté sur la figure ci-dessous. Il comprend:
     * Une première page affiche de façon synthétique les informations de
       l'ensemble des cartes. Son URL est
       `http://ADDRESSE_DU_SERVEUR:8080` (remplacez `ADDRESSE_DU_SERVEUR`
-      par celle qui vous sera donnée par les formateurs).
+      par `172.22.194.4` ou celle qui vous sera donnée par les 
+      formateurs).
 
 
     * D'autre pages affichent de manière plus détaillée les informations
@@ -89,7 +90,7 @@ formateurs.
 
 Le but de l'activité est de vous faire découvrir librement et à votre
 rythme les possibilités de communication des cartes micro:bit. C'est 
-pourquoi nous ne vous donnons pas de consignes précise. Si vous ne 
+pourquoi nous ne vous donnons pas de consignes précises. Si vous ne 
 savez pas quoi faire, commencez par:
 
 * transmettre l'état du bouton A,
@@ -101,37 +102,25 @@ savez pas quoi faire, commencez par:
 
 ## Comment commencer?
 
-* Lancez la machine virtuelle tel que décrit dans la page sur
-  [l'environnement de développement à IMT
-  Atlantique](activite-environnement-imta.md).
-* Lancer le navigateur Chromium (version libre de Chrome) en cliquant
-  sur l'icône correspondante: ![](img/chromium_icon_128x128.png){:style="width:30px"} </br>
+* Lancer le navigateur Firefox en cliquant
+  sur l'icône correspondante: ![](img/firefox_icon_128x128.png){:style="width:30px"} </br>
   **Bon à savoir:** MakeCode, l’environnement de développement web pour
   les cartes micro:bit, utilise la librairie `WebUSB` qui n'est pas
-  prise en charge par Firefox pour des raisons de sécurité. si vous
-  utilisez Firefox, vous pourrez travailler en simulation mais le
-  transfer des programmes dans les cartes micro:bit sera un peu plus
-  fastidieux.
+  prise en charge par Firefox pour des raisons de sécurité. MakeCode 
+  fonctionne quand même, mais le transfert des programmes dans les 
+  cartes micro:bit fonctionne légèrement différemment
 * Connectez-vous au site de MakeCode: [https://makecode.microbit.org/](https://makecode.microbit.org/).
 * Commencez un nouveau projet.
 * Vérifiez que vous arrivez bien à programmer votre carte:
     * Réalisez un programme très simple (par ex. en affichant un symbole 
       sur le panneau de LEDs).
-    * Branchez votre carte et transférez la gestion de son port USB à la
-      VM comme indiqué sur la page [environnement de développement à IMT
-      Atlantique](activite-environnement-imta.md).
-    * La première fois, il faut associer votre carte. Pour cela, cliquez
-      sur les trois points à droite du bouton "Télécharger" situé en bas
-      à gauche. Sélectionnez "Connecter l'appareil" et suivez la 
-      procédure. 
-      Attention à bien sélectionner "BBC micro:bit CMISS-DAP" au moment 
-      où la fenêtre correspondante le demande.
-      ![](img/connect_microbit_1.png){: style="width:60%"}  
-      </br>
-      ![](img/connect_microbit_2.png){: style="width:60%"}
-    * Si tout s'est bien déroulé, vous devriez désormais pouvoir 
-      télécharger vos programmes en cliquant simplement sur 
-      "Télécharger".
+    * Branchez votre carte au PC.
+    * Téléchargez le programme dans le PC. Cela enregistre un fichier
+      appelé `microbit-xxxx.hex` dans le répertoire `Documents` de votre
+      répertoire personnel. ![](img/screenshot-buton_telecharger.png){: style="width:60%"}  
+    * Utilisez ensuite l'explorateur de fichiers pour copier ce fichier  
+      en le faisant glisser dans votre carte micro:bit qui apparaît
+      comme une clé USB.
 
 Le protocole proposé dans le cadre de cette activité présente un certain
 nombre de défauts et de limitation. Discutez entre vous et avec les 

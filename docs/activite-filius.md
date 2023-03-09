@@ -82,7 +82,7 @@ majorité des cas, c'est le routeur d'accès (routeur par défaut,
 typiquement la box de la maison) qui l'assure.
 
 
-## Ressources : 
+## Ressources
 * [vidéos ressources  Filius - Comment connecter plusieurs réseaux ensemble ?](https://www.youtube.com/watch?v=bkaRSt5TUbY)
 * [Comment mettre en place un serveur Web ](https://www.youtube.com/watch?v=pS_rpzolCy8)
 * [Comment se connecter à un serveur par son adresse URL ?](https://www.youtube.com/watch?v=aHAmIwBhZdU)
