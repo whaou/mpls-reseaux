@@ -4,6 +4,7 @@
 
 * Support Genially *["Éclairage scientifique sur les
   réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* 
+* Support *["Les enjeux des réseaux"](resources/20230516--MPLS-Enjeux_des_reseaux-et_demarche_innovation.pdf){target=_blank}*
 
 ### Codes sources
 
@@ -16,15 +17,10 @@ micro:bit sur
 ### MPLS et FabLab
 
 * Les 
-  [mallettes Mérite](https://maisons-pour-la-science.org/node/1489332){target=_blank}
+  [mallettes Mérite](https://bretagne.maisons-pour-la-science.org/bretagne/nos-autres-activites/ressources-pedagogiques-bretagne){target=_blank}
    et en particulier : 
    [Communication informatique : tout un protocole](https://www.imt-atlantique.fr/fr/formation/dynamique-pedagogique/merite?arg=6418_2_6538){target=_blank}
 * Le site du [réseau Labfab](https://labfab.fr/){target=_blank} dont Baptiste nous a parlé
-* la liste des 
-  [MOOCs de l'IMT hébergés sur FUN](https://www.fun-mooc.fr/fr/etablissements/imt/){target=_blank} 
-  ou sur [edX (en anglais)](https://www.edx.org/school/imtx){target=_blank}
-  et [Coursera](https://www.coursera.org/imt). Mais d'autres 
-  institutions proposent également des ressources intéressantes!
 * Les sites de [Tinkercad](https://www.tinkercad.com/){target=_blank} 
   et [FreeCAD](https://www.freecadweb.org/){target=_blank}
 * Les ressources 
