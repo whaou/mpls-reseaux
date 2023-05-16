@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/test/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>À la découverte de la configuration réseau de ma machine - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-filius/" class="dropdown-item">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-config-machine/" class="dropdown-item">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="../activite-mesure-delais/" class="dropdown-item">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossaire/" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a-la-decouverte-de-la-configuration-reseau-de-ma-machine" class="nav-link">À la découverte de la configuration réseau de ma machine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pour-lister-les-parametres-reseau-tapez" class="nav-link">Pour lister les paramètres réseau, tapez:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pour-lister-les-adresses-des-differentes-interfaces-tapez" class="nav-link">Pour lister les adresses des différentes interfaces, tapez:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#notion-dadresse" class="nav-link">Notion d'adresse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pour-aller-plus-loin" class="nav-link">Pour aller plus loin</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="a-la-decouverte-de-la-configuration-reseau-de-ma-machine">À la découverte de la configuration réseau de ma machine</h1>
+<p>Les réseaux sont constitués de liaisons (câbles, fibres, faisceaux
+hertziens...) et d'équipements d'interconnexion (routeurs, switches,
+firewalls,...). Mais leur finalité est de relier des équipements
+terminaux comme des ordinateurs, des smartphones ou des objets
+connectés. Dans cette activité, nous allons découvrir les principaux
+paramètres à configurer sur une machine pour qu'elle fonctionne
+correctement sur un réseau.</p>
+<div class="admonition note">
+<p class="admonition-title">Attention à votre système d'exploitation!</p>
+<p>Certaines commandes n'ont pas le même nom (ou les même
+paramètres) dans les systèmes d'exploitation. Dans ce cas, nous 
+utilisions parfois la représentation ci-dessous. Sélectionnez votre 
+OS (Windows ou Linux) pour voir les commandes adéquates.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
+<p>```` shell</p>
+<h1 id="pour-lister-les-parametres-reseau-tapez">Pour lister les paramètres réseau, tapez:</h1>
+<p>ipconfig /all
+````</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Linux</label><div class="tabbed-content">
+<p>```` shell</p>
+<h1 id="pour-lister-les-adresses-des-differentes-interfaces-tapez">Pour lister les adresses des différentes interfaces, tapez:</h1>
+<p>ip address list
+````</p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Titre de la note</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.</p>
+</div>
+<details class="note">
+<summary>Indice...</summary>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.</p>
+</details>
+<p><a class="btn btn-primary" href="javascript:alert$.next(&quot;Done!&quot;)">Windows</a>
+<a class="btn btn-secondary disabled" href="#">Linux</a></p>
+<p><a class="btn btn-primary" href="javascript:myFunction();">test</a></p>
+<script>
+function myFunction() {
+    alert("I am an alert box!");
+//   var x = document.getElementById("myDIV");
+//   if (x.innerHTML === "Hello") {
+//     x.innerHTML = "Swapped text!";
+//   } else {
+//     x.innerHTML = "Hello";
+//   }
+} 
+</script>
+
+<p>Please buy the great products from {{ acme }}!</p>
+<p><button type="button" class="btn btn-primary">Window</button>
+<button type="button" class="btn btn-secondary disabled">Linux</button></p>
+<div class="codehilite"><pre><span></span><code>NOT Under Windows
+</code></pre></div>
+
+<h3 id="adding-a-glossary">Adding a glossary</h3>
+<p>When <a href="#snippets">Snippets</a> is enabled, content from other files can be embedded, which
+is especially useful to include abbreviations from a central file – a glossary –
+and embed them into any other file.</p>
+<p><em>Example</em>:</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows</label><div class="tabbed-content">
+<p>```` markdown
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+<p>````</p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Linux</label><div class="tabbed-content">
+<p>```` markdown</p>
+<p>````</p>
+</div>
+</div>
+<p><em>Result</em>:</p>
+<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+<p><em>Remember to locate the Markdown file containing the definitions outside of the</em>
+<code>docs</code> <em>folder (here</em> <code>includes</code> <em>is used), or MkDocs may complain about an 
+unreferenced file.</em></p>
+<p>```` markdown linenums="1"</p>
+<p>````</p>
+<p>The <code>#!python range()</code> function is used to generate a sequence of numbers.</p>
+<h2 id="notion-dadresse">Notion d'adresse</h2>
+<h3 id="quelle-est-ladresse-de-ma-machine">Quelle est l'adresse de ma machine?</h3>
+<p>Plusieurs adresses (<abbr title="Internet Protocol">IP</abbr>, nom de machine, <abbr title="Medium Access Control">MAC</abbr>), et même plusieurs <abbr title="Internet Protocol">IP</abbr> (IPv4, IPv6, plusieurs <abbr title="Internet Protocol">IP</abbr>...)
+<code>ipconfig -all</code> / <code>ip address list</code></p>
+<h3 id="comment-resoudre-une-adresse">Comment résoudre une adresse?</h3>
+<ul>
+<li><abbr title="Medium Access Control">MAC</abbr>/<abbr title="Internet Protocol">IP</abbr> -&gt; <abbr title="Address Resolution Protocol">ARP</abbr></li>
+<li><abbr title="Internet Protocol">IP</abbr>-&gt;nom de machine -&gt; <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a></li>
+</ul>
+<h3 id="ip-publique-ip-privee"><abbr title="Internet Protocol">IP</abbr> publique / <abbr title="Internet Protocol">IP</abbr> privée</h3>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<h3 id="les-parametres-necessaires">Les paramètres nécessaires</h3>
+<ul>
+<li>@<abbr title="Internet Protocol">IP</abbr> (v4, v6, les 2)</li>
+<li>masque: aie! il va falloir faire simple pour éviter de perdre tout le monde un peu compliqué </li>
+<li>Routeur par défaut </li>
+<li>serveur <abbr title="Domain Name System">DNS</abbr></li>
+</ul>
+<h3 id="comment-determiner-ces-parametres">Comment déterminer ces paramètres?</h3>
+<p>Configuration manuelle ou dynamique via <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></p>
+<p>note: <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> est très utilisé en IPv4. Il est également disponible en IPv6
+mais est beaucoup moins utilisé dans ce cas car IPv6 fournit un nouveau
+système d'auto-configuration d'adresse qui permet de se passer de
+serveur <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/activite-config-machine/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Configuration de ma machine - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-filius/" class="dropdown-item">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="../activite-mesure-delais/" class="dropdown-item">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossaire/" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a-la-decouverte-de-la-configuration-reseau" class="nav-link">À la découverte de la configuration réseau</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pour-lister-les-parametres-reseau-tapez" class="nav-link">Pour lister les paramètres réseau, tapez:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pour-lister-les-adresses-des-differentes-interfaces-tapez" class="nav-link">Pour lister les adresses des différentes interfaces, tapez:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#pour-lister-les-adresses-des-differentes-interfaces-tapez_1" class="nav-link">Pour lister les adresses des différentes interfaces, tapez:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#notion-dadresse" class="nav-link">Notion d'adresse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#comment-resoudre-une-adresse" class="nav-link">Comment résoudre une adresse?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-publique-ip-privee" class="nav-link">IP publique / IP privée</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="a-la-decouverte-de-la-configuration-reseau">À la découverte de la configuration réseau</h1>
+<p>Les réseaux sont constitués de <em>liaisons</em> (câbles, fibres, faisceaux
+hertziens...) et d'<em>équipements d'interconnexion</em> (routeurs, switches,
+firewalls,...). Mais leur finalité est de relier des <em>équipements
+terminaux</em> comme des ordinateurs, des smartphones ou des objets
+connectés. Dans cette activité, nous allons découvrir les principaux
+paramètres à configurer sur une machine pour qu'elle fonctionne
+correctement sur un réseau.</p>
+<div class="admonition note">
+<p class="admonition-title">Attention à votre système d'exploitation!</p>
+<p>Certaines commandes n'ont pas le même nom (ou les même
+paramètres) dans les différents systèmes d'exploitation. Dans ce 
+cas, nous  utilisions parfois la représentation ci-dessous. 
+Sélectionnez votre OS (Windows, Linux ou Mac) pour voir les 
+commandes adéquates.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
+<p>``` shell</p>
+<h1 id="pour-lister-les-parametres-reseau-tapez">Pour lister les paramètres réseau, tapez:</h1>
+<p>ipconfig /all
+```</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Linux</label><div class="tabbed-content">
+<p>``` shell</p>
+<h1 id="pour-lister-les-adresses-des-differentes-interfaces-tapez">Pour lister les adresses des différentes interfaces, tapez:</h1>
+<p>ip address list
+```</p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Mac</label><div class="tabbed-content">
+<p>``` shell</p>
+<h1 id="pour-lister-les-adresses-des-differentes-interfaces-tapez_1">Pour lister les adresses des différentes interfaces, tapez:</h1>
+<p>ifconfig
+```</p>
+</div>
+</div>
+</div>
+<p>Dans cette activité, nous allons beaucoup utiliser la ligne de commande.
+Si vous ne savez pas ouvrir un terminal, suivez les instructions
+ci-dessous:</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows</label><div class="tabbed-content">
+<div class="admonition note">
+<p>Ouvrez le "menu démarrer" (touche "Windows" ) puis tapez <code>cmd</code> 
+et "entrée".</p>
+</div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Linux</label><div class="tabbed-content">
+<div class="admonition note">
+<p>Ouvrez le lanceur de programmes (touche "Windows") puis tapez 
+<code>term</code>. Le système devrait vous proposer l'un des émulateurs de 
+terminal déja installés. Sélectionnez celui que vous préférez.</p>
+<p>Sous Ubuntu, une autre alternative est d'utiliser le raccourci 
+clavier <code>Ctrl + Alt + t</code>.</p>
+</div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Mac</label><div class="tabbed-content">
+<div class="admonition note">
+<p>Lancez le programme <code>Terminal</code>.</p>
+</div>
+</div>
+</div>
+<h2 id="notion-dadresse">Notion d'adresse</h2>
+<p>Une machine dispose de plusieurs adresses:</p>
+<ul>
+<li>une pour chaque niveau de de la pile de protocole (adresse <abbr title="Medium Access Control">MAC</abbr>,
+  adresse <abbr title="Internet Protocol">IP</abbr>, nom de machine...)</li>
+<li>Dans certains cas, une même machine peut même posséder plusieurs
+  adresses pour la même couche</li>
+</ul>
+<h3 id="quel-est-le-nom-de-ma-machine">Quel est le nom de ma machine?</h3>
+<p>Les ordinateurs possèdent généralement un nom de machine. Vous pouvez
+retrouver le nom de votre machine à l'aide de la commande suivante:</p>
+<p><code>hostname</code></p>
+<p>Notez le nom de votre machine.</p>
+<h3 id="quelle-est-ladresse-de-ma-machine">Quelle est l'adresse de ma machine?</h3>
+<p>Les commandes ci-dessous vous permettent de lister les interfaces (aussi
+appelée cartes réseaux ou "NIC" pour Network Interface Card) de votre
+machine ainsi que leurs différentes adresses. Essayez de retrouver les
+adresses <abbr title="Medium Access Control">MAC</abbr> et <abbr title="Internet Protocol">IP</abbr> des interfaces de votre machine et notez les dans un
+tableau sur le modèle de celui ci-dessous.</p>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>shell
+ipconfig /all</code></p>
+</div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Linux</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>shell
+ip address list</code></p>
+<p><em>Note:</em> lorsque cela ne soulève pas d'ambiguïté, la commande 
+<code>ip</code> assure automatiquement la complétion des paramètres qui lui 
+sont passés. Ainsi <code>ip a l</code> donnera le même résultat que 
+<code>ip address list</code>... Et comme <code>list</code> est le paramètre par défaut
+pour la sous commande <code>address</code>, <code>ip a</code> sera même suffisant!
+Les informaticiens ne sont pas fainéants, ils savent juste 
+s'économiser :-)</p>
+</div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Mac</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>shell
+ifconfig</code></p>
+</div>
+</div>
+</div>
+<p>Essayez de retrouver les adresses <abbr title="Medium Access Control">MAC</abbr> et <abbr title="Internet Protocol">IP</abbr> des interfaces de votre
+machine. Notez les dans le tableau correspondant à votre groupe (cf. 
+tableaux de réponses <a href="../activite-les-reseaux-c_est/" target="_blank">ici</a>) </p>
+<!-- Notez les dans un tableau comme celui-ci:
+
+Interface    | Adresse MAC   | Adresse IP
+:------------|---------------| -----------
+interface 1  |   @MAC_1      |   @IP_1_1
+             |               |   @IP_1_2
+interface 2  |   @MAC_2      |   @IP_1_2
+    ...      |       ...     |   ... -->
+
+<h3 id="quest-ce-que-ladresse-de-loopback">Qu'est ce que l'adresse de loopback?</h3>
+<p>Sur toutes les machines, une adresse particulière désigne la machine
+locale. On l'appelle "l'adresse de loopback". On l'utilise pour faire 
+des tests et pour communiquer avec d'autres programmes qui se trouvent 
+sur la machine.</p>
+<p>L'adresse de loopback a les caractéristiques suivantes:</p>
+<ul>
+<li>elle n'a pas d'adresse <abbr title="Medium Access Control">MAC</abbr></li>
+<li>au niveau réseau (<abbr title="Internet Protocol">IP</abbr>), son adresse est <code>127.0.0.1</code> en IPv4 et <code>::1</code> en IPv6</li>
+<li>le nom de machine <code>localhost</code> lui est généralement associé </li>
+</ul>
+<p>La commande <code>ping</code> sert à envoyer un paquet de test vers une autre
+machine. En réponse, cette machine revoie une copie du message reçu ce
+qui permet de vérifier le bon fonctionnement de la liaison. </p>
+<p><strong>Note 1</strong>: Cela suppose que la machine cible accepte de coopérer, ce qui
+n'est pas toujours le cas.</p>
+<p><strong>Note 2</strong>: Par défaut, sous Windows, <code>ping</code> s'arrête automatique après avoir envoyé
+4 paquets de test, alors que sous Linux, il faut forcer son arrêt à
+l'aide de <code>Ctrl+C</code>.</p>
+<p>Utilisez la commande <code>ping</code> pour vérifier la connection avec votre 
+interface de loopback en tapant les 3 commandes suivantes. </p>
+<p>Remarquez que ping accepte indifféremment des adresses IPv4, IPv6 ou des
+noms de machine. Prenez le temps de regarder les informations retournées
+par la commande <code>ping</code>. Regardez notamment par quelle adresse <abbr title="Internet Protocol">IP</abbr>, le 
+nom de machine <code>localhost</code> a été remplacé.</p>
+<p><code>sh
+ping 127.0.0.1
+ping ::1
+ping localhost</code></p>
+<h2 id="comment-resoudre-une-adresse">Comment résoudre une adresse?</h2>
+<p>Nous venons de voir qu'une machine peut avoir un nom de machine, une ou
+plusieurs adresses <abbr title="Internet Protocol">IP</abbr> ainsi qu'une adresse <abbr title="Medium Access Control">MAC</abbr> pour chacune de ses
+interfaces.</p>
+<p>Les protocoles de résolution d'adresse permettent de trouver la 
+correspondance entre deux adresses de deux couches adjacentes. Par 
+exemple:</p>
+<ul>
+<li>La résolution <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a> permet de trouver l'adresse <abbr title="Internet Protocol">IP</abbr> à
+  partir d'un nom de machine (Reverse <abbr title="Domain Name System">DNS</abbr> permet de faire la résolution
+  dans le sens inverse)</li>
+<li>La résolution <a href="../glossaire/#arp"><abbr title="Address Resolution Protocol">ARP</abbr></a> permet de trouver l'adresse <abbr title="Medium Access Control">MAC</abbr>
+  d'une machine à partir de son adresse <abbr title="Internet Protocol">IP</abbr> (Reverse <abbr title="Address Resolution Protocol">ARP</abbr> permet la
+  requête inverse)</li>
+</ul>
+<!-- Nous allons utiliser ces deux protocoles de résolution d'adresse. -->
+<p>Afin d'économiser le temps nous nous focaliserons sur la résolution <abbr title="Domain Name System">DNS</abbr>.</p>
+<h3 id="la-resolution-dns">La résolution <abbr title="Domain Name System">DNS</abbr></h3>
+<p>Différents programmes permettent de faire des requêtes <abbr title="Domain Name System">DNS</abbr>. Nous allons
+utiliser la commande <code>nslookup</code> qui a le mérite d'exister sous Windows
+comme sous Linux.</p>
+<p>Tapez les commandes suivantes. 
+<code>sh
+nslookup localhost
+nslookup google.fr
+nslookup google.com</code>
+Pour trouver ses réponses <code>nslookup</code> procède en deux étapes:</p>
+<ul>
+<li>Il recherche tout d'abord si l'adresse de la machine recherchée a été
+  configuré de manière fixe par l'administrateur (résolution statique).</li>
+<li>Dans le cas contraire (ce qui est le plus fréquent), il interroge un
+  <em>serveur <abbr title="Domain Name System">DNS</abbr></em> (résolution dynamique). Nous reviendrons juste après sur
+  la façon de sélectionner ce serveur.</li>
+</ul>
+<p>L'administrateur de votre ordinateur peut configurer la résolution
+statique en éditant le fichier de configuration adéquat. Regardons ce 
+fichier (les lignes commençant par <code>#</code> sont des commentaires et ne sont
+donc pas prises en compte).</p>
+<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Windows</label><div class="tabbed-content">
+<p><code>shell
+type C:\Windows\System32\Drivers\etc\hosts</code></p>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Linux</label><div class="tabbed-content">
+<p><code>shell
+cat /etc/hosts</code></p>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Mac</label><div class="tabbed-content">
+<p><code>shell
+cat /etc/hosts</code></p>
+</div>
+</div>
+<p>Il est très rare d'avoir à configurer statiquement la résolution <abbr title="Domain Name System">DNS</abbr>, et
+<strong>nous vous déconseillons de le faire</strong> sans bonne raison. En effet, il
+est possible que les résultats de la résolution changent pour
+différentes raisons, par exemple pour répartir la charge d'un même site
+sur différents serveurs. Vous pouvez vous en apercevoir en faisant la
+même requête <code>nslookup google.com</code> à plusieurs minutes d'intervalle ou
+en confrontant vos résultats avec ceux d'autres collègues.</p>
+<p>Puisque la résolution statique est déconseillée, comment mon ordinateur
+sélectionne-t-il le serveur <abbr title="Domain Name System">DNS</abbr> à interroger? Faute de temps, il est
+difficile de rentrer dans les détails. Disons simplement que, quand elle
+démarre, votre machine récupère ses paramètres de configuration auprès
+d'un <em>serveur <a href="../glossaire/#dhcp"><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></a></em> qui lui communique notamment
+l'adresse d'un ou plusieurs serveur <abbr title="Domain Name System">DNS</abbr>. Si vous êtes à la maison, le
+serveur <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> tourne sur votre "Box Internet" et le serveur <abbr title="Domain Name System">DNS</abbr> qui vous
+est proposé est géré par votre fournisseur d'accès internet.</p>
+<p>La gestion du <abbr title="Domain Name System">DNS</abbr> peut revêtir un intérêt stratégique. N'oublions pas 
+que ce sont les états qui accordent aux opérateurs télécoms les licences
+qui les autorisent à opérer. Par ce biais, il leur est facile de limiter
+l'accès à certains sites. Prenons l'exemple du site <code>sci-hub.se</code> qui 
+donne accès à des publications scientifiques en contournant les droits
+des maisons d'édition.</p>
+<p>Faites une recherche <abbr title="Domain Name System">DNS</abbr> pour trouver l'adresse <abbr title="Internet Protocol">IP</abbr> de ce site:
+<code>sh
+nslookup sci-hub.se</code>
+En analysant la réponse de cette commande, vous devriez voir qu'elle ne 
+vous retourne pas l'adresse demandée.</p>
+<p>Reprenons la même requête mais en la dirigeant vers un le célèbre 
+serveur <abbr title="Domain Name System">DNS</abbr> de Google dont l'adresse <abbr title="Internet Protocol">IP</abbr> est <code>8.8.8.8</code>:
+<code>sh
+nslookup sci-hub.se 8.8.8.8</code>
+Vous devriez obtenir une adresse valide cette fois-ci.</p>
+<p>Conclusion: Même si ce n'est pas le seul, le blocage de résolution <abbr title="Domain Name System">DNS</abbr>
+est un moyen couramment utilisé pour empêcher l'accès à des sites
+internet.</p>
+<!-- 
+### La résolution ARP
+
+**<a class="text-danger">TODO:  Probablement Hors scope (faute de
+temps). Peut-être à proposer comme une activité bonus à faire par les
+plus motivés/compétents entre les deux séances. </a>**
+
+note pour installer arp depuis linux `sudo apt install net-tools`
+ -->
+
+<h2 id="ip-publique-ip-privee"><abbr title="Internet Protocol">IP</abbr> publique / <abbr title="Internet Protocol">IP</abbr> privée</h2>
+<p>Dans les parties précédentes, vous avez noté les différentes adresses <abbr title="Internet Protocol">IP</abbr>
+attribuées à votre machine. Les résultats dépendent fortement de votre
+réseau et de votre machine. Vous avez également vu que la commande 
+<code>ping</code> permet de tester la connectivité avec une machine identifiée par 
+son adresse <abbr title="Internet Protocol">IP</abbr>. </p>
+<p>Dans cette partie, commencez par tester la connectivité avec les
+différentes adresses <abbr title="Internet Protocol">IP</abbr> des autres membres de votre groupe.</p>
+<p>Y-êtes vous arrivé·e? Probablement pas :-( Si ça a marché, il y a de
+fortes chance que ce soit avec des adresses IPv6. Essayons de
+comprendre...</p>
+<h3 id="un-peu-de-theorie">Un peu de théorie...</h3>
+<p>Il existe deux version du protocole <abbr title="Internet Protocol">IP</abbr>: IPv4 et IPv6. La principale
+raison de l'introduction d'IPv6 est la pénurie d'adresses IPv4. En
+effet, les adresses IPv4 sont codées sur 4 octets (<code>w.x.y.z</code>). Cela
+permet un peu plus de 4 milliards d'adresses. Ce nombre s'est révélé
+insuffisant pour adresser directement l'ensemble des équipements
+connectés à l'Internet. IPv6 a résolu le problème en codant les adresses
+sur 16 octets soit plus de <span class="arithmatex"><span class="MathJax_Preview">10^{38}</span><script type="math/tex">10^{38}</script></span> adresses. Mais le passage d'IPv4 à
+IPv6 va prendre du temps et nous allons devoir vivre avec le double
+système pendant un certain temps...</p>
+<h4 id="ipv4-et-nat">IPv4 et <abbr title="Network Address Translation">NAT</abbr></h4>
+<p>Les protocoles <a href="../glossaire/#nat"><abbr title="Network Address Translation">NAT</abbr></a> ont été imaginés pour de palier
+le manque d'adresses IPv4. Sans approfondir, disons simplement que <abbr title="Network Address Translation">NAT</abbr>
+permet à un routeur (typiquement votre box d'accès Internet) de "prêter"
+son adresse <abbr title="Internet Protocol">IP</abbr> aux équipements de son réseau. Votre ordinateur dispose
+de sa propre adresse pour communiquer avec les autres équipements (dont
+la box) au sein du réseau local mais cette adresse est choisie dans une
+plage particulière dite d'<em>adresses privées</em> (par exemple les plages
+<code>192.168.x.y</code>  ou <code>10.x.y.z</code>). Chacun peut construire son réseau local
+en utilisant ces adresses. Mais pour éviter les conflits d'adresse, il
+n'est pas possible d'utiliser une adresse privée pour communiquer sur
+l'Internet (les routeurs de l'internet ne traitent pas ces adresses).
+Pour aller sur Internet, il faut donc utiliser une <em>adresse <abbr title="Internet Protocol">IP</abbr> publique</em>
+mais c'est cette ressource qui est limitée en IPv4. Votre fournisseur
+d'accès à Internet attribue donc une IPv4 publique à votre box qui peut
+alors la prêter aux autres équipements en utilisant le protocole <abbr title="Network Address Translation">NAT</abbr>.</p>
+<p>Lorsque vous avez demandé ses adresses IPv4 à votre machine, vous avez
+logiquement récupéré ses adresses privées puisque votre machine ne
+connaît l'<abbr title="Internet Protocol">IP</abbr> publique votre box. Comme ces adresses ne sont pas
+routables sur l'Internet, il est logique que vous n'ayez pas réussi à
+faire un ping avec elles.</p>
+<h4 id="et-en-ipv6">Et en IPv6 ?</h4>
+<p>En IPv6, il n'y a pas de pénurie d'adresses, les IPv6 des machines sont
+donc généralement publiques par défaut (sauf celles que l'on veut
+volontairement être non routables comme celles commençant par <code>fe80:</code>).
+Le ping entre deux adresses IPv6 devrait donc fonctionner en général.</p>
+<p>Mais pour que cela fonctionne, il faut encore que les fournisseurs
+d'accès à Internet des deux machines implémentent effectivement IPv6, ce
+qui n'est pas toujours le cas... </p>
+<h4 id="en-quoi-est-ce-un-probleme">En quoi est-ce un problème ?</h4>
+<p>Comme vous pouvez le constater, le fait de n'avoir une <abbr title="Internet Protocol">IP</abbr> publique que
+sur votre box ne vous empêche pas de vous connecter à Internet. Le
+problème se pose lorsque vous voulez exposer un service sur Internet
+(autrement dit: héberger un serveur). Dans ce cas, il faut bien que vous
+disposiez d'une adresse publique pour que vos clients s'y connectent. De
+la même façon, qu'elle peut vous prêter son <abbr title="Internet Protocol">IP</abbr> pour sortir sur Internet,
+votre box peut faire suivre le trafic qu'elle reçoit vers l'un de vos
+serveurs. Mais cela induit de nombreuses complications, à commencer par
+le fait que vous ne pourrez héberger qu'un seul serveur car vous ne
+disposez que d'une seule <abbr title="Internet Protocol">IP</abbr> publique. D'autre part, cela suppose que
+votre fournisseur d'accès vous attribue systématiquement la même adresse
+<abbr title="Internet Protocol">IP</abbr> publique (on parle alors d'<em><abbr title="Internet Protocol">IP</abbr> fixe</em>), ce qui n'est pas forcément
+toujours le cas compte tenu de la pénurie d'adresses.</p>
+<h3 id="un-peu-de-pratique">Un peu de pratique...</h3>
+<h4 id="comment-connaitre-lip-publique-de-ma-box">Comment connaître l'<abbr title="Internet Protocol">IP</abbr> publique de ma box ?</h4>
+<p>Différents sites internet vous permettent de connaître votre adresse <abbr title="Internet Protocol">IP</abbr>
+publique. Il s'agit généralement de serveurs Web qui affichent l'adresse
+source des paquets <abbr title="Internet Protocol">IP</abbr> que vous leur envoyez. </p>
+<p>Nous vous proposons d'utiliser le site
+<a href="http://ip.lafibre.info/" target="_blank">http://ip.lafibre.info/</a> car il
+affiche plusieurs informations intéressantes (notamment l'IPv4 et
+l'IPv6).</p>
+<p>Ouvrez le lien dans votre navigateur et notez notamment les
+informations suivantes (conservez les quelque part):</p>
+<ul>
+<li>votre adresse IPv4 publique, si vous en avez une </li>
+<li>votre adresse IPv6 publique, si vous en avez une </li>
+<li>les noms associés à ces adresses (résultat des requêtes reverse <abbr title="Domain Name System">DNS</abbr> )</li>
+</ul>
+<p>Comparez ces adresses avec celles que vous aviez récupérées localement
+sur votre machine. Vous devriez constater que </p>
+<ul>
+<li>L'IPv4 publique est différente de l'IPv4 de votre machine (car votre
+  box a utilisé <abbr title="Network Address Translation">NAT</abbr> pour remplacer votre <abbr title="Internet Protocol">IP</abbr> privée par son <abbr title="Internet Protocol">IP</abbr> publique).</li>
+<li>Si vous avez de l'IPv6, il est fort probable que l'une des adresses
+  IPv6 de votre machine corresponde exactement à celle affichée par le
+  site. Cela signifie que votre machine est directement accessible
+  depuis l'internet (il est donc possible d'y héberger un serveur en
+  IPv6).</li>
+</ul>
+<h4 id="trouver-les-meme-infos-via-une-api">Trouver les même infos via une <abbr title="Application Programming Interface">API</abbr></h4>
+<p>Le site <a href="https://www.myip.com" target="_blank">https://www.myip.com</a>
+offre le même type d'informations (votre adresse <abbr title="Internet Protocol">IP</abbr> publique). Mais il
+les fournit également sous la forme d'une <a href="../glossaire/#api"><abbr title="Application Programming Interface">API</abbr></a> Web
+accessible à l'adresse suivante:
+<a href="https://api.myip.com" target="_blank">https://api.myip.com</a>.</p>
+<p>Cette <a href="../glossaire/#url"><abbr title="Uniform Resource Locator">URL</abbr></a> renvoie des données structurées dans au
+format <a href="../glossaire/#json"><abbr title="Javascript Object Notation">JSON</abbr></a>. Ce format présente l'avantage d'être
+facilement compréhensible par des programmes informatiques.</p>
+<p>Accédez à <a href="https://api.myip.com" target="_blank">https://api.myip.com</a> à
+l'aide de votre navigateur Web et observez la réponse au format <abbr title="Javascript Object Notation">JSON</abbr>.</p>
+<p>Vous pouvez récupérer la même information depuis la ligne de commande en
+utilisant l'outil <code>curl</code> qui sert à effectuer des requêtes HTTP.</p>
+<p><code>shell
+curl https://api.myip.com</code></p>
+<p>Note: Avec <code>curl</code>, vous pouvez utiliser les options <code>-4</code> ou <code>-6</code> pour
+imposer des requêtes respectivement en IPv4 ou IPv6. Par exemple, si
+vous avez une connexion IPv6, la commande suivante devrait retourner
+votre IPv6 publique: <code>curl -6 https://api.myip.com</code>.</p>
+<h4 id="tester-la-connectivite-sur-monmes-ip-publiques">Tester la connectivité sur mon(mes) <abbr title="Internet Protocol">IP</abbr> publique(s)</h4>
+<p>Maintenant que chacun·e a récupéré son(ses) <abbr title="Internet Protocol">IP</abbr> publique(s), essayez de 
+"pinguer" celles de vos collègues. Cela devait fonctionner désormais.</p>
+<p><em>Note</em>: La situation n'est pas exactement la même en IPv4 qu'en IPv6. En
+IPv4, les requêtes arrivent sur la box internet de votre correspondant,
+c'est donc elle qui y répond. Alors qu'en IPv6, elles arrivent
+directement sur la machine cible. Bien que cela dépasse le cadre de
+cette activité, les utilisateurs les plus avancés peuvent l'observer en
+utilisant un outil d'analyse de trafic comme
+<a href="https://www.wireshark.org/" target="_blank">Wireshark</a> sur la cible de
+la requête. Vous devriez observer le trafic ping en IPv6 (puisqu'il
+atteint la machine) mais pas en IPv4 (car c'est la box qui y répond).</p>
+<h4 id="remarques-plus-avances-sur-lipv6">Remarques plus avancés sur l'IPv6</h4>
+<p>En IPv6, vous disposez généralement de plusieurs adresses <abbr title="Internet Protocol">IP</abbr>
+(trois, typiquement):</p>
+<ul>
+<li>L'une est dite <em>temporaire</em>. C'est celle dont se sert la machine pour
+  faire des requêtes vers d'autres serveurs. Cette adresse change
+  périodiquement afin de limiter la possibilité de vous pister.
+  Attention! cela ne vous garantit en aucun cas l'anonymat!</li>
+<li>Une adresse qui ne change pas au cours du temps. C'est cette adresse
+  qu'il faut utiliser si pour héberger vos propres serveurs. En effet,
+  il vaut mieux que l'adresse des serveurs ne change pas trop au cours
+  du temps, sinon ils risque d'être difficiles à trouver (même s'il l'on
+  peu y arriver en mettant à jour le <abbr title="Domain Name System">DNS</abbr>).</li>
+<li>Une adresse dite de <em>lien local</em> et qui commence en <code>fe80::</code>. Celle-ci
+  est uniquement destinée aux communications avec les machines
+  directement reliées sur le même câble. Nous n'en dirons pas plus, si
+  ce n'est qu'elle n'offre pas de connectivité internet puisqu'elle
+  n'est pas routable sur l'Internet.</li>
+</ul>
+<p>Vous noterez que les deux premières adresses commencent de la même
+façon. Plus exactement, ont dit qu'elles ont le même <em>préfixe</em>. Ce
+préfixe a typiquement une longueur de 64 bits (soit 8 octets). Si en
+IPv4, les fournisseurs d'accès ne fournissent qu'une seule <abbr title="Internet Protocol">IP</abbr> publique,
+en IPv6 en revanche, chaque client se voit attribuer une large plage
+d'adresses qui ont toutes le même préfixe. Les adresses IPv6 ayant une
+taille de 128 bits et si l'on fixe les 64 premiers bits pour le préfixe,
+il reste 64 bits pour numéroter des machines soit <span class="arithmatex"><span class="MathJax_Preview">2^{64}</span><script type="math/tex">2^{64}</script></span>, c'est à dire
+plus de <span class="arithmatex"><span class="MathJax_Preview">10^{19}</span><script type="math/tex">10^{19}</script></span> adresses pour chaque client! Autant dire que la
+pénurie d'adresse est résolue!</p>
+<h4 id="manipulations-avances-en-ipv6-et-ipv4">Manipulations avancés en IPv6 (et IPv4)</h4>
+<p>Pour les utilisat·rice·eur·s un peu avancé·e·s, il est assez simple de
+tester l'exposition d'un service sur Internet. cela suppose:</p>
+<ul>
+<li>d'installer et lancer un serveur sur votre machine, </li>
+<li>le cas échéant, de configurer le firewall de votre machine pour
+  accepter les connexions entrantes</li>
+<li>si vous êtes en IPv4 uniquement (pas d'IPv6) ou si vous voulez que le
+  service soit accessible en IPv4, il faudra également configurer votre
+  box que qu'elle fasse suivre (<em>port forwading</em>) le trafic des ports
+  TCP et/ou UDP concernés (par exemple TCP port 80 pour un serveur web
+  http) vers la machine où est installé le serveur</li>
+</ul>
+<p>Attention à ce que vous faites! Pensez à arrêter vos serveurs et à
+refermer les différents ports à la fin de vos expérimentations.</p>
+<p>Certaines de ces activités nécessiteront les droits administrateurs.</p>
+<p>Pour vous entraîner, vous pouvez par exemple installer:</p>
+<ul>
+<li>un serveur web, par exemple
+  <a href="https://www.apachefriends.org/fr/index.html" target="_blank">XAMPP</a>
+  sous windows ou bien <code>apache</code> ou <code>nginx</code> sous linux</li>
+<li>ou simplement <code>netcat</code> (linux) ou
+  <a href="http://nmap.org/ncat/" target="_blank"><code>ncat</code></a> sous windows qui
+  permettent de lancer un serveur et de s'y connecter sur n'importe quel
+  port</li>
+<li>et même installer un serveur <code>ssh</code> qui vous permettra d'exécuter des
+  commandes à distance sur votre machine. Attention toutefois à bien
+  sécuriser vos accès!</li>
+<li>Vous pouvez aussi développer votre propre serveur, pas exemple en
+  utilisant les librairies Python
+  <a href="https://palletsprojects.com/p/flask/" target="_blank">Flask</a> ou
+  <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a>. Il est ainsi
+  assez facile de développer une <abbr title="Application Programming Interface">API</abbr> permettant de lancer des actions en
+  fonction des requêtes reçues.</li>
+</ul>
+<!-- 
+**<p class="text-danger">TODO: REDISCUTER DES CONTENUS (cf. ci-dessous)</p>**
+
+## Autre activité possible: découvrir les paramètres réseau de la machine
+### Les paramètres nécessaires 
+
+**<p class="text-danger">TODO: L'idée originale était de parler des paramètres 
+de config réseau de base d'une machine: IP, masque, routeur par défaut et DNS.
+Mais n'est ca pas un peu compliqué? :-(</p>**
+
+* @IP (v4, v6, les 2)
+* masque: aie! il va falloir faire simple pour éviter de perdre tout le monde un peu compliqué 
+* Routeur par défaut 
+* serveur DNS
+
+**<p class="text-danger">TODO: Ce serait peut-être possible de le faire
+dans un simulateur comme Filius</p>**
+
+### Comment déterminer ces paramètres? 
+
+Configuration manuelle ou dynamique via DHCP
+
+note: DHCP est très utilisé en IPv4. Il est également disponible en IPv6
+mais est beaucoup moins utilisé dans ce cas car IPv6 fournit un nouveau
+système d'auto-configuration d'adresse qui permet de se passer de
+serveur DHCP
+
+
+## Autre activité possible (pour les plus avancés): Développement d'une API en Flask
+
+On pourrait donner un squelette de programme Python mettant en place un
+début d'API. Ils pourraient alors ajouter une URI pour déclencher une
+action, par exemple:
+
+* déclencher un son
+* afficher le message de texte reçu dans une fenêtre
+* .... --></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

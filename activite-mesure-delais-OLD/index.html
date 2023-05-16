@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/activite-mesure-delais-OLD/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Mesure des délais sur Internet - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-filius/" class="dropdown-item">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-config-machine/" class="dropdown-item">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="../activite-mesure-delais/" class="dropdown-item">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossaire/" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#mesure-des-delais-sur-internet" class="nav-link">Mesure des délais sur Internet</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#rappel-theoriques" class="nav-link">Rappel théoriques</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#modele-propose" class="nav-link">Modèle proposé</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#protocole-experimental" class="nav-link">Protocole expérimental</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mesures" class="nav-link">Mesures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mesure-des-delais-sur-internet">Mesure des délais sur Internet</h1>
+<p>La notion de délai est l'une des métriques importantes
+permettant de caractériser les performances des systèmes de
+communication. De nombreux paramètres influent sur les délais et leur
+variation au cours du temps (jitter).</p>
+<p>Les sources de délai les plus courantes sont les suivantes:</p>
+<ul>
+<li>Le <strong>temps de propagation</strong> est le temps mis par un signal pour aller
+  d'un point à un autre (cf. section suivante)</li>
+<li>La <strong>durée d'émission</strong> est le temps nécessaire pour émettre un
+  certain volume d'informations à un débit donné (cf. section suivante)</li>
+<li>Le <strong>temps de traitement</strong> est le temps pris par les différents
+  équipements traversés pour réaliser les traitements nécessaires à
+  l'acheminement des messages.</li>
+<li>Les <strong>congestions</strong> sont liées à des situations où l'afflux de
+  messages entrants est supérieur à la capacité de sortie d'un
+  équipement du réseau. Les afflux ponctuels peuvent être traités grâce
+  à des files d'attente. Cependant cela a un impact fort sur la latence
+  de bout en bout. 
+  L'une des raisons des congestions est la mutualisation des liaisons 
+  entre les différents utilisateurs.</li>
+<li>Lorsque des erreurs se produisent, il peut être nécessaire de
+  <strong>re-transmettre</strong> les messages perdus. Cela constitue une évidente
+  source de retard. </li>
+</ul>
+<p>Dans cette activité, nous allons nous focaliser sur le temps de
+propagation (principalement) et la durée d'émission (un peu). Nous
+commencerons par quelques rappels de formalisation puis nous essaierons
+de réaliser quelques mesures sur l'Internet et de les analyser. </p>
+<h2 id="rappel-theoriques">Rappel théoriques</h2>
+<h3 id="temps-de-propagation">Temps de propagation</h3>
+<p>Le <em>temps de propagation</em> (<span class="arithmatex"><span class="MathJax_Preview">t_p</span><script type="math/tex">t_p</script></span>) est le temps mis par un signal pour
+aller d'un point à un autre. Il dépend de la distance (<span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>) à parcourir
+et de la <em>vitesse de propagation</em> (<span class="arithmatex"><span class="MathJax_Preview">v_p</span><script type="math/tex">v_p</script></span>) dans le milieu considéré. Ces
+trois paramètres sont liés par la relation suivante (qui dérive
+directement de l'équation aux dimensions).</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">v_p = \frac{d}{t_p}</span><script type="math/tex">v_p = \frac{d}{t_p}</script></span>, soit <span class="arithmatex"><span class="MathJax_Preview">t_p = \frac{d}{v_p}</span><script type="math/tex">t_p = \frac{d}{v_p}</script></span></p>
+<p>À noter que pour les ondes électromagnétiques, la vitesse de propagation
+est liée à la vitesse de la lumière (<span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>) et l'indice de propagation du
+milieu considéré. Le tableau ci-dessous donne quelques ordres de
+grandeurs. Notez que les ondes radio se propagent plus rapidement que la
+lumière dans une fibre optique!</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th>Milieu</th>
+<th>Indice</th>
+<th>Vitesse de propagation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Signal radio</td>
+<td>air</td>
+<td>1</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">3.10^{8}~m.s^{-1}</span><script type="math/tex">3.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">Signal optique</td>
+<td>fibre</td>
+<td>0.66</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">2.10^{8}~m.s^{-1}</span><script type="math/tex">2.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">Signal électrique</td>
+<td>cuivre</td>
+<td>0.66</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">2.10^{8}~m.s^{-1}</span><script type="math/tex">2.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">son</td>
+<td>air</td>
+<td></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">340~m.s^{-1}</span><script type="math/tex">340~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">son</td>
+<td>eau</td>
+<td></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">1500~m.s^{-1}</span><script type="math/tex">1500~m.s^{-1}</script></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="duree-demission">Durée d'émission</h3>
+<p>La <em>durée d'émission</em> (<span class="arithmatex"><span class="MathJax_Preview">t_e</span><script type="math/tex">t_e</script></span>) d'un message dépend de sa taille (<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>, en
+bits) et du débit (<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> en bits/secondes). De même que précédemment, on
+retrouve la relation entre ces trois grandeurs à partir de l'équation 
+aux dimensions du débit.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">D = \frac{L}{t_e}</span><script type="math/tex">D = \frac{L}{t_e}</script></span> soit <span class="arithmatex"><span class="MathJax_Preview">t_e = \frac{L}{D}</span><script type="math/tex">t_e = \frac{L}{D}</script></span></p>
+<p>Attention à ne pas tomber dans le piège classique de la confusion entre
+les bits et les octets. Les volumes de données (par exemple la taille
+d'un fichier) sont traditionnellement exprimés en octets, alors que les 
+débits sont typiquement exprimés en bits/seconde. Il ne faut donc pas 
+oublier le facteur 8 pour convertir les octets en seconde...</p>
+<h2 id="modele-propose">Modèle proposé</h2>
+<p>Dans cette activité, nous allons considérer un modèle basique basé sur 
+des hypothèses simples:</p>
+<ul>
+<li>Nous ne considérerons que deux sources de délai: le temps de
+  propagation et la durée d'émission</li>
+<li>Nous ignorerons donc les temps de traitements ainsi que les
+  éventuelles congestions ou re-transmissions</li>
+<li>De plus, nous considérerons que le type de signal et le débit du lien
+  sont identiques tout au long du parcours.</li>
+</ul>
+<p>Notons, que ces hypothèses reviennent à considérer que la source est
+reliée directement à la destination par une liaison dédiée ne comportant
+aucun équipement actif.</p>
+<p>On définit le <em>délai de transmission</em> (<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>) comme le temps entre
+l'émission du premier bit d'un message (de <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> bits) et la reception du
+dernier bit de ce message par son destinataire.</p>
+<p>Dans nos hypothèses, le délai de transmission (<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>) est la somme du
+temps de propagation et du temps d'émission. Nous avons donc:</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">t = t_p+t_e =  \frac{d}{v_p} + \frac{L}{D}</span><script type="math/tex">t = t_p+t_e =  \frac{d}{v_p} + \frac{L}{D}</script></span></p>
+<h2 id="protocole-experimental">Protocole expérimental</h2>
+<p>Nous allons chercher à caractériser le <em>débit moyen</em> (<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>) et le temps
+de propagation (<span class="arithmatex"><span class="MathJax_Preview">t_p</span><script type="math/tex">t_p</script></span>) de notre liaison en faisant une série de pings.</p>
+<p>Rappelons que ping nous donne une mesure du temps d'aller retour (ou <abbr title="Round Trip Time">RTT</abbr>
+pour Round Trip Time) entre la source de notre message et sa
+destination.</p>
+<h3 id="estimation-du-temps-demission">Estimation du temps d'émission</h3>
+<p>Remarquons tout d'abord que temps de propagation ne dépend pas de la
+taille des paquets transmis. À partir de notre modèle (<span class="arithmatex"><span class="MathJax_Preview">t = t_p+t_e</span><script type="math/tex">t = t_p+t_e</script></span>),
+il est donc possible d'isoler l'effet du temps de propagation en faisant
+la différence entre les délais de transmission mesurés pour deux tailles
+de paquet différentes.</p>
+<p>Par exemple, si l'on appelle <span class="arithmatex"><span class="MathJax_Preview">t_{1}</span><script type="math/tex">t_{1}</script></span> et <span class="arithmatex"><span class="MathJax_Preview">t_{2}</span><script type="math/tex">t_{2}</script></span> les temps de
+transmission mesurés respectivement pour des paquets de taille <span class="arithmatex"><span class="MathJax_Preview">L_1</span><script type="math/tex">L_1</script></span> et
+<span class="arithmatex"><span class="MathJax_Preview">L_2</span><script type="math/tex">L_2</script></span>, la différence de temps de transmission (<span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span>) est égale à
+celle des durée d'émission.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\Delta  = t_{1} - t_{2} = (t_p + t_{e1}) - (t_p + t_{e2}) = t_{e1}- t_{e2}</span><script type="math/tex">\Delta  = t_{1} - t_{2} = (t_p + t_{e1}) - (t_p + t_{e2}) = t_{e1}- t_{e2}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\Delta  = \frac{L_{1}}{D} - \frac{L_{2}}{D}</span><script type="math/tex">\Delta  = \frac{L_{1}}{D} - \frac{L_{2}}{D}</script></span></p>
+<p>Soit <span class="arithmatex"><span class="MathJax_Preview">D = \frac{L_{1} - L_{2}}{\Delta} = \frac{L_{1} - L_{2}}{t_1 - t_2}</span><script type="math/tex">D = \frac{L_{1} - L_{2}}{\Delta} = \frac{L_{1} - L_{2}}{t_1 - t_2}</script></span></p>
+<h2 id="mesures">Mesures</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/activite-mesure-delais/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Mesures de délais - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-filius/" class="dropdown-item">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-config-machine/" class="dropdown-item">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossaire/" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#mesure-des-delais-sur-internet" class="nav-link">Mesure des délais sur Internet</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#rappel-theoriques" class="nav-link">Rappel théoriques</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#modele-propose" class="nav-link">Modèle proposé</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#protocole-experimental" class="nav-link">Protocole expérimental</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mesures-de-rtt-et-estimation-de-la-distance" class="nav-link">Mesures de RTT et estimation de la distance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#evaluation-du-modele" class="nav-link">Évaluation du modèle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#etude-des-ecarts-du-modele" class="nav-link">Étude des écarts du modèle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#traceroute" class="nav-link">Traceroute</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mesure-des-delais-sur-internet">Mesure des délais sur Internet</h1>
+<p>La notion de délai est l'une des métriques importantes
+permettant de caractériser les performances des systèmes de
+communication. De nombreux paramètres influent sur les délais et leur
+variation au cours du temps (jitter).</p>
+<p>Cette activité, a plusieurs objectifs:</p>
+<ul>
+<li>connaître les facteurs influençant les délais dans les réseaux</li>
+<li>utiliser des outils simples pour estimer la latence</li>
+<li>décrire et appliquer une démarche scientifique dans le cadre d'un
+  protocole expérimental simple</li>
+</ul>
+<h2 id="rappel-theoriques">Rappel théoriques</h2>
+<p>Les sources de délai les plus courantes sont les suivantes:</p>
+<ul>
+<li>Le <strong>temps de propagation</strong> est le temps mis par un signal pour aller
+  d'un point à un autre (cf. section suivante).</li>
+<li>La <strong>durée d'émission</strong> est le temps nécessaire pour émettre un
+  certain volume d'informations à un débit donné (cf. section suivante).</li>
+<li>Le <strong>temps de traitement</strong> est le temps pris par les différents
+  équipements traversés pour réaliser les traitements nécessaires à
+  l'acheminement des messages.</li>
+<li>Les <strong>congestions</strong> sont liées à des situations où l'afflux de messages
+  entrants est supérieur à la capacité de sortie d'un équipement. L'une des
+  raisons des congestions est la mutualisation des liaisons entre différents
+  utilisateurs.
+  Les afflux ponctuels peuvent être absorbés dans des files d'attente.
+  Cependant cela a un impact fort sur la latence de bout en bout. </li>
+<li>Lorsque des erreurs se produisent, il peut être nécessaire de
+  <strong>re-transmettre</strong> les messages perdus. Cela constitue une évidente
+  source de retard. </li>
+</ul>
+<p>Dans cette activité, nous allons nous focaliser sur le temps de
+propagation. Nous commencerons par quelques rappels de formalisation
+puis nous essaierons de réaliser quelques mesures sur l'Internet et de
+les analyser. </p>
+<h3 id="temps-de-propagation">Temps de propagation</h3>
+<p>Le <em>temps de propagation</em> (<span class="arithmatex"><span class="MathJax_Preview">t_p</span><script type="math/tex">t_p</script></span>) est le temps mis par un signal pour
+aller d'un point à un autre. Il dépend de la distance (<span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>) à parcourir
+et de la <em>vitesse de propagation</em> (<span class="arithmatex"><span class="MathJax_Preview">v_p</span><script type="math/tex">v_p</script></span>) dans le milieu considéré. Ces
+trois paramètres sont liés par la relation suivante (qui dérive
+directement de l'équation aux dimensions).</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">v_p = \frac{d}{t_p}</span><script type="math/tex">v_p = \frac{d}{t_p}</script></span>, soit <span class="arithmatex"><span class="MathJax_Preview">t_p = \frac{d}{v_p}</span><script type="math/tex">t_p = \frac{d}{v_p}</script></span></p>
+<p>À noter que pour les ondes électromagnétiques, la vitesse de propagation
+est liée à la vitesse de la lumière (<span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>) et à l'indice de propagation
+du milieu considéré. Le tableau ci-dessous donne quelques ordres de
+grandeurs. Notez que les ondes radio se propagent plus rapidement que la
+lumière dans une fibre optique!</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th>Milieu</th>
+<th>Indice</th>
+<th>Vitesse de propagation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Signal radio</td>
+<td>air</td>
+<td>1</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">3.10^{8}~m.s^{-1}</span><script type="math/tex">3.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">Signal optique</td>
+<td>fibre</td>
+<td>0.66</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">2.10^{8}~m.s^{-1}</span><script type="math/tex">2.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">Signal électrique</td>
+<td>cuivre</td>
+<td>0.66</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">2.10^{8}~m.s^{-1}</span><script type="math/tex">2.10^{8}~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">son</td>
+<td>air</td>
+<td></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">340~m.s^{-1}</span><script type="math/tex">340~m.s^{-1}</script></span></td>
+</tr>
+<tr>
+<td align="left">son</td>
+<td>eau</td>
+<td></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">1500~m.s^{-1}</span><script type="math/tex">1500~m.s^{-1}</script></span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="duree-demission">Durée d'émission</h3>
+<p>La <em>durée d'émission</em> (<span class="arithmatex"><span class="MathJax_Preview">t_e</span><script type="math/tex">t_e</script></span>) d'un message dépend de sa taille (<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>, en
+bits) et du débit (<span class="arithmatex"><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>, en bits/secondes). De même que précédemment, on
+retrouve la relation entre ces trois grandeurs à partir de l'équation 
+aux dimensions du débit.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">D = \frac{L}{t_e}</span><script type="math/tex">D = \frac{L}{t_e}</script></span> soit <span class="arithmatex"><span class="MathJax_Preview">t_e = \frac{L}{D}</span><script type="math/tex">t_e = \frac{L}{D}</script></span></p>
+<p>Attention à ne pas tomber dans le piège classique de la confusion entre
+les bits et les octets. Les volumes de données (par exemple la taille
+d'un fichier) sont traditionnellement exprimés en octets, alors que les 
+débits sont typiquement exprimés en bits/seconde. Il ne faut donc pas 
+oublier le facteur 8 pour convertir les octets en bits...</p>
+<h3 id="illustration-video">Illustration vidéo</h3>
+<p>La vidéo ci-dessous illustre ces notions. </p>
+<p>Les liaisons bleues et jaunes fonctionnent à <span class="arithmatex"><span class="MathJax_Preview">1~Mb/s</span><script type="math/tex">1~Mb/s</script></span> alors que la liaison
+rouge est à <span class="arithmatex"><span class="MathJax_Preview">5~Mb/s</span><script type="math/tex">5~Mb/s</script></span>. La longueur des traits figurant les paquets
+représente la durée d'émission. Elle est bien 5 fois plus courte pour la
+liaison rouge.</p>
+<p>La distance <span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span> est identique sur les liaisons bleue et rouge. Le temps
+de propagation (c'est à dire le temps de parcours du 1er bit par ex.)
+est donc identique.</p>
+<p>Sur la liaisons jaune en revanche, la distance est plus courte. Le temps
+de propagation est donc plus court également.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yZi5g39pad0" 
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="modele-propose">Modèle proposé</h2>
+<p>Dans cette activité, nous allons considérer un modèle basique basé sur 
+des hypothèses simples:</p>
+<ul>
+<li>Nous ne considérerons qu'une seule source de délai: le temps de
+  propagation</li>
+<li>Nous ignorerons donc les durées d'émission, les temps de traitements
+  ainsi que les éventuelles congestions ou re-transmissions</li>
+<li>De plus, nous considérerons que le type de signal (et donc la vitesse
+  de propagation) est identique tout au long du parcours.</li>
+</ul>
+<p>Ces hypothèses reviennent à considérer que la source est reliée
+directement à la destination par une liaison dédiée ne comportant aucun
+équipement actif.</p>
+<h3 id="justification-des-hypotheses">Justification des hypothèses</h3>
+<p>Soyons clairs, la motivation principale de ces hypothèses est de
+simplifier la mise en oeuvre de l'activité. D'autant que la précision de
+mesure des ordinateurs dont vous disposez reste limitée. </p>
+<p>Concernant les erreurs, nous pouvons faire l'hypothèse raisonnable
+qu'elles sont peu fréquentes et qu'elles se matérialiseront par des
+mesures aberrantes que nous pourrons écarter facilement. C'est une
+approche couramment admise en sciences expérimentales. </p>
+<p>Par ailleurs, nous n'avons aucun contrôle sur l'apparition des
+congestions sur l'Internet. Là encore, nous tâcherons d'écarter les
+mesures aberrantes. Notons également que, même si nous n'avons pas le
+temps d'approfondir cette question, la taille des files d'attente est
+généralement relativement limitée afin d'éviter de trop longues
+attentes. La contrepartie est que, lorsque leur file d'attente est
+pleine, les équipements détruisent les paquets en surplus. Cela revient
+donc générer des erreurs de transmission.</p>
+<p>L'ignorance de la durée d'émission est plus discutable. En effet, le
+phénomène est indéniablement présent et modélisable (cf. § précédent).
+Dans la version initiale de cette activité, il était même prévu de vous
+faire estimer ce temp. Cependant, la précision des machines à
+disposition (en particulier sous Windows) ne permettrait pas de tirer
+facilement de conclusions. N'hésitez pas en discuter entre vous et avec
+les formateurs! Posez vous notamment la question de savoir à partir de
+quel débit le temps d'émission peut être considéré comme négligeable vis
+à vis des autres sources de délai...</p>
+<p>Quoi qu'il en soit un modèle est forcément une abstraction simplifiée de
+la réalité. L'essentiel est d'avoir conscience de ses limites.</p>
+<h2 id="protocole-experimental">Protocole expérimental</h2>
+<p>Nous allons chercher à caractériser le temps de propagation (<span class="arithmatex"><span class="MathJax_Preview">t_p</span><script type="math/tex">t_p</script></span>) de
+notre liaison en faisant une série de pings.</p>
+<p>Rappelons que <code>ping</code> nous donne une mesure du temps d'aller retour (ou
+<abbr title="Round Trip Time">RTT</abbr>) entre la source de notre message et sa destination. </p>
+<p>Nous allons mesurer le <abbr title="Round Trip Time">RTT</abbr> vers différents serveurs de l'Internet, en
+déduire le temps de propagation puis évaluer leur distance par
+rapport à nous. </p>
+<p>Ensuite, nous chercherons à évaluer la pertinence notre modèle en le 
+confrontant à la réalité.</p>
+<h2 id="mesures-de-rtt-et-estimation-de-la-distance">Mesures de <abbr title="Round Trip Time">RTT</abbr> et estimation de la distance</h2>
+<p>Commençons par mesurer le <abbr title="Round Trip Time">RTT</abbr> vers différents serveurs de la planète à
+l'aide de la commande <code>ping</code>. Ciblez par exemple les serveurs suivants
+(libre à vous d'enrichir la liste!):</p>
+<ul>
+<li>le serveur de L'Institut Mines-Télécom à Paris: <code>imt.fr</code></li>
+<li>le serveur de l'université de Berkeley (Californie): <code>berkeley.edu</code></li>
+<li>le site officiel de la ville de Pékin: <code>www.beijing.gov.cn</code></li>
+<li>le site officiel de la ville de Singapour: <code>www.gov.sg</code></li>
+</ul>
+<p>Notez que, la première fois, le premier échange peut mettre un temps
+significativement plus long que les suivants. Essayez ce comprendre
+pourquoi et si cela se justifie, écartez cette mesure.</p>
+<p>À partir de notre modèle (<span class="arithmatex"><span class="MathJax_Preview">t_p = \frac{d}{v_p}</span><script type="math/tex">t_p = \frac{d}{v_p}</script></span>) estimez la distance
+vers chacun des nœuds testés. Cela revient à remplir le tableau
+ci-dessous. Notez vos réponses dans les premières colones du <a href="../activite-les-reseaux-c_est/" target="_blank">tableur
+collaboratif</a> fourni.
+Note: Vous aurez besoin de faire une hypothèse sur le type de liaison;
+cela fait partie du modèle.</p>
+<p>Les ordres de grandeur de vos résultats vous semblent-ils cohérents? À
+ce stade, si vous notez des incohérences que vous ne savez pas
+expliquer, notez les simplement. Nous en discuterons par la suite.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Cible</th>
+<th><abbr title="Round Trip Time">RTT</abbr>  (ms)</th>
+<th>Distance (km)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>imt.fr</code></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td align="left"><code>berkeley.edu</code></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td align="left"><code>www.beijing.gov.cn</code></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td align="left"><code>www.gov.sg</code></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td align="left">.....</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evaluation-du-modele">Évaluation du modèle</h2>
+<p>Afin de valider notre modèle, comparons nos résultats avec ceux fournis
+par une méthode complètement indépendante. Il se trouve que les
+géographes ont eux aussi des méthodes pour calculer la distance entre
+deux villes. </p>
+<p>Le site <a href="https://fr.distance.to/" target="_blank">distance.to</a> permet de
+mesurer la distance orthodromique (c'est à dire la distance à vol
+d'oiseau en suivant la courbure de la terre) entre deux villes du globe.
+Servez-vous en pour valider vos résultats et estimer la précision du
+modèle.</p>
+<h2 id="etude-des-ecarts-du-modele">Étude des écarts du modèle</h2>
+<h3 id="un-cas-aberrant">Un cas aberrant</h3>
+<p>Si tout s'est déroulé comme prévu, vous devriez avoir au moins une
+grosse anomalie concernant le site <code>www.gov.sg</code>. </p>
+<p>Depuis le départ, nous avons fait l'hypothèse implicite que le serveur
+du gouvernement de Singapour était hébergé à...Singapour. Mais nos
+mesures semblent contredire cette hypothèse. Devons nous mettre en cause
+notre modèle ou cette hypothèse sur la localisation du serveur?</p>
+<p>Le site <a href="https://www.iplocation.net" target="_blank">iplocation.net</a> (parmi beaucoup
+d'autres) permet de trouver la localisation géographique d'une adresse
+<abbr title="Internet Protocol">IP</abbr>. Il se base sur des données fournies par les fournisseurs d'accès à
+Internet. La précision de ces données varie suivant les fournisseurs et
+les bases de données, mais elles permettent souvent de se faire un idée
+(au moins à l'échelle d'un pays).</p>
+<p>Jouez avec <a href="https://www.iplocation.net" target="_blank">iplocation.net</a>
+pour:</p>
+<ul>
+<li>localiser votre propre adresse <abbr title="Internet Protocol">IP</abbr> publique</li>
+<li>localiser celle des sites qui donnaient des résultats aberrants avec
+  notre modèle</li>
+</ul>
+<p>Concernant <code>www.gov.sg</code>, notez qui est le propriétaire de l'adresse <abbr title="Internet Protocol">IP</abbr>.
+Connaissez-vous cette société? Savez-vous quelle est son activité?
+Discutez-en entre vous et avec les formateurs.</p>
+<h3 id="autre-facon-pour-localiser-une-machine">Autre façon pour localiser une machine</h3>
+<p>Les gros hébergeurs du cloud ont généralement l'habitude d'associer des
+noms <abbr title="Domain Name System">DNS</abbr> à chacune de leurs adresses <abbr title="Internet Protocol">IP</abbr>. Ces noms de machine sont
+destinés à être interprétés par des humains et comportent souvent des
+informations explicites sur leur localisation. </p>
+<p>Prenons l'exemple de <code>berkeley.edu</code>. Effectuons une requête <abbr title="Domain Name System">DNS</abbr> pour
+retrouver son adresse <abbr title="Internet Protocol">IP</abbr>.</p>
+<p><code>sh
+nslookup www.berkeley.edu</code> </p>
+<p>Effectuons maintenant la requête <abbr title="Domain Name System">DNS</abbr> inverse (qui donne le nom de
+machine en fonction de l'<abbr title="Internet Protocol">IP</abbr>):
+<code>sh
+nslookup &lt;Addresse_IP_récupérée_lors_de_la_requête_précédente&gt;</code> </p>
+<p>Vous devriez obtenir le nom complet de la machine. Avez-vous tou·te·s
+obtenu les mêmes résultats? Savez-vous expliquer pourquoi ce nom n'est
+pas simplement <code>berkeley.edu</code>? Discutez-en entre vous et avec les
+formateurs.</p>
+<p>Le nom de la machine devrait vous renseigner sur l'hébergeur de ce
+serveur et le site où se situe cette machine. Essayez de savoir où se
+situe précisément ce site et refaites le calcul de distance
+orthodromique pour affiner l'évaluation de la précision du modèle.</p>
+<h2 id="traceroute">Traceroute</h2>
+<p>La commande <code>traceroute</code> (<code>tracert</code> sous windows) permet d'identifier
+les différent routeurs à traverser pour atteindre une destination
+donnée. Certains routeurs ne coopèrent pas avec cette commande (en fait,
+ils ne répondent pas au ping envoyé par traceroute). Pour les autres,
+traceroute affiche leur adresse <abbr title="Internet Protocol">IP</abbr> ainsi que leur nom de machine lorsque
+la requête de <abbr title="Domain Name System">DNS</abbr> inverse a fonctionné.</p>
+<p>Lancez la commande suivante pour identifier la route jusqu'au serveur de
+<code>berkley.edu</code> et essayez de suivre le chemin emprunté par les paquets.</p>
+<p><em>Note</em>: Le nom des routeurs intègre souvent le <a href="https://fr.wikipedia.org/wiki/Liste_des_codes_AITA_des_a%C3%A9roports/A" target="_blank">code
+AITA</a>
+de l'aéroport le plus proche</p>
+<p>Par défaut, <code>traceroute</code> effectue trois essais pour chaque saut. C'est
+pourquoi vous voyez trois résultats sur chaque ligne. Si vous avez de la
+chance, vous pourrez constater que, parfois, le chemin n'est pas le
+même. Cela est notamment lié aux stratégies de partage de charge (ou
+"load balancing") qui permettent de distribuer la charge entre
+différentes machines.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>sh
+tracert -w 500 -h 64 berkeley.edu</code></p>
+<ul>
+<li>l'option <code>-w 500</code> indique d'attendre 500 ms avant de considérer 
+  qu'un routeur intermédiaires n'a pas répondu</li>
+<li>l'option <code>-h 64</code> indique de limiter la recherche aux 64 
+  premières machines identifiées</li>
+</ul>
+</div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Linux</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>sh
+traceroute berkeley.edu</code></p>
+</div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Mac</label><div class="tabbed-content">
+<div class="admonition note">
+<p><code>sh
+traceroute berkeley.edu</code></p>
+</div>
+</div>
+</div>
+<p>Amusez vous à identifier les routes vers différents sites et les <abbr title="Internet Protocol">IP</abbr>
+publiques de membres de votre groupe.</p>
+<!-- **<p class="text-danger">TODO: On pourrait parler d'outils externes
+comme les looking glass (et éventuellement les weathermaps pour la
+congestions). Mais est-ce nécessaire.</p>** -->
+
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>De nombreux facteurs impactent les délais de transmission des paquets.<ul>
+<li>Le temps de propagation est très dimensionnant pour les liaisons de
+  longues distance. </li>
+<li>Les recherches en physique quantique, et en particulier sur
+  l'intrication des particules permettront peut-être un jour de
+  dépasser cette limite physique.</li>
+</ul>
+</li>
+<li>Une autre solution consiste à rapprocher les serveurs de leurs
+  utilisateurs. <ul>
+<li>On arrive à réduire le délai perçu par l'utilisateur en dupliquant
+  les serveurs dans des endroits stratégiques et en configurant
+  habilement les serveurs <abbr title="Domain Name System">DNS</abbr> pour pointer vers les serveurs les
+  plus proches. </li>
+<li>C'est la technique utilisée dans les CDN (Content Delivery
+  Networks) ou dans l'approche MEC (Mobile Edge Computing) de la 5G.</li>
+</ul>
+</li>
+<li>D'une manière générale, pour améliorer les performances et tenir la
+  montée en charge (on dit aussi "passer à l'échelle"), les industriels
+  sont amenés à déployer de solutions d'hébergement et des stratégies de
+  routage complexes qui perturbent la compréhension des concepts pour
+  les débutants.</li>
+<li>Des commandes simples (<code>ping</code>, <code>nslookup</code>, <code>traceroute</code>...)
+  disponibles en standard sur les machines permettent de tester et de
+  caractériser les liaisons. <ul>
+<li>D'autres outils complémentaires sont disponibles, notamment en
+  ligne, sur des sites spécialisés.</li>
+</ul>
+</li>
+<li>Concernant la recherche:<ul>
+<li>La modélisation permet de formaliser un problème sur la base
+  d'hypothèses. Mais ces modèles doivent être caractérisés et leur
+  limites bien identifiées.</li>
+<li>En recherche, on ne sais jamais ce que l'on va trouver! Par
+  exemple, alors que nous cherchions à caractériser la latence dans
+  les réseaux, nous avons découvert différentes problématiques liées
+  à l'hébergement de services sur Internet. </li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/glossaire/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Glossaire - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-filius/" class="dropdown-item">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-config-machine/" class="dropdown-item">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="../activite-mesure-delais/" class="dropdown-item">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#glossaire" class="nav-link">Glossaire</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#arp" class="nav-link">ARP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#api" class="nav-link">API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dhcp" class="nav-link">DHCP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dns" class="nav-link">DNS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#iot" class="nav-link">IoT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip" class="nav-link">IP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#json" class="nav-link">JSON</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mac" class="nav-link">MAC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#nat" class="nav-link">NAT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rtt" class="nav-link">RTT</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#url" class="nav-link">URL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#vm" class="nav-link">VM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="glossaire">Glossaire</h1>
+<p>Le monde des réseaux regorgent de termes parfois abscons pour le commun
+des mortels. Voici la signification de quelques acronymes et leur
+définition simple.</p>
+<h2 id="arp"><abbr title="Address Resolution Protocol">ARP</abbr></h2>
+<p><em>Address Resolution Protocol</em></p>
+<p>Protocole assurant la résolution d'adresse <abbr title="Medium Access Control">MAC</abbr>. Il permet à une machine
+d'interroger les autres machines du réseau local afin d'obtenir
+l'adresse <abbr title="Medium Access Control">MAC</abbr> correspondant à une adresse <abbr title="Internet Protocol">IP</abbr> donnée. En général, la 
+réponse est apportée directement par la machine qui possède l'adresse <abbr title="Internet Protocol">IP</abbr>
+recherchée.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Address_Resolution_Protocol" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol" target="_blank">en</a>.</p>
+<h2 id="api"><abbr title="Application Programming Interface">API</abbr></h2>
+<p><em>Application Programming Interface</em></p>
+<p>Interface de programmation permettant à un programme d'exposer un
+service auprès d'autres programmes. Ces interfaces permettent par
+exemple d'accéder à des informations (lecture, écriture) ou de
+déclencher des actions.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Interface_de_programmation" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/API" target="_blank">en</a>.</p>
+<h2 id="dhcp"><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></h2>
+<p><em>Dynamic Host Configuration Protocol</em></p>
+<p>Protocole qui permet à un nœud de récupérer automatiquement ses
+paramètres de configuration réseau auprès d'un <em>serveur <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></em>. Ces 
+paramètres comprennent notamment l'adresse <abbr title="Internet Protocol">IP</abbr> que la machine devra 
+utiliser ainsi que l'adresse d'un ou plusieurs serveurs <abbr title="Domain Name System">DNS</abbr>.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol" target="_blank">fr</a>, 
+<a href="https://wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol" target="_blank">en</a>.</p>
+<h2 id="dns"><abbr title="Domain Name System">DNS</abbr></h2>
+<p><em>Domain Name System</em></p>
+<p>Système de nommage des machines utilisé sur l'Internet. Désigne
+également le nom du protocole permettant de demander à un <em>serveur <abbr title="Domain Name System">DNS</abbr></em>
+l'adresse <abbr title="Internet Protocol">IP</abbr> correspondant à un nom de machine.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Domain_Name_System" target="_blank">fr</a>, 
+<a href="https://wikipedia.org/wiki/Domain_Name_System" target="_blank">en</a>.</p>
+<h2 id="iot"><abbr title="Internet of Things">IoT</abbr></h2>
+<p><em>Internet of Things</em> (ou IdO: Internet des objets)</p>
+<p>L'Internet des Objets désigne à la fois les équipements et les
+mécanismes (protocoles et réseaux de communication) permettant de faire
+dialoguer des objets entre eux. </p>
+<p>Dans sa version la plus simple, l'Internet des Objets permet à des 
+capteurs (par exemple de température) des remonter leur valeur vers 
+des serveurs. Il permet également d'interagir à distance avec des 
+actionneurs (par exemple de déclencher le chauffage à distance). Une 
+application plus complexe concerne par exemple les véhicules 
+communicants.</p>
+<p>Une caractéristique de l'<abbr title="Internet of Things">IoT</abbr> et qu'il s’intéresse souvent à de petits
+objets dont les resources sont très contraintes en matière d'énergie, de puissance de calcul ou de moyen de communication. De plus, le nombre 
+d'objets à intégrer peut parfois être très important. C'est pourquoi des solutions spécifiques sont dédiées à l'<abbr title="Internet of Things">IoT</abbr>. </p>
+<p>Une autre contrainte de l'<abbr title="Internet of Things">IoT</abbr> est que les objets sont parfois 
+difficilement accessibles une fois déployés. Ce qui peut poser des 
+problèmes pour assurer leur maintenance ou leur mise à jour. Associées à 
+la limite de puissance de calcul et de stockage, cela peut conduire à de
+sérieux problèmes en matière de cybersécurité.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Internet_des_objets" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">en</a>.</p>
+<h2 id="ip"><abbr title="Internet Protocol">IP</abbr></h2>
+<p><em>Internet Protocol</em></p>
+<p>C'est le protocole de la couche réseau (niveau 3 du modèle OSI). Il est
+notamment en charge de l'adressage (adresses <abbr title="Internet Protocol">IP</abbr>) et du routage (chemin
+suivi) des paquets sur le réseau. À ce jour, la version 4 (IPv4) est
+encore la plus utilisée. Elle est peu à peu remplacée par la version 6
+(IPv6) qui fournit notamment un espace d'adressage beaucoup plus
+important.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Internet_Protocol" target="_blank">fr</a>, 
+<a href="https://wikipedia.org/wiki/Internet_Protocol" target="_blank">en</a>.</p>
+<h2 id="json"><abbr title="Javascript Object Notation">JSON</abbr></h2>
+<p><em>JavaScript Object Notation</em></p>
+<p>Format de représentation de données structurées facilement interprétable
+par les machines d'autant que des librairies pour le manipuler existent
+dans la plupart des langages de programmation. Les données sont
+organisées sous forme de <code>clé</code>:<code>valeur</code>. Il est également possible
+d'imbriquer ces données et de les organiser sous forme de listes.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/JavaScript_Object_Notation" target="_blank">en</a>.</p>
+<h2 id="mac"><abbr title="Medium Access Control">MAC</abbr></h2>
+<p><em>Medium Access Control</em> </p>
+<p>Nom donné à la couche gérant l'accès au canal (niveau 2 du modèle OSI).
+Cette couche gère notamment le partage du canal entre les différents 
+émetteurs. Elle implémente souvent un mécanisme de détection d'erreurs 
+et parfois de correction de ces erreurs ou bien de retransmission quand
+une erreur est détectée.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Contr%C3%B4le_d%27acc%C3%A8s_au_support" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Medium_access_control" target="_blank">en</a>.</p>
+<h2 id="nat"><abbr title="Network Address Translation">NAT</abbr></h2>
+<p><em>Network Address Translation</em> </p>
+<p>Protocole permettant à un routeur de substituer l'adresse d'un paquet
+par une autre. Ce protocole est principalement utilisé par les routeurs
+d'accès pour substituer les <abbr title="Internet Protocol">IP</abbr> privées du réseau local par une <abbr title="Internet Protocol">IP</abbr>
+publique routable sur l'Internet. Cela permet d'une part de palier le
+manque d'adresses IPv4 et d'autre part de limiter l'accès direct aux
+machines d'un réseau local depuis l'extérieur.</p>
+<p>Il existe différents types de <abbr title="Network Address Translation">NAT</abbr> mais nous ne n'évoquerons pas ces
+différences ici.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Network_address_translation" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Network_address_translation" target="_blank">en</a>.</p>
+<h2 id="rtt"><abbr title="Round Trip Time">RTT</abbr></h2>
+<p><em>Round Trip Time</em></p>
+<p>Le <abbr title="Round Trip Time">RTT</abbr> représente le temps d'aller / retour entre deux machines. La
+commande <code>ping</code> permet par exemple de mesurer ce temps. Une machine
+envoie un paquet de test à la machine cible qui le renvoie à son tour à
+l'expéditeur initial. Le <abbr title="Round Trip Time">RTT</abbr> est mesuré par l'expéditeur initial. C'est
+le temps entre le début de l'émission du paquet de test et la réception 
+de la fin du la réponse.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Round-trip_delay_time" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Round-trip_delay" target="_blank">en</a>.</p>
+<h2 id="url"><abbr title="Uniform Resource Locator">URL</abbr></h2>
+<p><em>Uniform Resource Locator</em></p>
+<p>Adresse au format texte permettant de localiser une resource sur
+Internet de façon unique. Le début de l'<abbr title="Uniform Resource Locator">URL</abbr> indique également le
+protocole à utiliser pour accéder à cette resource. Par exemple
+<code>https://www.imt-atlantique.fr/fr</code> indique comment accéder à la page
+d'accueil en français de la machine <code>www</code> du domaine <code>imt-atlantique.fr</code>
+en utilisant le protocole HTTPS.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Uniform_Resource_Locator" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Locator" target="_blank">en</a>.</p>
+<h2 id="vm"><abbr title="Virtual Machine">VM</abbr></h2>
+<p><em>Virtual Machine</em></p>
+<p>Une machine virtuelle est un logiciel qui reproduit de manière virtuelle
+l'ensemble des composants matériels d'un ordinateur. Il est ainsi 
+possible de faire tourner une ou plusieurs <em>machine(s) virtuelle(s)</em> sur
+le même <em>hôte physique</em>.</p>
+<p>Cela permet notamment de facilement:</p>
+<ul>
+<li>installer de nouvelles configuration,</li>
+<li>dupliquer des configurations intéressantes,</li>
+<li>faire fonctionner plusieurs <em>instances</em> de machines virtuelles sur un 
+  même <em>hôte</em> physique,</li>
+<li>isoler les différentes <abbr title="Virtual Machine">VM</abbr> entre elles afin de limiter les 
+  interférences entre elles (pb de sécurité, incompatibilités de 
+  configuration, isolation des pannes...).</li>
+</ul>
+<p>Les <abbr title="Virtual Machine">VM</abbr> peuvent être utilisée sur des ordinateurs personnels à des fins 
+de test ou pour de besoins de configuration spécifiques (ex. une <abbr title="Virtual Machine">VM</abbr> 
+Linux sur un hôte sous Windows) ou bien sur des serveurs afin de 
+mutualiser les resources matérielles entre différents clients ou 
+services.</p>
+<p>Liens wikipedia: <a href="https://fr.wikipedia.org/wiki/Machine_virtuelle" target="_blank">fr</a>, 
+<a href="https://en.wikipedia.org/wiki/Virtual_machine" target="_blank">en</a>.</p>
+<!-- 
+* [**DHCP**](https://fr.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol):
+  *Dynamic Host Configuration Protocol*. Protocole qui permet
+  à un nœud de récupérer automatiquement ses paramètres de configuration
+  réseau auprès d'un *serveur DHCP*.
+* [**DNS**](https://fr.wikipedia.org/wiki/Domain_Name_System): 
+  *Domain Name System*. Système de nommage des machines utilisé
+  sur l'Internet. Désigne également le nom du protocole permettant de 
+  demander à un *serveur DNS* l'adresse IP correspondant à un nom de 
+  machine.
+* [**IP**](https://fr.wikipedia.org/wiki/Internet_Protocol): 
+  *Internet Protocol*. C'est le protocole de la couche réseau
+  (niveau 3 du modèle OSI). Il est notamment en charge de l'adressage
+  (adresses IP) et du routage (chemin suivi) des paquets sur le réseau.
+  À ce jour, la version 4 (IPv4) est encore la plus utilisée. Elle est 
+  peu à peu remplacée par la version 6 (IPv6) qui fournit notamment un 
+  espace d'adressage beaucoup plus important. --></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

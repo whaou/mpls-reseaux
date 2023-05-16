@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Anne-Hélène Tual, Anthony Penhard, Christophe Couturier">
+        <link rel="canonical" href="https://ccouturi.gitlabpages.inria.fr/mpls-reseaux/activite-filius/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Simulation réseau avec Filius - Les secrets des réseaux</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/obsidian.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <link href="../css/tabbed.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Les secrets des réseaux</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activités <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Simulation réseau avec Filius</a>
+</li>
+                                    
+<li>
+    <a href="../activite-IoT-micro-bit/" class="dropdown-item">Internet des objets avec micro:bit</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archives  session 2021 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../activite-config-machine/" class="dropdown-item">Configuration de ma machine</a>
+</li>
+                                    
+<li>
+    <a href="../activite-mesure-delais/" class="dropdown-item">Mesures de délais</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../glossaire/" class="nav-link">Glossaire</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ressources/" class="nav-link">Ressources</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://www.maisons-pour-la-science.org/fr/bretagne" class="nav-link">MPLS</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#simulation-reseau-avec-filius" class="nav-link">Simulation réseau avec Filius</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#presentation-de-filius" class="nav-link">Présentation de filius</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#partie-1-saisie-dun-schema-reseau-et-configuration-des-adresses-sur-ce-reseau" class="nav-link">Partie 1: Saisie d'un schéma réseau et Configuration des adresses sur ce réseau</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#partie-2-configuration-dun-second-reseau-local" class="nav-link">Partie 2: Configuration d'un second réseau local</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#partie-3-serveur-web" class="nav-link">Partie 3: Serveur WEB</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#partie-4-bonus-serveur-dns" class="nav-link">Partie 4 (Bonus) : Serveur DNS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#partie-5-super-bonus-serveur-dhcp" class="nav-link">Partie 5 (Super Bonus): Serveur DHCP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ressources" class="nav-link">Ressources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="simulation-reseau-avec-filius">Simulation réseau avec Filius</h1>
+<p>Cette activité a pour objectifs de:</p>
+<ul>
+<li>découvrir le simulateur de réseau Filius</li>
+<li>modéliser un réseau dans Filius</li>
+<li>identifier les composants d'un réseau local et leurs paramètres de 
+  configuration </li>
+<li>comprendre le principe de la résolution d'adresse en observant 
+  le fonctionnement d'un réseau local</li>
+</ul>
+<h2 id="presentation-de-filius">Présentation de filius</h2>
+<ul>
+<li>lien vers le <a href="https://www.lernsoftware-filius.de/Herunterladen">site officiel de Filus (en allemand)</a></li>
+<li><a href="https://ent2d.ac-bordeaux.fr/disciplines/sti-college/2019/09/25/filius-un-logiciel-de-simulation-de-reseau-simple-et-accessible/">lien vers un exemple d'activité</a></li>
+</ul>
+<h2 id="partie-1-saisie-dun-schema-reseau-et-configuration-des-adresses-sur-ce-reseau">Partie 1: Saisie d'un schéma réseau et Configuration des adresses sur ce réseau</h2>
+<p><img alt="Filius Partie 1" src="../img/Filius_1.png" width="75%" /></p>
+<ul>
+<li>Dessiner un réseau avec 3 machines "PC portables" (adresses <abbr title="Internet Protocol">IP</abbr> <code>192.168.1.1</code> ; <code>192.168.1.2</code> ; <code>192.168.1.3</code> ) + switch</li>
+<li>"installer" des logiciels sur les PC virtuels la "Ligne de commande"</li>
+<li>Tester la communication entre 2 PCs avec la commande <code>ping</code></li>
+</ul>
+<p>Correction : <a href="../resources/Filius_1.fls">Correction Filius Partie 1</a></p>
+<h3 id="aide-outils-en-ligne-de-commande">AIDE outils en ligne de commande :</h3>
+<ul>
+<li><code>ipconfig</code> : qui permet de connaître la configuration réseau de la machine sur laquelle est exécutée cette commande (<code>ipconfig</code> est une véritable commande sous Windows. Sous Linux, vous pouvez utiliser <code>ifconfig</code> (obsolète) ou bien <code>ip</code>.)</li>
+<li><code>ping</code> : qui permet d'envoyer des paquets de données d'une machine A vers une machine B. Si la commande est exécutée sur la machine A, le <code>ping</code> devra être suivi par l'adresse <abbr title="Internet Protocol">IP</abbr> de la machine B (par exemple, si l'adresse <abbr title="Internet Protocol">IP</abbr> de B est <code>192.168.1.2</code>, on aura <code>ping 192.168.1.2</code></li>
+</ul>
+<h2 id="partie-2-configuration-dun-second-reseau-local">Partie 2: Configuration d'un second réseau local</h2>
+<p><img alt="Filius Partie 2" src="../img/Filius_2.png" width="75%" /></p>
+<ul>
+<li>Configurer un nouveau réseau démarrant par <code>192.168.2.xxx</code> avec 3 nouvelles machines "PC portables".</li>
+<li><abbr title="Internet Protocol">IP</abbr> des 3 machines <code>192.168.2.1</code> ; <code>192.168.2.2</code> ; <code>192.168.2.3</code>.</li>
+<li>Réalisez les paramètres nécessaires en ajoutant un routeur afin de permettre la communication entre les deux réseaux.</li>
+<li>Vérifiez le bon fonctionnement de communication entre les deux réseaux, toujours avec la commande <code>ping</code>.</li>
+<li>Les "PC portables" sont a reconfigurer avec l'<abbr title="Internet Protocol">IP</abbr> du Routeur/Passerelle</li>
+</ul>
+<p>Correction : <a href="../resources/Filius_2.fls">Correction Filius Partie 2</a></p>
+<h2 id="partie-3-serveur-web">Partie 3: Serveur WEB</h2>
+<p><img alt="Filius Partie 3" src="../img/Filius_3.png" width="75%" /></p>
+<ul>
+<li>Ajouter un serveur, "PC fixe", que vous appelez "Youtube.fr" avec l’adresse <abbr title="Internet Protocol">IP</abbr>  qui n'est ni en <code>192.168.1.x</code> ni <code>192.168.2.x</code>. Par exemple : <code>192.168.20.200</code>.</li>
+<li>Sur ce serveur, "Installer" un "serveur web", "Explorateur de fichier", "Editeur de texte".</li>
+<li>"Installer" sur quelques "PC portable" un "navigateur web".</li>
+<li>Depuis un "PC portable" vous devriez pouvoir visualiser la page disponible sur le "serveur web" en utilisant sont adresse <abbr title="Internet Protocol">IP</abbr> dans le navigateur.</li>
+</ul>
+<p>Correction : <a href="../resources/Filius_3.fls">Correction Filius Partie 3</a></p>
+<h2 id="partie-4-bonus-serveur-dns">Partie 4 (Bonus) : Serveur <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a></h2>
+<p><img alt="Filius Partie 4" src="../img/Filius_all_end.png" width="75%" /></p>
+<ul>
+<li>Ajouter un nouveau serveur, "PC fixe", que vous appelez <code>DNS</code> avec une adresse <abbr title="Internet Protocol">IP</abbr>  qui n'est ni en <code>192.168.1.x</code> ni en <code>192.168.2.x</code>. Par exemple : <code>192.168.100.100</code>.</li>
+<li>Sur ce serveur, "Installer" un "serveur <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a>".</li>
+<li>Vous devez configurer l'adresse <abbr title="Internet Protocol">IP</abbr> du serveur "Youtube.fr" et l'associer a son adresse <abbr title="Internet Protocol">IP</abbr>.</li>
+<li>Les "PC portable" sont a reconfigurer avec l'<abbr title="Internet Protocol">IP</abbr> du <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a>.</li>
+<li>Depuis un "PC portable" vous devriez pouvoir visualiser la page disponible sur le "serveur web" en utilisant cette fois si son nom de domaine "Youtube.fr".</li>
+</ul>
+<p>Correction : <a href="../resources/Filius_4.fls">Correction Filius Partie 4</a></p>
+<h2 id="partie-5-super-bonus-serveur-dhcp">Partie 5 (Super Bonus): Serveur <a href="../glossaire/#dhcp"><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></a></h2>
+<p>Configurez Filius pour qui émule le fonctionnement d'un serveur
+<a href="../glossaire/#dhcp"><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></a>. Les machines récupéreront ainsi
+automatiquement leurs paramètres réseau:</p>
+<ul>
+<li>leur adresse <abbr title="Internet Protocol">IP</abbr> et leur masque de sous-réseau,</li>
+<li>l'adresse de leur routeur par défaut et</li>
+<li>l'adresse du serveur <a href="../glossaire/#dns"><abbr title="Domain Name System">DNS</abbr></a>.</li>
+</ul>
+<p>Il faut noter qu'en réalité la fonctionnalité <a href="../glossaire/#dhcp"><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></a>
+est assurée par un équipement physique sur le réseau. Dans la grande
+majorité des cas, c'est le routeur d'accès (routeur par défaut,
+typiquement la box de la maison) qui l'assure.</p>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=bkaRSt5TUbY">vidéos ressources  Filius - Comment connecter plusieurs réseaux ensemble ?</a></li>
+<li><a href="https://www.youtube.com/watch?v=pS_rpzolCy8">Comment mettre en place un serveur Web </a></li>
+<li><a href="https://www.youtube.com/watch?v=aHAmIwBhZdU">Comment se connecter à un serveur par son adresse <abbr title="Uniform Resource Locator">URL</abbr> ?</a></li>
+<li><a href="https://view.genial.ly/6272924086ebe00018d2ac39/presentation-secrets-des-reseaux-2022">Genial.ly de présentation</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+<p>
+<hr>
+Copyright &copy; 2021-2023, A.H. Tual, A. Penhard, C. Couturier. Contenu sous licence  <a href="http://creativecommons.org/licenses/by/4.0/deed.fr">CC BY &nbsp; <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a></br>Code source disponible sur <a href="https://github.com/whaou/mpls-reseaux/"target="_blank">ce dépôt Github</a>.<br>
+
+<!--
+<small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+-->
+<br>
+
+
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
