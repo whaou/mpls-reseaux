@@ -5,6 +5,7 @@
 * Support Genially *["Éclairage scientifique sur les
   réseaux"](https://view.genial.ly/60524fc89b3f0f0d928b5f9c){target=_blank}* 
 * Support *["Les enjeux des réseaux"](resources/20230516--MPLS-Enjeux_des_reseaux-et_demarche_innovation.pdf){target=_blank}*
+* Supports d'un [cours de réseaux d'IMT Atlantique](resources/r201-s18-cours.pdf) 
 
 ### Codes sources
 
